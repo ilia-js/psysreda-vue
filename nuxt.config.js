@@ -4,19 +4,25 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'psysreda',
+    title: 'КАК ПЕРЕСТАТЬ ЗАВИСЕТЬ ОТ ОБСТОЯТЕЛЬСТВ И ПОВЕРИТЬ В СЕБЯ с психологом Татьяной Гвоздовской',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+
+    ],
+    script: [
+      { src: 'js/jquery-3.5.1.min.js' },
+      { src: 'js/bootstrap.min.js' }
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '@/assets/css/bootstrap.min.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
