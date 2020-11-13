@@ -63,3 +63,9 @@
   </div>
 </div>
 </template>
+<style>
+.goal-program .block {background: #FFF;padding:20px 15px 5px;border-radius:5px;}
+.goal-program h1{font-size:1.15rem;font-weight:bold;}
+.goal-program .separator{height:40px;}
+.goal-program .dash{padding-left:20px;}
+</style>

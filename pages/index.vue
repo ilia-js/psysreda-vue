@@ -8,6 +8,7 @@
     <Program />
     <Changes />
     <Reviews />
+    <Cost />
   </div>
 </template>
 
