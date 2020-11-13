@@ -43,7 +43,5 @@
 .section-cost .title{padding-bottom:40px;font-size:2.4rem;}
 .section-cost .block {background: #efefef;padding:20px 15px 5px;border-radius:20px;}
 .section-cost h1{font-size:1.5rem;font-weight:bold;padding:10px 0;}
-.section-cost h2{font-size:1.4rem;padding:5px 0 30px;}
-.section-cost .separator{height:40px;}
-.section-cost .dash{padding-left:20px;}
+.section-cost h2{font-size:1.3rem;padding:5px 0 30px;font-weight:bold;}
 </style>

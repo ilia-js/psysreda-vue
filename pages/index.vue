@@ -9,6 +9,7 @@
     <Changes />
     <Reviews />
     <Cost />
+    <Faq />
   </div>
 </template>
 
