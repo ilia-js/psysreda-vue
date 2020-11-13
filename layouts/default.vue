@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="container-fluid" id="app">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <Nuxt />
+      </div>
+    </div>
   </div>
 </template>
 

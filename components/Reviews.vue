@@ -1,5 +1,5 @@
+<!--NEXT Раздел "Отзывы моих клиентов"-->
 <template>
-  <!--NEXT Цель "Что говорят мои клиенты"-->
   <div class="col-md-12 b-even goal-clients">
       <div class="row">
         <div class="col-md-2"></div>

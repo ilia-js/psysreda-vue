@@ -1,5 +1,12 @@
 <template>
   <div>
+    <Start />
+    <AboutMe />
+    <Diplomas />
+    <Choice />
+    <Test />
+    <Program />
+    <Changes />
     <Reviews />
   </div>
 </template>
