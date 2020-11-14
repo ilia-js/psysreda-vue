@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Начало"-->
 <template>
-  <div class="col-md-12 b-odd i-7 section-start">
+  <div class="col-md-12 b-odd container">
     <div class="row">
       <div class="col-4 i-3">
         <img src="img/logo.jpg" class='img-fluid logo rounded'>
@@ -23,11 +23,12 @@
     </div>
   </div>
 </template>
-<style>
-.section-start h1{margin:50px 0 30px;}
-.section-start .shift{padding-left:50px;}
-.section-start ul{padding-left:0px;margin-bottom:30px;}
-.section-start h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
-.section-start .warranties{width:50px;height:20px;margin-left:-20px;width:80px;height:20px;font-size:0.75rem;padding:0;}
-.section-start .online{margin-left:-20px;margin-top:50px;}
+<style scoped>
+  .container{padding:40px 0 !important;}
+  h1{margin:50px 0 30px;font-size:2.5rem;}
+  .shift{padding-left:50px;}
+  ul{padding-left:0px;margin-bottom:30px;}
+  h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
+  .warranties{width:50px;height:20px;margin-left:-20px;width:80px;height:20px;font-size:0.75rem;padding:0;}
+  .online{margin-left:-20px;margin-top:50px;}
 </style>

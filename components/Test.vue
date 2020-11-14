@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Тест на созависимость"-->
 <template>
-<div class="col-md-12 b-odd i-8">
+<div class="col-md-12 b-odd container-section">
   <div>
     <h1 class="t-7 text-center i-6">Нужна ли тебе работа</br/>с созависимостью?</h1>
     <h2 class="t-8 text-center i-6">Этот легкий бесплатный тест поможет тебе<br/>определить степень созависимости</h2>

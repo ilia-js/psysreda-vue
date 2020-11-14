@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Стоимость"-->
 <template>
-<div class="col-md-12 b-odd i-8 section-cost">
+<div class="col-md-12 b-odd container-section">
   <div>
     <h1 class="t-9 text-center title">Стоимость услуг</h1>
     <div class="row">
@@ -39,9 +39,9 @@
   </div>
 </div>
 </template>
-<style>
-.section-cost .title{padding-bottom:40px;font-size:2.4rem;}
-.section-cost .block {background: #efefef;padding:20px 15px 5px;border-radius:20px;}
-.section-cost h1{font-size:1.5rem;font-weight:bold;padding:10px 0;}
-.section-cost h2{font-size:1.3rem;padding:5px 0 30px;font-weight:bold;}
+<style scoped>
+  .title{padding-bottom:40px;font-size:2.4rem;}
+  .block {background: #efefef;padding:20px 15px 5px;border-radius:20px;}
+  h1{font-size:1.5rem;font-weight:bold;padding:10px 0;}
+  h2{font-size:1.3rem;padding:5px 0 30px;font-weight:bold;}
 </style>

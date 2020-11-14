@@ -1,10 +1,10 @@
 <!--NEXT Раздел "Программа для индивидуальной работы"-->
 <template>
-<div class="col-md-12 b-even i-8">
+<div class="col-md-12 b-even container-section">
   <div>
-    <h1 class="t-9 text-center i-6">Программа индивидуальной работы</h1>
+    <h1 class="title t-9 text-center i-6">Программа индивидуальной работы</h1>
     <h2 class="t-10 text-center i-6">Примерные темы нашей работы -<br/>компас на пути освобождения из со-зависимости</h2>
-    <div class="row goal-program">
+    <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-4 block">
         <h1>Обозначаем маршрут</h1>
@@ -63,9 +63,10 @@
   </div>
 </div>
 </template>
-<style>
-.goal-program .block {background: #FFF;padding:20px 15px 5px;border-radius:5px;}
-.goal-program h1{font-size:1.15rem;font-weight:bold;}
-.goal-program .separator{height:40px;}
-.goal-program .dash{padding-left:20px;}
+<style scoped>
+  .block {background: #FFF;padding:20px 15px 5px;border-radius:5px;}
+  h1{font-size:1.15rem;font-weight:bold;}
+  h1.title{font-size:2rem;}
+  .separator{height:40px;}
+  .dash{padding-left:20px;}
 </style>

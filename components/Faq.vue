@@ -1,6 +1,6 @@
 <!--NEXT Раздел "ЧАВО"-->
 <template>
-<div class="col-md-12 b-even i-8 section-faq">
+<div class="col-md-12 b-even container-section">
   <div>
     <h1 class="t-9 text-center title">Часто-задаваемые вопросы</h1>
     <div class="row">
@@ -84,11 +84,11 @@
   </div>
 </div>
 </template>
-<style>
-.section-faq .title{padding-bottom:40px;font-size:2.4rem;}
-.section-faq .block {background: #fff;padding:10px 15px 30px;border-radius:20px;}
-.section-faq button, .section-faq button:active, .section-faq button:focus {
-  font-size:1.3rem;background:none;border:none;outline:none;padding:10px 0 0 20px;cursor:pointer;
-}
-.section-faq p {padding:5px 100px 0 40px;}
+<style scoped>
+  .title{padding-bottom:40px;font-size:2.4rem;}
+  .block {background: #fff;padding:10px 15px 30px;border-radius:20px;}
+  button, button:active, button:focus {
+    font-size:1.3rem;background:none;border:none;outline:none;padding:10px 0 0 20px;cursor:pointer;
+  }
+  p {padding:5px 100px 0 40px;}
 </style>

@@ -1,7 +1,7 @@
 <!--NEXT Раздел "Дипломы"-->
 <template>
-  <div class="col-md-12 b-odd goal-diplomas text-center">
-    <h1>Дипломы.<br/> Подтверждение квалификации.</h1>
+  <div class="col-md-12 b-odd container-section text-center">
+    <h1 class="title-section">Дипломы.<br/> Подтверждение квалификации.</h1>
     <div id="carouselExampleIndicators" class="carousel slide w-50 mx-auto" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -66,12 +66,11 @@
     </div>          
   </div>
 </template>
-<style>
-.goal-diplomas{padding:60px 0 50px 0;}
-.goal-diplomas .carousel-caption{bottom:60px;padding:10px 0 0 0;background:#efefef !important;opacity:0.8;border:1px solid #999;}
-.goal-diplomas .even{background:#efefef !important;opacity:0.8 !important;}
-.goal-diplomas .odd{background:#fff !important;opacity:0.6 !important;}
-.goal-diplomas h1{font-size:2.5rem;margin-bottom:40px;}
-.goal-diplomas h2{color:#000;font-size:1.3rem;}
-.goal-diplomas p{color:#000;font-size:1.2rem;}
+<style scoped>
+  h1{font-size:2.5rem;margin-bottom:40px;}
+  h2{color:#000;font-size:1.3rem;}
+  p{color:#000;font-size:1.2rem;}
+  .carousel-caption{bottom:60px;padding:10px 0 0 0;background:#efefef !important;opacity:0.8;border:1px solid #999;}
+  .even{background:#efefef !important;opacity:0.8 !important;}
+  .odd{background:#fff !important;opacity:0.6 !important;}
 </style>  

@@ -1,10 +1,10 @@
 <!--NEXT Раздел "Отзывы моих клиентов"-->
 <template>
-  <div class="col-md-12 b-even goal-clients">
+  <div class="col-md-12 b-even">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-5">Отзывы моих клиентов</h1>
+          <h1 class="text-center mb-5 title-section">Отзывы моих клиентов</h1>
           <div class="row">
             <div class="col-md-6">
               <div class="embed-responsive embed-responsive-16by9">
@@ -230,9 +230,9 @@ export default {
   }
 }
 </script>
-<style>
-.goal-clients .card{padding:15px;margin-top:30px;border-radius:8px;}
-.goal-clients .card .title{font-size:1.6rem;}
-.goal-clients .card .action span{color:#007bff;}
-.goal-clients .card .action span:hover{text-decoration:underline;cursor:pointer;}
+<style scoped>
+  .card{padding:15px;margin-top:30px;border-radius:8px;}
+  .card .title{font-size:1.6rem;}
+  .card .action span{color:#007bff;}
+  .card .action span:hover{text-decoration:underline;cursor:pointer;}
 </style>

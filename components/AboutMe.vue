@@ -1,14 +1,14 @@
 <!--NEXT Раздел "Обо мне"-->
 <template>
-	<div class="col-md-12 b-even i-8 goal-about">
+	<div class="col-md-12 b-even container-section">
 		<div class="row">
 		  <div class="col-md-2"></div>
 		  <div class="col-md-4">
-		    <h1>Обо мне</h1>
-		    <h1 class="second">Гвоздовская Татьяна</h1>
+		    <h1 class="title-section">Обо мне</h1>
+		    <h1 class="title-section">Гвоздовская Татьяна</h1>
 		    <div class="social">
-		      <a href="https://www.facebook.com/gvozdtatyana" target="_blank"><img src="/src/icons/facebook_32.png"></a>
-		      <a href="https://www.instagram.com/mypsyholog/" target="_blank"><img src="/src/icons/instagram_32.png"></a>
+		      <a href="https://www.facebook.com/gvozdtatyana" target="_blank"><img src="icons/facebook_32.png"></a>
+		      <a href="https://www.instagram.com/mypsyholog/" target="_blank"><img src="icons/instagram_32.png"></a>
 		    </div>
 		    <ul class="square">
 		      <li>15 лет опыта в психологии</li>
@@ -49,12 +49,11 @@
 		</div>
 	</div>
 </template>
-<style>
-.goal-about h1{font-size:2rem;font-weight:bold;padding-top:0px;}
-.goal-about h1:nth-child(1){padding-top:80px;font-weight:normal;}
-.goal-about h1:nth-child(2){font-size:1.5rem;}
-.goal-about .social{margin-bottom:10px;}
-.goal-about .social img{margin-right:10px;}
-.goal-about ul{padding-left:35px;}
-.goal-about button{margin-top:15px;margin-bottom:30px;}
+<style scoped>
+	h1:nth-child(1){padding-top:80px;}
+	h1:nth-child(2){font-size:1.5rem;}
+	.social{margin-bottom:10px;}
+	.social img{margin-right:10px;}
+	ul{padding-left:35px;}
+	button{margin-top:15px;margin-bottom:30px;}
 </style>	

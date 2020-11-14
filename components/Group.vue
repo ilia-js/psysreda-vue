@@ -1,10 +1,10 @@
 <!--NEXT Раздел "Отзывы моих клиентов"-->
 <template>
-  <div class="col-md-12 b-odd section-groups i-8">
+  <div class="col-md-12 b-odd container-section">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-5">Работа в группах</h1>
+          <h1 class="text-center mb-5 title-section">Работа в группах</h1>
           <div class="row">
             <div class="col-md-6">
               <div class="embed-responsive embed-responsive-16by9">
@@ -36,11 +36,6 @@
       <h3>Видео сняты во время занятий в группах и размещены с разрешения участников.</h3>
   </div>
 </template>
-
-<script>
-export default {
-}
-</script>
 <style scoped>
-.section-groups h3{padding:30px 0;text-align:center;font-size:1.2rem;}
+  h3{padding:30px 0;text-align:center;font-size:1.2rem;}
 </style>

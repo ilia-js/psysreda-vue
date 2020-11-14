@@ -7,6 +7,7 @@ ul.dash{list-style-type:none;}
 ul.dash li:before{content:"\2010";position:relative;left:-5px;}
 ul.square{list-style-type:square;}
 /*NEXT Заголовки*/
+.title-section{font-size:2rem;font-weight:bold;}
 .t-1, .t-2, .t-3, .t-4, .t-5, .t-6, .t-7, .t-8, .t-9, .t-10 {font-weight: bold;color:#000;}
 .t-1{font-size:1.8rem;}
 .t-2{font-size:1.3rem;}
@@ -25,12 +26,11 @@ ul.square{list-style-type:square;}
 .b-even{background:#efefef;padding:80px 0 !important;}
 /*END Блоки на главной*/
 /*BEGIN Отступы сверху, снизу, слева, справа*/
+.container-section{padding:100px 0 !important;}
 .i-2{margin-top:40px;}
 .i-3{margin:0 50px 0 0px;}
 .i-4{margin:0 auto;}
 .i-6{padding-bottom:20px;}
-.i-7{padding:40px 0 !important;}
-.i-8{padding:100px 0 !important;}
 /*END Отступы сверху, снизу, слева, справа*/
 /*BEGIN Кнопки*/
 .bt-1{}
