@@ -10,6 +10,7 @@
     <Reviews />
     <Cost />
     <Faq />
+    <Group />
   </div>
 </template>
 

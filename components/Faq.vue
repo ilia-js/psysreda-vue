@@ -87,6 +87,8 @@
 <style>
 .section-faq .title{padding-bottom:40px;font-size:2.4rem;}
 .section-faq .block {background: #fff;padding:10px 15px 30px;border-radius:20px;}
-.section-faq button, .section-faq button:active, .section-faq button:focus {font-size:1.3rem;background:none;border:none;outline:none;padding:10px 0 0 20px;cursor:pointer;}
+.section-faq button, .section-faq button:active, .section-faq button:focus {
+  font-size:1.3rem;background:none;border:none;outline:none;padding:10px 0 0 20px;cursor:pointer;
+}
 .section-faq p {padding:5px 100px 0 40px;}
 </style>

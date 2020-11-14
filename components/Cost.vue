@@ -17,7 +17,7 @@
           </li>
           <li>Также мы обсудим границы наших отношений и график дальнейших встреч</li>
         </ul>
-        <h2 class="text-center">4000руб / 50 мин</h2>
+        <h2 class="text-center">3500руб / 50 мин</h2>
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-4 block">
