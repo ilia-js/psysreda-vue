@@ -3,7 +3,7 @@
 <div class="col-md-12 b-even container-section">
   <div>
     <h1 class="title t-9 text-center i-6">Программа индивидуальной работы</h1>
-    <h2 class="t-10 text-center i-6">Примерные темы нашей работы -<br/>компас на пути освобождения из со-зависимости</h2>
+    <h2 class="t-10 text-center i-6">Ориентировочные темы нашей работы -<br/>компас на пути освобождения из со-зависимости</h2>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-4 block">

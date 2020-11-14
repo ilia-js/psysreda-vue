@@ -43,5 +43,5 @@
   .title{padding-bottom:40px;font-size:2.4rem;}
   .block {background: #efefef;padding:20px 15px 5px;border-radius:20px;}
   h1{font-size:1.5rem;font-weight:bold;padding:10px 0;}
-  h2{font-size:1.3rem;padding:5px 0 30px;font-weight:bold;}
+  h2{font-size:1.3rem;font-weight:bold;padding:5px 0 30px;}
 </style>
