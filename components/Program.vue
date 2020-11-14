@@ -1,14 +1,14 @@
 <!--NEXT Раздел "Программа для индивидуальной работы"-->
 <template>
-<div class="col-md-12 b-even container-section">
+<div class="col-md-12 muted s-container">
   <div>
-    <h1 class="title t-9 text-center i-6">Программа индивидуальной работы</h1>
-    <h2 class="t-10 text-center i-6">Ориентировочные темы нашей работы -<br/>компас на пути освобождения из со-зависимости</h2>
+    <h1 class="s-title text-center">Программа индивидуальной работы</h1>
+    <h2 class="title-comment">Ориентировочные темы нашей работы -<br/>компас на пути освобождения из со-зависимости</h2>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-4 block">
-        <h1>Обозначаем маршрут</h1>
-        <ul>
+        <h1 class="c-title">Обозначаем маршрут</h1>
+        <ul class="square">
           <li>Увидеть и признать реальное положение в отношениях</li>
           <li>Работа с чувствами и потребностями (страх, стыд, вина)</li>
           <li>Умение управлять своими эмоциями</li>
@@ -17,8 +17,8 @@
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-4 block">
-        <h1>Работаем с со-зависимыми моделями</h1>
-        <ul>
+        <h1 class="c-title">Работаем с со-зависимыми моделями</h1>
+        <ul class="square">
           <li>отрицание</li>
           <li>низкая самооценка</li>
           <li>уступчивость</li>
@@ -30,8 +30,8 @@
       <div class="col-md-12 separator"></div>
       <div class="col-md-1"></div>
       <div class="col-md-4 block">
-        <h1>Формируем здоровые стратегии</h1>
-        <ul>
+        <h1 class="c-title">Формируем здоровые стратегии</h1>
+        <ul class="square">
           <li>признание</li>
           <li>устойчивая самооценка</li>
           <li>формирование здоровых границ и способность говорить НЕТ</li>
@@ -43,8 +43,8 @@
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-4 block">
-        <h1>Работаем с убеждениями</h1>
-        <ul>
+        <h1 class="c-title">Работаем с убеждениями</h1>
+        <ul class="square">
           <li>Работа с ограничивающими убеждениями, родительскими посланиями</li>
           <li>Работа с травмами и разрешение травматического опыта</li>
           <li>
@@ -64,9 +64,11 @@
 </div>
 </template>
 <style scoped>
+  h2
   .block {background: #FFF;padding:20px 15px 5px;border-radius:5px;}
-  h1{font-size:1.15rem;font-weight:bold;}
-  h1.title{font-size:2rem;}
+  .s-title{padding-bottom:20px;}
+  .c-title{font-size:1.15rem;font-weight:bold;}
+  .title-comment{font-size:1.3rem;font-weight:normal;text-align:center;padding-bottom:20px;}
   .separator{height:40px;}
   .dash{padding-left:20px;}
 </style>

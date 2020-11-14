@@ -1,11 +1,11 @@
 <!--NEXT Раздел "Обо мне"-->
 <template>
-	<div class="col-md-12 b-even container-section">
+	<div class="col-md-12 muted s-container">
 		<div class="row">
 		  <div class="col-md-2"></div>
 		  <div class="col-md-4">
-		    <h1 class="title-section">Обо мне</h1>
-		    <h1 class="title-section">Гвоздовская Татьяна</h1>
+		    <h1 class="s-title">Обо мне</h1>
+		    <h1 class="s-title">Гвоздовская Татьяна</h1>
 		    <div class="social">
 		      <a href="https://www.facebook.com/gvozdtatyana" target="_blank"><img src="icons/facebook_32.png"></a>
 		      <a href="https://www.instagram.com/mypsyholog/" target="_blank"><img src="icons/instagram_32.png"></a>
@@ -52,8 +52,9 @@
 <style scoped>
 	h1:nth-child(1){padding-top:80px;}
 	h1:nth-child(2){font-size:1.5rem;}
-	.social{margin-bottom:10px;}
-	.social img{margin-right:10px;}
 	ul{padding-left:35px;}
 	button{margin-top:15px;margin-bottom:30px;}
+	.social{margin-bottom:10px;}
+	.social img{margin-right:10px;}
+	.s-title{text-align:left;}
 </style>	

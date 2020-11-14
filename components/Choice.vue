@@ -1,8 +1,8 @@
 <!--NEXT Раздел "Выбор"-->
 <template>
-  <div class="col-12 b-even">
+  <div class="col-12 muted">
     <div>
-      <h1 class="t-5 text-center i-6">Кому подойдут консультации?</h1>
+      <h1 class="s-title text-center">Кому подойдут консультации?</h1>
       <div class="d-block mx-auto col-md-6 text-center">
         <div>
           <h2>Отношения жертва-спасатель-агрессор</h2>
@@ -34,4 +34,5 @@
 </template>
 <style scoped>
   h2{font-size:1.1rem;font-weight:bold;text-align:left;}
+  .s-title{padding-bottom:20px;}
 </style>

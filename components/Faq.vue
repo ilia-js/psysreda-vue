@@ -1,8 +1,8 @@
 <!--NEXT Раздел "ЧАВО"-->
 <template>
-<div class="col-md-12 b-even container-section">
+<div class="col-md-12 muted s-container">
   <div>
-    <h1 class="t-9 text-center title">Часто-задаваемые вопросы</h1>
+    <h1 class="s-title">Часто-задаваемые вопросы</h1>
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 block">
@@ -85,7 +85,7 @@
 </div>
 </template>
 <style scoped>
-  .title{padding-bottom:40px;font-size:2.4rem;}
+  .s-title{padding-bottom:40px;}
   .block {background: #fff;padding:10px 15px 30px;border-radius:20px;}
   button, button:active, button:focus {
     font-size:1.3rem;background:none;border:none;outline:none;padding:10px 0 0 20px;cursor:pointer;

@@ -1,12 +1,12 @@
 <!--NEXT Раздел "Стоимость"-->
 <template>
-<div class="col-md-12 b-odd container-section">
+<div class="col-md-12 s-container">
   <div>
-    <h1 class="t-9 text-center title">Стоимость услуг</h1>
+    <h1 class="s-title">Стоимость услуг</h1>
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-4 block">
-        <h1 class="text-center">Первичная консультация</h1>
+        <h1 class="variant">Первичная консультация</h1>
         <ul>
           <li>На первой встрече я знакомлюсь, задаю вопросы, для меня важно услышать, с чем ты пришел, как устроена твоя жизнь</li>
           <li>
@@ -21,7 +21,7 @@
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-4 block">
-        <h1 class="text-center">Долгосрочная терапия</h1>
+        <h1 class="variant">Долгосрочная терапия</h1>
         <ul>
           <li>Если ты решил работать со своей со-зависимостью и выбрал меня своим терапевтом, моя задача организовать стабильные терапевтические отношения</li>
           <li>Поэтому, я беру в терапию клиентов только с постоянным сеттингом</li>
@@ -40,8 +40,8 @@
 </div>
 </template>
 <style scoped>
-  .title{padding-bottom:40px;font-size:2.4rem;}
+  .s-title{padding-bottom:40px;}
   .block {background: #efefef;padding:20px 15px 5px;border-radius:20px;}
-  h1{font-size:1.5rem;font-weight:bold;padding:10px 0;}
+  h1.variant{font-size:1.5rem;font-weight:bold;text-align:center;padding:10px 0;}
   h2{font-size:1.3rem;font-weight:bold;padding:5px 0 30px;}
 </style>

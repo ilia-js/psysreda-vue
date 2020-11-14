@@ -1,10 +1,10 @@
 <!--NEXT Раздел "Отзывы моих клиентов"-->
 <template>
-  <div class="col-md-12 b-even">
+  <div class="col-md-12 muted">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-5 title-section">Отзывы моих клиентов</h1>
+          <h1 class="text-center mb-5 s-title">Отзывы моих клиентов</h1>
           <div class="row">
             <div class="col-md-6">
               <div class="embed-responsive embed-responsive-16by9">
