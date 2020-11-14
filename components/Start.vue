@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Начало"-->
 <template>
-  <div class="col-md-12 b-odd i-7 goal-start">
+  <div class="col-md-12 b-odd i-7 section-start">
     <div class="row">
       <div class="col-4 i-3">
         <img src="img/logo.jpg" class='img-fluid logo rounded'>
@@ -24,10 +24,10 @@
   </div>
 </template>
 <style>
-.goal-start h1{margin:50px 0 30px;}
-.goal-start .shift{padding-left:50px;}
-.goal-start ul{padding-left:0px;margin-bottom:30px;}
-.goal-start h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
-.goal-start .warranties{width:50px;height:20px;margin-left:-20px;width:80px;height:20px;font-size:0.75rem;padding:0;}
-.goal-start .online{margin-left:-20px;margin-top:50px;}
+.section-start h1{margin:50px 0 30px;}
+.section-start .shift{padding-left:50px;}
+.section-start ul{padding-left:0px;margin-bottom:30px;}
+.section-start h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
+.section-start .warranties{width:50px;height:20px;margin-left:-20px;width:80px;height:20px;font-size:0.75rem;padding:0;}
+.section-start .online{margin-left:-20px;margin-top:50px;}
 </style>
