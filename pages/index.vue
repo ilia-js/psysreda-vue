@@ -11,6 +11,7 @@
     <Cost />
     <Faq />
     <Group />
+    <Footer />
   </div>
 </template>
 

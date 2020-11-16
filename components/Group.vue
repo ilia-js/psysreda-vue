@@ -37,5 +37,6 @@
   </div>
 </template>
 <style scoped>
-  h3{padding:30px 0;text-align:center;font-size:1.2rem;}
+  .s-container{padding-bottom:50px !important;}
+  h3{padding:30px 0;text-align:center;font-size:1.1rem;}
 </style>
