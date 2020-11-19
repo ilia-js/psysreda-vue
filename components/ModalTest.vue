@@ -14,14 +14,19 @@
 							<li>
 								{{ index+1 }}. {{ question.content }}
 								<div class="answer-variants">
-									<input type="radio" @change="set_answer(index + 1, 1)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 1 (никогда)<br/>
-									<input type="radio" @change="set_answer(index + 1, 2)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 2 (иногда)<br/>
-									<input type="radio" @change="set_answer(index + 1, 3)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 3 (часто)<br/>
-									<input type="radio" @change="set_answer(index + 1, 4)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 4 (почти всегда)
+									<input type="radio" @change="set_answer(index, 1)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 1 (никогда)<br/>
+									<input type="radio" @change="set_answer(index, 2)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 2 (иногда)<br/>
+									<input type="radio" @change="set_answer(index, 3)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 3 (часто)<br/>
+									<input type="radio" @change="set_answer(index, 4)" :name="'question_' + (index + 1)" style="margin-left:18px;"> 4 (почти всегда)
 								</div>
 							</li>		
 						</ol>
 						<input type="submit" value="Получить результат" id="show_result" @click="show_result" class="t-submit">
+						<div id="error">
+							<b>Вам также требуется ответить на вопросы:</b>
+							<div id="not_answered_questions">
+							</div>
+						</div>
 					</div>
 					<!--Next block: Answers-->
 					<div id="answers">
@@ -29,10 +34,10 @@
 						<br><span class="result">Ваш результат:</span> <b id="sum_result"></b><br/><br/>
 						Шкала оценки результатов:<br/>
 						<ul class='shkala'>
-							<li style='margin-top:5px;'>Более 60 баллов - очень высокая степень зависимых моделей</li>
-							<li style='margin-top:5px;'>От 40 до 59 баллов - высокая степень зависимых моделей</li>
-							<li style='margin-top:5px;'>От 30 до 39 баллов - средняя степень зависимых и/или контрзависимых моделей</li>
-							<li style='margin-top:5px;'>От 21 до 29 баллов - очень мало зависимых и/или высокая степень контрзависимых моделей</li>
+							<li style='margin-top:5px;'>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
+							<li style='margin-top:5px;'>От <b>40 до 59 баллов</b> - высокая степень зависимых моделей</li>
+							<li style='margin-top:5px;'>От <b>30 до 39 баллов</b> - средняя степень зависимых и/или контрзависимых моделей</li>
+							<li style='margin-top:5px;'>От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая степень контрзависимых моделей</li>
 						</ul>
 					</div>
         </div>
@@ -84,10 +89,19 @@
 				this.answers[index]=answer;
 			},
 			show_result: function(){
-				let sum = 0
+				let sum = 0; let not_answered_questions = []
+				for(let i=0;i<this.questions.length;i++){
+					this.answers.hasOwnProperty(i) ? undefined : not_answered_questions.push(i + 1)
+				}
+				if(not_answered_questions.length) {
+					document.getElementById("not_answered_questions").innerHTML = not_answered_questions.join(", ")
+					document.getElementById("error").style.display = "block"
+					return 0
+				}
 				this.answers.forEach(function(item){
 					sum += item
 				})
+				document.getElementById("error").style.display = "none"
 				document.getElementById("sum_result").innerHTML = sum
 				document.getElementById("answers").style.display = "block"
 				document.getElementById("show_result").style.display = "none"
@@ -114,4 +128,5 @@
 	#questions{font-size:1.1rem;}
 	#answers{display:none;font-size:1.1rem;}
 	#show_result{color:#fff;border-radius:5px;padding:5px 10px;border:0;background-color:#f2354b;}
+	#error{display:none;padding:20px 0;font-size:1.2rem;}
 </style>
