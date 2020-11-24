@@ -89,7 +89,7 @@
 				this.answers[index]=answer;
 			},
 			show_result: function(){
-				let sum = 0; let not_answered_questions = []
+				let sum = 0; let not_answered_questions = []; let answers_string = ""
 				for(let i=0;i<this.questions.length;i++){
 					this.answers.hasOwnProperty(i) ? undefined : not_answered_questions.push(i + 1)
 				}
@@ -98,8 +98,9 @@
 					document.getElementById("error").style.display = "block"
 					return 0
 				}
-				this.answers.forEach(function(item){
+				this.answers.forEach(function(item, index){
 					sum += item
+					answers_string += 'Ответ №' + (index+1) + ': ' + item + '\n'
 				})
 				document.getElementById("error").style.display = "none"
 				document.getElementById("sum_result").innerHTML = sum
@@ -107,7 +108,16 @@
 				document.getElementById("show_result").style.display = "none"
 				document.getElementById("questions").style.display = "none"
 				$('#test_modal').animate({ scrollTop: $('#test_modal .modal-content').height() }, 'slow');
-				console.log(sum)
+				//Send notification to telegram
+				let api = 'http://psyholog.baikal.net.ru'
+				let url = new URL(api + '/telegram')
+				let text = 'Тест пройден!\n'
+				text += 'Дата заполнения: ' + (new Date().toLocaleDateString()) + '\n\n'
+				text += answers_string + '\n'
+				text += 'Сумма теста: ' + sum
+				let params = {text: text}
+				url.search = new URLSearchParams(params).toString()
+				fetch(url)
 			},
 			close_test: function(){
 				//document.getElementById("sum_result").innerHTML = 0
