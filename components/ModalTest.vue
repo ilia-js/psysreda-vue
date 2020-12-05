@@ -42,7 +42,7 @@
 					</div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="close_test">Закрыть</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
@@ -109,20 +109,11 @@
 				document.getElementById("questions").style.display = "none"
 				$('#test_modal').animate({ scrollTop: $('#test_modal .modal-content').height() }, 'slow');
 				//Send notification to telegram
-				let api = 'http://psyholog.baikal.net.ru'
-				let url = new URL(api + '/telegram')
 				let text = 'Тест пройден!\n'
 				text += 'Дата заполнения: ' + (new Date().toLocaleDateString()) + '\n\n'
 				text += answers_string + '\n'
 				text += 'Сумма теста: ' + sum
-				let params = {text: text}
-				url.search = new URLSearchParams(params).toString()
-				fetch(url)
-			},
-			close_test: function(){
-				//document.getElementById("sum_result").innerHTML = 0
-				//document.getElementById("answers").style.display = "none"
-				//document.getElementById("show_result").style.display = "block"
+				this.$notify(text)
 			}
 	  }
 	}
