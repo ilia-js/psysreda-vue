@@ -2,10 +2,10 @@
 <template>
   <div class="col-md-12 container">
     <div class="row">
-      <div class="logo col-4">
+      <div class="col-12 col-md-6 col-lg-4 logo">
         <img src="img/logo.png" class='img-fluid rounded'>
       </div>
-      <div class="col-6 text-center">
+      <div class="col-12 col-md-6 col-lg-6 text-center">
         <h1>Как перестать думать только о других?<br/>Как научиться заботиться о себе?!</h1>
         <div class="shift text-center">
           <ul class="dash">

@@ -1,25 +1,25 @@
 <!--NEXT Раздел "Отзывы моих клиентов"-->
 <template>
-  <div class="col-md-12 muted">
+  <div class="col-12 muted">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-5 s-title">Отзывы моих клиентов</h1>
+          <h1 class="text-center mb-4">Отзывы моих клиентов</h1>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-lg-6">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/O1gkycoOydY"></iframe>
+                <iframe class="embed-responsive-item video" src="https://www.youtube.com/embed/O1gkycoOydY"></iframe>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UjaH_JYkpE4"></iframe>
+            <div class="col-12 col-lg-6">
+              <div class="embed-responsive embed-responsive-16by9 ">
+                <iframe class="embed-responsive-item video" src="https://www.youtube.com/embed/UjaH_JYkpE4"></iframe>
               </div>
             </div>
           </div>
           <div class="row">
             <!--NEXT Отзыв 1-->
-            <div class="col-md-6">
+            <div class="col-12 col-lg-6">
               <div class="card">
                 <div class="content">
                   <span class="title">Анонимный</span>
@@ -57,7 +57,7 @@
             </div>
 
             <!--NEXT Отзыв 2-->
-            <div class="col-md-6">
+            <div class="col-12 col-lg-6">
               <div class="card">
                 <div class="content">
                   <span class="title">Анонимный</span>
@@ -116,7 +116,7 @@
               </div>                      
             </div>
             <!--NEXT Отзыв 3-->
-            <div class="col-md-6">
+            <div class="col-12 col-lg-6">
               <div class="card">
                 <div class="content">
                   <span class="title">Наталья</span>
@@ -231,7 +231,8 @@ export default {
 }
 </script>
 <style scoped>
-  .card{padding:15px;margin-top:30px;border-radius:8px;}
+  .video{margin:20px 15px;width:95%;}
+  .card{padding:15px;margin:30px 15px 0;border-radius:8px;}
   .card .title{font-size:1.6rem;}
   .card .action span{color:#007bff;}
   .card .action span:hover{text-decoration:underline;cursor:pointer;}

@@ -27,7 +27,7 @@
         </ul>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-12 separator"></div>
+      <div class="col-md-12"></div>
       <div class="col-md-1"></div>
       <div class="col-md-4 block">
         <h1 class="c-title">Формируем здоровые стратегии</h1>
@@ -64,11 +64,10 @@
 </div>
 </template>
 <style scoped>
-  h2{margin-bottom:30px;}
-  .block {background: #FFF;padding:20px 15px 5px;border-radius:5px;}
-  .s-title{padding-bottom:20px;}
+  h2{margin-bottom:10px;}
+  .block {background: #FFF;padding:20px 15px 5px;margin:20px 30px;border-radius:5px;}
+  .s-title{padding:0 20px 20px;}
   .c-title{font-size:1.15rem;font-weight:bold;}
-  .title-comment{font-size:1.3rem;font-weight:normal;text-align:center;padding-bottom:20px;}
-  .separator{height:40px;}
+  .title-comment{font-size:1.3rem;font-weight:normal;text-align:center;padding:0 40px 20px;}
   .dash{padding-left:20px;}
 </style>

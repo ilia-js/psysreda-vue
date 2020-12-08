@@ -4,7 +4,7 @@
     <div>
       <h1 class="s-title text-center">Кому подойдут консультации?</h1>
       <div class="d-block mx-auto col-md-6 text-center">
-        <div>
+        <div class="part">
           <h2>Отношения жертва-спасатель-агрессор</h2>
           <p class="text-left">
             Мои консультации подойдут тем, кто устал от разрушающих отношений.<br/>
@@ -12,7 +12,7 @@
             Тем, кто ощущает в душе боль и пустоту одиночества.<br/>
           </p>
         </div>
-        <div>
+        <div class="part">
           <h2>Жизнь состоит из ожиданий и откладывания на потом</h2>
           <p class="text-left">
             Вы часто ждете подходящий момент или человека.<br/>
@@ -20,7 +20,7 @@
             Вы «торчите на эмоциях» от эйфории до эмоционального упадка.
           </p>
         </div>
-        <div>
+        <div class="part">
           <h2>Твоей жизнью распоряжается кто угодно, только не ты</h2>
           <p class="text-left">
             Для тех, кто боится сказать свое НЕТ, и живет в тревоге.<br/>
@@ -35,4 +35,5 @@
 <style scoped>
   h2{font-size:1.1rem;font-weight:bold;text-align:left;}
   .s-title{padding-bottom:20px;}
+  .part{padding:0 30px;}
 </style>
