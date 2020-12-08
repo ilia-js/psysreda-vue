@@ -12,7 +12,7 @@
 </div>
 </template>
 <style scoped>
-	h1{font-size:2.8rem;font-weight:bold;padding-bottom:20px;}
+	h1{font-size:2.7rem;font-weight:bold;padding-bottom:20px;margin:0 10px;}
 	h2{font-size:1.6rem;font-weight:normal;padding:0 30px 20px;}
 	button{font-size:1.4rem;margin-top:40px;}
 </style>

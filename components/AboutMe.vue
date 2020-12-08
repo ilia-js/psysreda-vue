@@ -55,10 +55,13 @@
 	h1:nth-child(2){font-size:1.5rem;}
 	ul{padding-left:35px;}
 	button{margin:15px 20px 30px;}
-		.list{padding:0 20px;}
+	.list{padding:0 20px;}
 	.social{margin-bottom:10px;padding:0 20px;}
 	.social img{margin-right:10px;}
 	.s-title{text-align:left;}
 	.img-fluid{margin:0 20px;border-radius:25px;display:inline-block;}
 	#more_about_me{padding:20px;}
+	@media (max-width: 500px) {
+		.img-fluid{width:90%;}
+	}
 </style>	

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-4 pr-5">Отзывы моих клиентов</h1>
+          <h1 class="text-center mb-4 px-5">Отзывы моих клиентов</h1>
           <div class="row">
             <div class="col-12 col-lg-6">
               <div class="embed-responsive embed-responsive-16by9">
