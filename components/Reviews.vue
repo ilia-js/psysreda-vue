@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-4">Отзывы моих клиентов</h1>
+          <h1 class="text-center mb-4 pr-5">Отзывы моих клиентов</h1>
           <div class="row">
             <div class="col-12 col-lg-6">
               <div class="embed-responsive embed-responsive-16by9">
@@ -155,7 +155,7 @@
               </div>                      
             </div>
             <!--NEXT Отзыв 4-->
-            <div class="col-md-6">
+            <div class="col-lg-6">
               <div class="card">
                 <div class="content">
                   <span class="title">Алёна</span>
@@ -231,8 +231,8 @@ export default {
 }
 </script>
 <style scoped>
-  .video{margin:20px 15px;width:95%;}
-  .card{padding:15px;margin:30px 15px 0;border-radius:8px;}
+  .video{margin:20px;width:90%;}
+  .card{padding:15px;margin:30px 20px 0;border-radius:8px;}
   .card .title{font-size:1.6rem;}
   .card .action span{color:#007bff;}
   .card .action span:hover{text-decoration:underline;cursor:pointer;}

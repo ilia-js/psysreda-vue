@@ -2,8 +2,8 @@
 <template>
 	<div class="col-12 muted s-container">
 		<div class="row">
-		  <div class="col-md-2"></div>
-		  <div class="col-12 col-md-4">
+			<div class="col-12 col-lg-1"></div>
+		  <div class="col-12 col-lg-5">
 		    <h1 class="s-title">Обо мне</h1>
 		    <h1 class="s-title">Гвоздовская Татьяна</h1>
 		    <div class="social">
@@ -24,7 +24,6 @@
 		    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#more_about_me" aria-expanded="false" aria-controls="collapseExample">
 		      Узнай о моём подходе
 		    </button>
-
 		    <div class="collapse" id="more_about_me">
 		      <div class="card card-body">
 		      Друзья!<br/><br/>
@@ -40,20 +39,19 @@
 		      <br/><br/>
 		      Выбор за тобой!           
 		      </div>
+
 		   </div>            
 		  </div>
-		  <div class="col-12 col-md-6">
-		    <img src="img/tanya.png" class='img-fluid rounded'>
-		  </div>
+		  <div class="col-12 col-lg-4">
+		  	<img src="img/tanya.png" class='img-fluid'>
+	  	</div>
 		</div>
-		<div class="col-md-2">
 		</div>
 	</div>
 </template>
 <style scoped>
 	h1{padding:0 20px;}
 	h1:nth-child(1){padding-top:50px;}
-	@media (max-width: 767px) {}
 	h1:nth-child(2){font-size:1.5rem;}
 	ul{padding-left:35px;}
 	button{margin:15px 20px 30px;}
@@ -61,5 +59,6 @@
 	.social{margin-bottom:10px;padding:0 20px;}
 	.social img{margin-right:10px;}
 	.s-title{text-align:left;}
-	.img-fluid{padding:0 20px;}
+	.img-fluid{margin:0 20px;border-radius:25px;display:inline-block;}
+	#more_about_me{padding:20px;}
 </style>	

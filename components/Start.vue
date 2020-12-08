@@ -2,11 +2,12 @@
 <template>
   <div class="col-md-12 container">
     <div class="row">
-      <div class="col-12 col-md-6 col-lg-4 logo">
-        <img src="img/logo.png" class='img-fluid rounded'>
+      <div class="col-12 col-lg-4 logo">
+        <img src="img/logo.png" class='img-fluid' style="border-radius:25px;">
       </div>
-      <div class="col-12 col-md-6 col-lg-6 text-center">
-        <h1>Как перестать думать только о других?<br/>Как научиться заботиться о себе?!</h1>
+      <div class="col-12 col-lg-6 text-center">
+        <h1>Как перестать думать только о других?</h1>
+        <h1 class="second">Как научиться заботиться о себе?!</h1>
         <div class="shift text-center">
           <ul class="dash">
       		  <li>Если ты задаёшь себе эти вопросы, то значит ты готов к изменениям в своей жизни</li>
@@ -24,7 +25,8 @@
   </div>
 </template>
 <style scoped>
-  h1{margin:50px 0 30px;font-size:2.5rem;}
+  h1{margin:50px 0 0px;font-size:2.5rem;}
+  h1.second{margin:0 0 30px;font-size:2.1rem;}
   h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
   ul{padding-left:0px;margin-bottom:30px;}
   button{color:#fff;padding:10px 15px;font-size:1.1rem;margin-top:20px;}

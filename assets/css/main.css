@@ -7,6 +7,6 @@ ul.square{list-style-type:square;}
 /*Next Заголовки разделов*/
 .s-title{font-size:2rem;font-weight:bold;text-align:center;}
 /*Next Слегка приглушённый фон для разделов*/
-.muted {background:#efefef;padding:80px 0 !important;}
+.muted {background:#efefef;padding:80px 0 !important;border-radius:25px;}
 /*Next Общий отступ для разделов*/
 .s-container {padding:100px 0 !important;}

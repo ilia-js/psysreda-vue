@@ -1,7 +1,7 @@
 <!--NEXT Раздел "ЧАВО"-->
 <template>
-<div class="col-md-12 muted s-container">
-  <div>
+<div class="col-md-12">
+  <div class="s-container muted">
     <h1 class="s-title">Часто-задаваемые вопросы</h1>
     <div class="row">
       <div class="col-md-2"></div>
@@ -86,9 +86,9 @@
 </template>
 <style scoped>
   .s-title{padding-bottom:40px;}
-  .block {background: #fff;padding:10px 15px 30px;border-radius:20px;}
+  .block {background: #fff;padding:10px 15px 30px;margin:0 50px;border-radius:20px;}
   button, button:active, button:focus {
     font-size:1.3rem;background:none;border:none;outline:none;padding:10px 0 0 20px;cursor:pointer;
   }
-  p {padding:5px 100px 0 40px;}
+  p{padding:5px 100px 0 40px;}
 </style>

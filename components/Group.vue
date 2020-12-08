@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <h1 class="text-center mb-5 s-title">Работа в группах</h1>
+          <h1 class="text-center mb-4 s-title">Работа в группах</h1>
           <div class="row">
             <div class="col-md-6">
               <div class="embed-responsive embed-responsive-16by9">
@@ -39,4 +39,5 @@
 <style scoped>
   .s-container{padding-bottom:50px !important;}
   h3{padding:30px 0;text-align:center;font-size:1.1rem;}
+  .embed-responsive{margin-top:20px;}
 </style>
