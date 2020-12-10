@@ -9,13 +9,13 @@
         <h1>Как перестать думать только о других?</h1>
         <h1 class="second">Как научиться заботиться о себе?!</h1>
         <div class="shift text-center">
-          <ul class="dash">
-      		  <li>Если ты задаёшь себе эти вопросы, то значит ты готов к изменениям в своей жизни</li>
+          <ul class="none">
+      		  <li>Если ты задаёшь себе эти вопросы, значит ты готов к изменениям</li>
   			    <li>И мы сможем начать совместную работу</li>
           </ul>
          <h2>Психотерапевт<br/>Татьяна Гвоздовская</h2>
           <div class="online text-center">
-            <h3>Предварительная консультация ОН-ЛАЙН</h3>
+            <h3>Предварительная консультация ОН&#8209;ЛАЙН</h3>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#signup_modal">ЗАПИСАТЬСЯ</button>
           </div>
         </div>
@@ -35,4 +35,5 @@
   .shift{padding-left:50px;}
   .warranties{width:50px;height:20px;margin-left:-20px;width:80px;height:20px;font-size:0.75rem;padding:0;}
   .online{margin-left:-20px;margin-top:50px;}
+  .none{list-style-type: none}
 </style>

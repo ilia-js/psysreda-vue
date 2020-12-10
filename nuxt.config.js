@@ -17,7 +17,8 @@ export default {
     ],
     script: [
       { src: 'js/jquery-3.5.1.min.js' },
-      { src: 'js/bootstrap.min.js' }
+      { src: 'js/bootstrap.min.js' },
+      { src: 'js/pixel.js', type: 'text/javascript' }
     ]
   },
 

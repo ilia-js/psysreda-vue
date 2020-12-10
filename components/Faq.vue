@@ -7,8 +7,8 @@
       <div class="col-md-2"></div>
       <div class="col-md-8 block">
         <!--NEXT Вопрос-->
-        <div>
-          <button type="button" data-toggle="collapse" data-target="#collapse1">
+        <div class="text-left">
+          <button type="button" data-toggle="collapse" data-target="#collapse1" class="text-left">
             Я не знаю, как правильно сформулировать проблему, мне можно приходить в терапию?
           </button>                  
           <div id="collapse1" class="collapse">
@@ -19,7 +19,7 @@
         </div>
         <!--NEXT Вопрос-->
         <div>
-          <button type="button" data-toggle="collapse" data-target="#collapse2">
+          <button type="button" data-toggle="collapse" data-target="#collapse2" class="text-left">
             Как скоро я получу результат?
           </button>                  
           <div id="collapse2" class="collapse">
@@ -30,7 +30,7 @@
         </div>
         <!--NEXT Вопрос-->
         <div>
-          <button type="button" data-toggle="collapse" data-target="#collapse3">
+          <button type="button" data-toggle="collapse" data-target="#collapse3" class="text-left">
             От чего зависит результат терапии?
           </button>                  
           <div id="collapse3" class="collapse">
@@ -41,7 +41,7 @@
         </div>
         <!--NEXT Вопрос-->
         <div>
-          <button type="button" data-toggle="collapse" data-target="#collapse4">
+          <button type="button" data-toggle="collapse" data-target="#collapse4" class="text-left">
             Вдруг мне станет хуже от разговоров? Может лучше думать о хорошем?
           </button>                  
           <div id="collapse4" class="collapse">
@@ -54,7 +54,7 @@
         </div>
         <!--NEXT Вопрос-->
         <div>
-          <button type="button" data-toggle="collapse" data-target="#collapse5">
+          <button type="button" data-toggle="collapse" data-target="#collapse5" class="text-left">
             Если у меня нет отношений, мне нужна терапия созависимости?
           </button>                  
           <div id="collapse5" class="collapse">
@@ -67,7 +67,7 @@
         </div>
         <!--NEXT Вопрос-->
         <div>
-          <button type="button" data-toggle="collapse" data-target="#collapse6">
+          <button type="button" data-toggle="collapse" data-target="#collapse6" class="text-left">
             Стоит ждать, когда мне станет легче и тогда приходить в терапию?
           </button>                  
           <div id="collapse6" class="collapse">
