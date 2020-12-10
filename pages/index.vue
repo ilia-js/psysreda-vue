@@ -1,16 +1,17 @@
 <template>
   <div>
     <Start />
-    <AboutMe />
-    <Diplomas />
-    <Choice />
+    <Course />
     <Test />
-    <Program />
+    <Choice />
+    <AboutMe />
     <Changes />
+    <Program />
     <Reviews />
     <Cost />
     <Faq />
     <Group />
+    <Diplomas />
     <Footer />
   </div>
 </template>

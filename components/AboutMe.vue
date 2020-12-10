@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Обо мне"-->
 <template>
-	<div class="col-12 muted s-container">
+	<div class="col-12 s-container">
 		<div class="row">
 			<div class="col-12 col-lg-1"></div>
 		  <div class="col-12 col-lg-5">

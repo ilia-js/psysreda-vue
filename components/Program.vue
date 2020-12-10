@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Программа для индивидуальной работы"-->
 <template>
-<div class="col-md-12 muted s-container">
+<div class="col-md-12 s-container">
   <div>
     <h1 class="s-title text-center">Программа индивидуальной работы</h1>
     <h2 class="title-comment">Ориентировочные темы нашей работы -<br/>компас на пути освобождения из со-зависимости</h2>
@@ -66,7 +66,7 @@
 </template>
 <style scoped>
   h2{margin-bottom:10px;}
-  .block {background: #FFF;padding:20px 15px 5px;margin:20px 30px;border-radius:5px;}
+  .block {background: #efefef;padding:20px 15px 5px;margin:20px 30px;border-radius:15px;}
   .s-title{padding:0 20px 20px;}
   .c-title{font-size:1.15rem;font-weight:bold;}
   .title-comment{font-size:1.3rem;font-weight:normal;text-align:center;padding:0 40px 20px;}

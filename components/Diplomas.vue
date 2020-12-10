@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Дипломы"-->
 <template>
-  <div class="col-md-12 s-container text-center">
+  <div class="col-md-12 s-container text-center muted">
     <h1>Дипломы.<br/> Подтверждение квалификации.</h1>
     <div id="carouselExampleIndicators" class="carousel slide w-50 mx-auto" data-ride="carousel">
       <ol class="carousel-indicators">

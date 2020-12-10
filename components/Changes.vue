@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Изменения, благодаря терапии"-->
 <template>
-  <div class="col-md-12 s-container">
+  <div class="col-md-12 s-container muted">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8 block">
