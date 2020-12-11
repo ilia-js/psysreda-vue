@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Подвал"-->
 <template>
-<div class="col-md-12 muted s-container">
+<div class="col-md-12 muted s-container footer">
   <div class="row">
     <div class="col-md-6">
       <span>Гвоздовская Татьяна &copy; {{ new Date().getFullYear() }}</span>
@@ -28,10 +28,11 @@
   button:hover{text-decoration:underline;}
   button:focus{outline:0!important;outline-color:transparent!important;outline-width:0!important;outline-style:none!important;box-shadow:0 0 0 0 rgba(0,123,255,0)!important;}
   .s-container{padding:30px 100px !important;}
-  .social{margin:5px 0 10px;}
+  .social{padding-top:15px;margin:5px 0 10px;}
   .social img{margin-right:10px;}
   .right{text-align:right;padding-top:2px;}
   .developer{font-size:0.95rem;padding-top:10px;}
   .developer a{color:#212529;text-decoration:underline;}
   .developer a:hover{text-decoration:none;}
+  .footer{margin-top:40px;}
 </style>
