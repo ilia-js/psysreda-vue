@@ -1,20 +1,3 @@
-# psysreda
-
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Репозиторий Таниного сайта psysreda.ru. Сайт написан на NUXT и сейчас используется режим статики.
+Сайт на данный момент является одностраничником и выложен на хостинге ruweb.net.
+На сайте есть тест, отправка уведомлений на телеграм из формы записи и о прохождении теста.
