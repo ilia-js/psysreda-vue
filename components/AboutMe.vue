@@ -7,8 +7,8 @@
 		    <h1 class="s-title">Обо мне</h1>
 		    <h1 class="s-title">Гвоздовская Татьяна</h1>
 		    <div class="social">
-		      <a href="https://www.facebook.com/gvozdtatyana" target="_blank"><img src="icons/facebook_32.png"></a>
-		      <a href="https://www.instagram.com/mypsyholog/" target="_blank"><img src="icons/instagram_32.png"></a>
+		      <a href="https://www.facebook.com/gvozdtatyana" target="_blank"><img src="facebook_32.png"></a>
+		      <a href="https://www.instagram.com/mypsyholog/" target="_blank"><img src="instagram_32.png"></a>
 		    </div>
 		    <div class="list">
 			    <ul class="square">

@@ -14,7 +14,7 @@
         Политика конфиденциальности
       </button>
       <div class="developer">
-        Разработал сайт <a href="http://baikal.net.ru">Илья Домышев</a>
+        Разработал сайт <a href="http://iadomyshev.ru">Илья Домышев</a>
       </div>
     </div>
   </div>
