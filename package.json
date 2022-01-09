@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/vuetify": "^1.12.3",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "nuxt-moment": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^7.13.0",

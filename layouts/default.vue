@@ -1,11 +1,11 @@
 <template>
-  <div class="container-fluid" id="app">
+  <v-app>
     <div class="row justify-content-center">
       <div class="col-md-10">
         <Nuxt />
       </div>
     </div>
-  </div>
+  </v-app>
 </template>
 
 <style>

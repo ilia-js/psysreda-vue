@@ -1,9 +1,9 @@
 <template>
   <div>
-<!--    <Start />-->
-<!--    <Course />-->
+    <Start />
+    <Course />
     <Test />
-<!--    <Choice />-->
+    <Choice />
 <!--    <AboutMe />-->
 <!--    <Changes />-->
 <!--    <Program />-->
@@ -15,15 +15,6 @@
     <Footer />
   </div>
 </template>
-
-<script>
-export default {
-  data: () => ({
-  }),
-  methods: {
-  }
-}
-</script>
 
 <style>
 body{
