@@ -4,14 +4,14 @@
     <Course />
     <Test />
     <Choice />
-<!--    <AboutMe />-->
-<!--    <Changes />-->
-<!--    <Program />-->
-<!--    <Reviews />-->
-<!--    <Cost />-->
-<!--    <Faq />-->
-<!--    <Group />-->
-<!--    <Diplomas />-->
+    <AboutMe />
+    <Changes />
+    <Program />
+    <Reviews />
+    <Cost />
+    <Faq />
+    <Group />
+    <Diplomas />
     <Footer />
   </div>
 </template>
