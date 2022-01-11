@@ -16,8 +16,5 @@
   </div>
 </template>
 
-<style>
-body{
-    font-family:'Georgia',serif;
-}
+<style lang="scss">
 </style>

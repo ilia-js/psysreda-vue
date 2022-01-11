@@ -12,7 +12,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', href: 'css/bootstrap.min.css' }
+      // { rel: 'stylesheet', href: 'css/bootstrap.min.css' }
     ],
     script: [
       // { src: 'js/jquery-3.5.1.min.js' },
@@ -36,6 +36,17 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    ['@nuxtjs/google-fonts', {googleFonts: {
+      families: {
+        Roboto: true,
+        'Josefin+Sans': true,
+        Lato: [100, 300],
+        Raleway: {
+          wght: [100, 400],
+          ital: [100]
+        },
+      }
+    }}]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)

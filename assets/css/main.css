@@ -1,5 +1,5 @@
 /*Next Шрифт для всего текста*/
-body{font-family:'Georgia',serif;}
+/* body{font-family:'Georgia',serif;} */
 /*Next lines Разные стили списков*/
 ul.dash{list-style-type:none;}
 ul.dash li:before{content:"\2010";position:relative;left:-5px;}
@@ -10,3 +10,7 @@ ul.square{list-style-type:square;}
 .muted {background:#efefef;padding:80px 0 !important;border-radius:25px;}
 /*Next Общий отступ для разделов*/
 .s-container {padding:100px 0 !important;}
+
+.v-application {
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
