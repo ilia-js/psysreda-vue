@@ -4,7 +4,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'КАК ПЕРЕСТАТЬ ЗАВИСЕТЬ ОТ ОБСТОЯТЕЛЬСТВ И ПОВЕРИТЬ В СЕБЯ с психологом Татьяной Гвоздовской',
+    title: 'Татьяна Гвоздовская, психотерапевт - Как перестать зависеть от обстоятельств и поверить в себя?!',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

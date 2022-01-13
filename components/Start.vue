@@ -1,37 +1,63 @@
 <!--NEXT Раздел "Начало"-->
 <template>
-  <v-row style="">
+  <v-row class="mt-8">
     <v-col lg="4">
-      <img src="img/logo.png" class='img-fluid' style="border-radius:25px;">
+      <v-card class="d-inline-block pt-6 pl-12 pr-6 mt-6">
+        <v-card-title class="d-block text-right">
+          Как перестать думать только о других?
+        </v-card-title>
+        <v-card-text class="text-right">
+          <div class="">
+            <h3>Связаться со мной ОН&#8209;ЛАЙН</h3>
+            <!--            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#signup_modal">ЗАПИСАТЬСЯ</button>-->
+          </div>
+        </v-card-text>
+      </v-card>
     </v-col>
     <v-col lg="8" class="text-right pr-16">
-      <h1>Как перестать думать только о других?</h1>
-      <h1 class="second">Как научиться заботиться о себе?!</h1>
+      <div/>
+      <v-card class="d-inline-block pt-6 pr-6 mt-6">
+        <v-card-text class="text-center">
+          <h1>Татьяна Гвоздовская</h1>
+          <h2 class="mt-4">Психотерапевт</h2>
+          <v-img
+            src="img/logo.png"
+            max-width="300px"
+            class="tanya-logo mt-6 d-inline-block"
+          />
+          <p class="mt-4 mb-2 py-0">Как научиться заботиться о себе?!</p>
+          <ul class="none">
+            <li>Если ты задаёшь себе эти вопросы, значит ты готов к изменениям</li>
+            <li>И мы сможем начать совместную работу</li>
+          </ul>
+        </v-card-text>
+      </v-card>
       <div class="shift text-right">
-        <ul class="none">
-          <li>Если ты задаёшь себе эти вопросы, значит ты готов к изменениям</li>
-          <li>И мы сможем начать совместную работу</li>
-        </ul>
-        <h2>Психотерапевт<br/>Татьяна Гвоздовская</h2>
-        <div class="online text-right">
-          <h3>Предварительная консультация ОН&#8209;ЛАЙН</h3>
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#signup_modal">ЗАПИСАТЬСЯ</button>
-        </div>
       </div>
     </v-col>
     <ModalSignup />
   </v-row>
-  
+
 </template>
-<style scoped>
-  h1{margin:50px 0 0px;font-size:2.5rem;}
-  h1.second{margin:0 0 30px;font-size:2.1rem;}
-  h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
+<style lang="scss" scoped>
+  h1{
+    font-size:2.6rem;
+    font-weight: normal;
+    color: #555;
+  }
+  h2{
+    font-size:1.7rem;
+    font-weight: normal;
+    color: #666;
+  }
+
+  .tanya-logo {
+    border-radius: 12px;
+  }
+  //h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
   ul{padding-left:0px;margin-bottom:30px;}
   button{color:#fff;padding:10px 15px;font-size:1.1rem;margin-top:20px;}
-  .container{padding:40px 0 !important;}
   .shift{padding-left:50px;}
-  .warranties{width:50px;height:20px;margin-left:-20px;width:80px;height:20px;font-size:0.75rem;padding:0;}
   .online{margin-left:-20px;margin-top:50px;}
   .none{list-style-type: none}
 </style>
