@@ -2,34 +2,41 @@
 <template>
   <v-row class="mt-8">
     <v-col lg="4">
-      <v-card class="d-inline-block pt-6 pl-12 pr-6 mt-6">
+      <v-card class="d-inline-block pt-3 pr-6 mt-6" min-width="600px">
         <v-card-title class="d-block text-right">
-          Как перестать думать только о других?
+          Нужна ли мне работа с созависимостью?
         </v-card-title>
         <v-card-text class="text-right">
-          <div class="">
-            <h3>Связаться со мной ОН&#8209;ЛАЙН</h3>
-            <!--            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#signup_modal">ЗАПИСАТЬСЯ</button>-->
-          </div>
+          <v-btn>Пройти бесплатный тест</v-btn>
         </v-card-text>
       </v-card>
     </v-col>
     <v-col lg="8" class="text-right pr-16">
       <div/>
-      <v-card class="d-inline-block pt-6 pr-6 mt-6">
-        <v-card-text class="text-center">
-          <h1>Татьяна Гвоздовская</h1>
-          <h2 class="mt-4">Психотерапевт</h2>
+      <v-card class="d-inline-block pr-6 mt-6 pt-2" min-width="480px">
+        <v-card-title class="d-block text-center">
+          <p class="mt-2 mb-2 py-0" style="font-size: 23px; color: #444; line-height: 33px;">
+            Как перестать думать только о других?
+            <br/>Как научиться заботиться о себе?!
+          </p>
+
           <v-img
             src="img/logo.png"
             max-width="300px"
             class="tanya-logo mt-6 d-inline-block"
           />
-          <p class="mt-4 mb-2 py-0">Как научиться заботиться о себе?!</p>
-          <ul class="none">
-            <li>Если ты задаёшь себе эти вопросы, значит ты готов к изменениям</li>
-            <li>И мы сможем начать совместную работу</li>
-          </ul>
+
+        </v-card-title>
+        <v-card-text class="text-center pb-10">
+<!--          <h1>Татьяна Гвоздовская</h1>-->
+<!--          <h2 class="mt-4">Психотерапевт</h2>-->
+          <p class="text-center mb-0" style="font-size: 17px;line-height: 17px;color:#666;">
+            Если ты задаёшь себе эти вопросы,<br/> то значит ты готов к изменениям
+            <br/>и мы сможем начать совместную работу
+          </p>
+          <div>
+            <v-btn color="#dc3545" middle class="py-2" style="color: #fff">Связаться ОН&#8209;ЛАЙН</v-btn>
+          </div>
         </v-card-text>
       </v-card>
       <div class="shift text-right">
@@ -52,7 +59,7 @@
   }
 
   .tanya-logo {
-    border-radius: 12px;
+    border-radius: 102px;
   }
   //h2{margin-left:-20px;font-size:1.5rem;font-weight:bold;}
   ul{padding-left:0px;margin-bottom:30px;}
