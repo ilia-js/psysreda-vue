@@ -3,7 +3,7 @@
     <v-col>
     <Start />
 <!--    <Course />-->
-<!--    <Test />-->
+    <Test />
 <!--    <Choice />-->
 <!--    <AboutMe />-->
 <!--    <Changes />-->

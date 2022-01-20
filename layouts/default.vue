@@ -8,6 +8,6 @@
 
 <style lang="scss">
 .container {
-  max-width: 1280px;
+  max-width: 1240px;
 }
 </style>
