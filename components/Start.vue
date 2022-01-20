@@ -11,8 +11,8 @@
             Этот легкий бесплатный тест<br/> поможет тебе
             определить<br/> степень созависимости
           </p>
-          <v-btn class="mt-0 py-2 psysreda-red-button">
-            НАЧАТЬ ТЕСТ
+          <v-btn class="mt-1 py-2 psysreda-red-button">
+            ПРОЙТИ ТЕСТ
           </v-btn>
         </v-card-text>
       </v-card>
