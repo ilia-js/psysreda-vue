@@ -2,8 +2,6 @@
   <v-row>
     <v-col>
     <Start />
-<!--    <Course />-->
-    <Test />
 <!--    <Choice />-->
 <!--    <AboutMe />-->
 <!--    <Changes />-->
