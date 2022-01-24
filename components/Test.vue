@@ -1,106 +1,104 @@
 <!--NEXT Раздел "Тест на созависимость"-->
 <template>
-  <div class="s-container col-md-12">
-
-    <h1 class="test-info text-center">Нужна ли тебе работа<br/>
-      с со-зависимостью?
-    </h1>
-    <h2 class="test-info text-center">
-      Этот легкий бесплатный тест поможет тебе<br/>
-      определить степень созависимости
-    </h2>
-    <v-dialog
-      v-model="showTest"
-      width="500"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <div class="text-center">
-          <button type="button" class="test-info btn btn-danger" v-bind="attrs" v-on="on">
-            Пройти ТЕСТ
-          </button>
-        </div>
-      </template>
-
-      <v-card>
-        <v-card-title class="text-h5 grey lighten-2">
-          Privacy Policy
-        </v-card-title>
-
-        <v-card-text>
-          <div>
-            <!--Next block: Questions-->
-            <div id="questions" v-if="!total">
-              <div v-if="currentQuestionIndex === undefined" class="description text-center">
-                Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.
-                <br/>Отвечайте, не думая слишком долго над каждым утверждением.
-                <br/>Обычно, первый ответ, который приходит в голову - <i>является самым точным</i>.<br/>
-                <input
-                  type="submit"
-                  value="Начать тест"
-                  @click="startTest()"
-                  class="mt-4 action-buttons orange-button"
-                >
-              </div>
-              <div v-if="currentQuestionIndex !== undefined" class="pt-4 text-center">
-                <b>Вопрос №{{ currentQuestionIndex + 1 }}</b> из {{questionsNumber}}
-                <div class="mt-1 text-left">
-                  {{ currentQuestion.content }}
-                </div>
-                <div class="answer-variants text-left">
-                  <input type="radio" @change="setAnswer(1)" ref="answer_1" name="answer_1"> 1 (никогда)<br/>
-                  <input type="radio" @change="setAnswer(2)" ref="answer_2" name="answer_2"> 2 (иногда)<br/>
-                  <input type="radio" @change="setAnswer(3)" ref="answer_3" name="answer_3"> 3 (часто)<br/>
-                  <input type="radio" @change="setAnswer(4)" ref="answer_4" name="answer_4"> 4 (почти всегда)
-                </div>
-                <input
-                  v-if="currentQuestionIndex < questionsNumber - 1"
-                  type="submit"
-                  value="Далее ->"
-                  @click="nextQuestion()"
-                  :class="`mt-4 action-buttons ${isAnswered && 'green-button'}`"
-                >
-                <input
-                  v-else
-                  type="submit"
-                  value="Получить результат"
-                  id="show_result"
-                  @click="showResult"
-                  :disabled="!isAnswered"
-                  :class="`action-buttons ${isAnswered && 'orange-button'}`"
-                >
-              </div>
-            </div>
-            <!--Next block: Answers-->
-            <div id="answers" v-if="total">
-              <h1>Рузультаты теста</h1>
-              <br><span class="result">Ваш результат:</span> <b id="sum_result"></b><br/><br/>
-              Шкала оценки результатов:<br/>
-              <ul class='shkala'>
-                <li style='margin-top:5px;'>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
-                <li style='margin-top:5px;'>От <b>40 до 59 баллов</b> - высокая степень зависимых моделей</li>
-                <li style='margin-top:5px;'>От <b>30 до 39 баллов</b> - средняя степень зависимых и/или контрзависимых моделей</li>
-                <li style='margin-top:5px;'>От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая степень контрзависимых моделей</li>
-              </ul>
-            </div>
+  <v-card class="d-inline-block test-card" min-width="480px" min-height="270" max-width="600">
+    <v-card-title class="psysreda-card-header">
+      Нужна ли мне работа с<br/> со-зависимостью?
+    </v-card-title>
+    <v-card-text class="mt-0 text-center custom-text-1">
+      <p class="mb-3">
+        Этот легкий бесплатный тест<br/> поможет тебе
+        определить<br/> степень созависимости
+      </p>
+      <v-dialog
+        v-model="showTest"
+        width="600"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <div class="text-center">
+            <v-btn class="mt-1 py-2 psysreda-red-button" v-bind="attrs" v-on="on">
+              ПРОЙТИ ТЕСТ
+            </v-btn>
           </div>
-        </v-card-text>
+        </template>
+        <v-card>
+          <v-card-title class="custom-text-1 pt-5 pb-4">
+            Тест на созависимость
+          </v-card-title>
+          <v-divider></v-divider>
+          <v-card-text class="pt-3">
+            <div>
+              <!--Next block: Questions-->
+              <div id="questions" v-if="!total">
+                <div v-if="currentQuestionIndex === undefined" class="description">
+                  Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.
+                  <br/>Отвечайте, не думая слишком долго над каждым утверждением.
+                  <br/>Обычно, первый ответ, который приходит в голову - <i>является самым точным</i>.<br/>
+                  <input
+                    type="submit"
+                    value="Начать тест"
+                    @click="startTest()"
+                    class="mt-4 action-buttons psysreda-orange-button"
+                  >
+                </div>
+                <div v-if="currentQuestionIndex !== undefined" class="pt-4 text-center">
+                  <b>Вопрос №{{ currentQuestionIndex + 1 }}</b> из {{questionsNumber}}
+                  <div class="mt-1 text-left">
+                    {{ currentQuestion.content }}
+                  </div>
+                  <div class="answer-variants text-left">
+                    <input type="radio" @change="setAnswer(1)" ref="answer_1" name="answer_1"> 1 (никогда)<br/>
+                    <input type="radio" @change="setAnswer(2)" ref="answer_2" name="answer_2"> 2 (иногда)<br/>
+                    <input type="radio" @change="setAnswer(3)" ref="answer_3" name="answer_3"> 3 (часто)<br/>
+                    <input type="radio" @change="setAnswer(4)" ref="answer_4" name="answer_4"> 4 (почти всегда)
+                  </div>
+                  <input
+                    v-if="currentQuestionIndex < questionsNumber - 1"
+                    type="submit"
+                    value="Далее ->"
+                    @click="nextQuestion()"
+                    :class="`mt-4 action-buttons ${isAnswered && 'green-button'}`"
+                  >
+                  <input
+                    v-else
+                    type="submit"
+                    value="Получить результат"
+                    id="show_result"
+                    @click="showResult"
+                    :disabled="!isAnswered"
+                    :class="`action-buttons ${isAnswered && 'psysreda-orange-button'}`"
+                  >
+                </div>
+              </div>
+              <!--Next block: Answers-->
+              <div id="answers" v-if="total">
+                <h1>Рузультаты теста</h1>
+                <br><span class="result">Ваш результат:</span> <b id="sum_result"></b><br/><br/>
+                Шкала оценки результатов:<br/>
+                <ul class='shkala'>
+                  <li style='margin-top:5px;'>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
+                  <li style='margin-top:5px;'>От <b>40 до 59 баллов</b> - высокая степень зависимых моделей</li>
+                  <li style='margin-top:5px;'>От <b>30 до 39 баллов</b> - средняя степень зависимых и/или контрзависимых моделей</li>
+                  <li style='margin-top:5px;'>От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая степень контрзависимых моделей</li>
+                </ul>
+              </div>
+            </div>
+          </v-card-text>
 
-        <v-divider></v-divider>
+          <v-divider></v-divider>
 
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog = false"
-          >
-            I accept
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-
-  </div>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="primary"
+              text
+              @click="showTest = false"
+            >
+              Закрыть
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>    </v-card-text>
+  </v-card>
 </template>
 <script>
 export default {
@@ -184,17 +182,13 @@ export default {
 }
 </script>
 <style scoped>
-h1.test-info{font-size:2.7rem;font-weight:bold;padding-bottom:20px;margin:0 10px;}
-h2.test-info{font-size:1.6rem;font-weight:normal;padding:0 30px 20px;}
-button.test-info{font-size:1.4rem;margin-top:40px;}
+/*h1.test-info{font-size:2.7rem;font-weight:bold;padding-bottom:20px;margin:0 10px;}*/
+/*h2.test-info{font-size:1.6rem;font-weight:normal;padding:0 30px 20px;}*/
+/*button.test-info{font-size:1.4rem;margin-top:40px;}*/
 
-h1{font-size:2.4rem;font-weight:bold;text-align:center;}
-.modal-dialog{max-width:1000px;}
-.modal-body{padding:20px 50px;font-size:12pt;}
-.description{
-  padding:0px 10px 10px;
-  font-size:1.1rem;
-}
+/*h1{font-size:2.4rem;font-weight:bold;text-align:center;}*/
+/*.modal-dialog{max-width:1000px;}*/
+/*.modal-body{padding:20px 50px;font-size:12pt;}*/
 .answer-variants{
   padding:5px 0 15px 10px;
 }
@@ -208,22 +202,10 @@ h1{font-size:2.4rem;font-weight:bold;text-align:center;}
   padding:5px 10px;
   border:0;
 }
-.green-button {
-  background-color:#00cc00;
-}
-.show-result{
-  background-color:#f2354b;
-}
-.blue-button {
-  background-color: #007bff;
-}
-.orange-button {
-  background-color: #ff4500;
-}
-.my-dialog-container {
-  position: absolute;
-  left: 0;
-  top: 0;
+.test-card {
+  padding-top: 18px;
+  padding-bottom: 33px;
+  margin-top: 64px;
 }
 </style>
 
