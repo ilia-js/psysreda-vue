@@ -30,7 +30,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/telegram.js'
+    '~/plugins/telegram.js',
+    '~/plugins/helpers.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

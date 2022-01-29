@@ -26,9 +26,8 @@
           </v-card-title>
           <v-divider></v-divider>
           <v-card-text class="pt-6 pb-8" style="font-size: 17px; color: #333;">
-            <!--Next block: Questions-->
-            <div v-if="!total">
-              <div v-if="currentQuestionIndex === undefined">
+            <div v-if="!isTestFinished">
+              <div v-if="currentQuestionIndex === null">
                 <p>Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.</p>
                 <p>Не думайте слишком долго над каждым утверждением.</p>
                 <p>Обычно первый ответ, который приходит в голову - <i>является самым точным</i>.
@@ -42,7 +41,7 @@
                   Начать тест
                 </v-btn>
               </div>
-              <div v-if="currentQuestionIndex !== undefined">
+              <div v-else>
 <!--                  <b>Вопрос №{{ currentQuestionIndex + 1 }}</b> из {{questionsNumber}}-->
                 <p class="mt-1">
                   {{ currentQuestion.content }}
@@ -67,7 +66,7 @@
                   v-else
                   type="submit"
                   id="show_result"
-                  @click="showResult"
+                  @click="processResult"
                   :disabled="!isAnswered"
                   :class="`${isAnswered && 'psysreda-button'}`"
                   color="green darken-1"
@@ -76,9 +75,8 @@
                 </v-btn>
               </div>
             </div>
-            <!--Next block: Answers-->
-            <div v-if="total">
-              <br><span class="result">Ваш результат:</span> <b></b><br/><br/>
+            <div v-else>
+              Ваш результат: <b>{{ total }}</b><br/><br/>
               Шкала оценки результатов:<br/>
               <ul class='shkala'>
                 <li style='margin-top:5px;'>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
@@ -135,10 +133,11 @@ export default {
     ],
     answers: [],
     total: 0,
-    currentQuestionIndex: undefined,
+    currentQuestionIndex: null,
     isAnswered: false,
-    currentAnswerNumber: undefined,
-    showTest: false
+    currentPoints: null,
+    showTest: false,
+    isTestFinished: false,
   }),
   created() {
   },
@@ -151,38 +150,32 @@ export default {
     }
   },
   methods: {
-    setAnswer(answerNumber) {
-      this.answers.push(answerNumber);
-      for(let i = 1; i <= 4; i++) {
-        if (answerNumber !== i) this.$refs[`answer_${i}`].checked = false;
-      }
-      this.currentAnswerNumber = answerNumber;
-      this.isAnswered = true;
+    startTest() {
+      this.currentQuestionIndex = 0;
     },
-    showResult() {
-      let answerString = '';
-      let total = 0;
-      total = this.answers.reduce((acc, a) => acc + a, 0);
-      //$('#test_modal').animate({ scrollTop: $('#test_modal .modal-content').height() }, 'slow');
-      // Send notification to telegram
-      console.log('Список ответов:', this.answers);
-      let text = 'Тест пройден!\n';
-      text += 'Дата заполнения: ' + this.$moment().format('DD.MM.YYYY') + '\n';
-      text += 'Сумма теста: ' + total;
-      this.$telegram(text);
-      this.total = total;
+    setAnswer(points) {
+      this.currentPoints = points;
+      this.answers.push(points);
+      this.isAnswered = true;
     },
     nextQuestion() {
       this.isAnswered = false;
       this.currentQuestionIndex++;
-      this.$refs[`answer_${this.currentAnswerNumber}`].checked = false
+      this.$refs[`answer_${this.currentPoints}`].checked = false
+      this.total += this.currentPoints;
     },
-    startTest() {
-      this.currentQuestionIndex = 0;
+    processResult() {
+      this.total += this.currentPoints;
+      this.isTestFinished = true;
+      let text = 'Тест пройден!\n';
+      text += 'Дата заполнения: ' + this.$moment().format('DD.MM.YYYY') + '\n';
+      text += 'Сумма теста: ' + this.total;
+      if (!this.$helpers.isDevOrTest()) {
+        this.$telegram(text);
+      } else {
+        console.log('Список ответов:', this.answers);
+      }
     },
-    setShowTest(val) {
-      this.showTest = val;
-    }
   }
 }
 </script>

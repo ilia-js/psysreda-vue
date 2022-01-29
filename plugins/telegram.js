@@ -1,4 +1,3 @@
-
 export default (context, inject) => {
   // This function send notification to telegram
   const telegram = (text) => {
