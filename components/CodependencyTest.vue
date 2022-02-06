@@ -1,6 +1,6 @@
 <!--NEXT Раздел "Тест на созависимость"-->
 <template>
-  <v-card class="mx-auto" min-width="480px" min-height="270" width="480">
+  <v-card class="mx-auto main-page-block" max-width="480px" min-height="270">
     <v-card-title class="psysreda-card-header">
       Нужна ли мне работа<br/> с со-зависимостью?
     </v-card-title>
@@ -43,7 +43,7 @@
                 <v-progress-linear
                   v-model="percentAnswered"
                   height="22"
-                  color="blue-grey"
+                  color="light-green lighten-3"
                   class="custom-text0"
                 >
                   Вопрос {{ currentQuestionIndex + 1 }} из {{ questionsNumber }}
@@ -51,18 +51,18 @@
                 <div class="question-box mt-6 custom-text1">
                   <span style="vertical-align: middle">{{ currentQuestion.content }}</span>
                 </div>
-                <div class="pt-3 pb-9 pl-4 custom-text2">
-                  <input type="radio" @change="setAnswer(1)" ref="answer_1" name="answer_1"> 1 (никогда)<br/>
-                  <input type="radio" @change="setAnswer(2)" ref="answer_2" name="answer_2"> 2 (иногда)<br/>
-                  <input type="radio" @change="setAnswer(3)" ref="answer_3" name="answer_3"> 3 (часто)<br/>
-                  <input type="radio" @change="setAnswer(4)" ref="answer_4" name="answer_4"> 4 (почти всегда)
-                </div>
+                <v-radio-group v-model="currentAnswer" class="pt-0 pb-2 pl-4">
+                  <v-radio label="1 (никогда)" value="1"/>
+                  <v-radio label="2 (иногда)" value="2"/>
+                  <v-radio label="3 (часто)" value="3"/>
+                  <v-radio label="4 (почти всегда)" value="4"/>
+                </v-radio-group>
                 <v-btn
                   v-if="currentQuestionIndex < questionsNumber - 1"
                   type="submit"
                   @click="nextQuestion()"
                   class="psysreda-button mb-2"
-                  :disabled="!isAnswered"
+                  :disabled="currentAnswer === null"
                   color="green darken-1"
                 >
                   Далее
@@ -72,7 +72,7 @@
                   type="submit"
                   id="show_result"
                   @click="processResult"
-                  :disabled="!isAnswered"
+                  :disabled="currentAnswer === null"
                   :class="`${isAnswered && 'psysreda-button'}`"
                   color="green darken-1"
                 >
@@ -119,36 +119,36 @@ export default {
   data: () => ({
     questions: [
       { content: 'Я склонен/склонна брать на себя ответственность за чувства и/или поведение других людей' },
-      { content: 'Я затрудняюсь идентифицировать свои чувства, такие как счастье, злость, смущение, уныние или возбуждение' },
-      { content: 'Мне тяжело выражать свои чувства' },
-      { content: 'Я испытываю страх или беспокойство при мысли о том, как другие отреагируют на мои чувства или поведение' },
-      { content: 'Я свожу к минимуму проблемы и отрицаю или изменяю правду о чувствах или поведении людей, с которыми общаюсь' },
-      // 6-1
-      { content: 'Мне трудно устанавливать или поддерживать тесные взаимоотношения' },
-      { content: 'Я боюсь быть отвергнутым (отвергнутой)' },
-      { content: 'Я стараюсь добиваться во всем совершенства и сужу себя строго' },
-      { content: 'Мне трудно принимать решения' },
-      { content: 'Я склонен (склонна) полагаться на мнения других, а не действовать по своему усмотрению' },
-      // 11-15
-      { content: 'Я склонен (склонна) ставить желания и потребности других людей на первый план' },
-      { content: 'Я склонен (склонна) ценить мнение других людей выше своего собственного' },
-      { content: 'Мое ощущение собственного достоинства идет извне, в зависимости от мнения или действий других людей, которые, как мне кажется, больше в этом разбираются' },
-      { content: 'Я нахожу, что тяжело быть уязвимым (уязвимой) и просить о помощи' },
-      { content: 'Я всегда подвергаюсь контролю или стремлюсь контролировать, и наоборот, всегда слежу за тем, чтобы никогда не оказаться ответственным (ответственной)' },
-      // 16-20
-      { content: 'Я слишком лоялен (лояльна) к другим, даже в том случае, когда эта лояльность не оправдывается' },
-      { content: 'У меня привычка рассматривать ситуации по принципу \'все или ничего\'' },
-      { content: 'Я очень толерантен (толерантна) к непоследовательности и смешанным поручениям' },
-      { content: 'В моей жизни происходят эмоциональные кризисы и хаос' },
-      { content: 'Я стараюсь искать взаимоотношения там, где чувствую себя “нужным” (“нужной”), и пытаюсь затем сохранять их' }
+      { content: 'Я затрудняюсь идентифицировать свои чувства, такие как счастье, злость, смущение, уныние или возбуждение' }
+      // { content: 'Мне тяжело выражать свои чувства' },
+      // { content: 'Я испытываю страх или беспокойство при мысли о том, как другие отреагируют на мои чувства или поведение' },
+      // { content: 'Я свожу к минимуму проблемы и отрицаю или изменяю правду о чувствах или поведении людей, с которыми общаюсь' },
+      // // 6-1
+      // { content: 'Мне трудно устанавливать или поддерживать тесные взаимоотношения' },
+      // { content: 'Я боюсь быть отвергнутым (отвергнутой)' },
+      // { content: 'Я стараюсь добиваться во всем совершенства и сужу себя строго' },
+      // { content: 'Мне трудно принимать решения' },
+      // { content: 'Я склонен (склонна) полагаться на мнения других, а не действовать по своему усмотрению' },
+      // // 11-15
+      // { content: 'Я склонен (склонна) ставить желания и потребности других людей на первый план' },
+      // { content: 'Я склонен (склонна) ценить мнение других людей выше своего собственного' },
+      // { content: 'Мое ощущение собственного достоинства идет извне, в зависимости от мнения или действий других людей, которые, как мне кажется, больше в этом разбираются' },
+      // { content: 'Я нахожу, что тяжело быть уязвимым (уязвимой) и просить о помощи' },
+      // { content: 'Я всегда подвергаюсь контролю или стремлюсь контролировать, и наоборот, всегда слежу за тем, чтобы никогда не оказаться ответственным (ответственной)' },
+      // // 16-20
+      // { content: 'Я слишком лоялен (лояльна) к другим, даже в том случае, когда эта лояльность не оправдывается' },
+      // { content: 'У меня привычка рассматривать ситуации по принципу \'все или ничего\'' },
+      // { content: 'Я очень толерантен (толерантна) к непоследовательности и смешанным поручениям' },
+      // { content: 'В моей жизни происходят эмоциональные кризисы и хаос' },
+      // { content: 'Я стараюсь искать взаимоотношения там, где чувствую себя “нужным” (“нужной”), и пытаюсь затем сохранять их' }
     ],
     answers: [],
     total: 0,
     currentQuestionIndex: null,
     isAnswered: false,
-    currentPoints: null,
     showTest: false,
-    isTestFinished: false
+    isTestFinished: false,
+    currentAnswer: null
   }),
   created () {
   },
@@ -167,19 +167,14 @@ export default {
     startTest () {
       this.currentQuestionIndex = 0
     },
-    setAnswer (points) {
-      this.currentPoints = points
-      this.answers.push(points)
-      this.isAnswered = true
-    },
     nextQuestion () {
       this.isAnswered = false
       this.currentQuestionIndex++
-      this.$refs[`answer_${this.currentPoints}`].checked = false
-      this.total += this.currentPoints
+      this.total += Number(this.currentAnswer)
+      this.currentAnswer = null
     },
     processResult () {
-      this.total += this.currentPoints
+      this.total += Number(this.currentAnswer)
       this.isTestFinished = true
       let text = 'Тест пройден!\n'
       text += 'Дата заполнения: ' + this.$moment().format('DD.MM.YYYY') + '\n'
@@ -194,12 +189,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-p {
-  margin-bottom: 12px !important;
-}
-</style>
-<style lang="scss" scoped>
 .question-box {
   vertical-align: middle;
 }
+
+p {
+  margin-bottom: 12px !important;
+}
+
 </style>

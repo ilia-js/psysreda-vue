@@ -1,8 +1,10 @@
 <template>
-  <v-card class="mx-auto" min-width="480" max-width="480">
+  <v-card class="main-page-block" max-width="480">
     <v-card-title class="psysreda-card-header">
-      Как перестать думать только о других?
-      <br/>Как научиться заботиться о себе?!
+      <div>
+        Как перестать думать только о других?
+        <br/>Как научиться заботиться о себе?!
+      </div>
       <v-img
         src="img/logo.png"
         max-width="300px"

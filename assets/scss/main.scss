@@ -38,3 +38,21 @@
 .rounded-2 {
   border-radius: 32px;
 }
+
+.main-page-block {
+  margin: 0 auto;
+  max-width: 480px !important;
+  @media (min-width: 240px) {
+    min-width: 320px !important;
+    max-width: 320px !important;
+  }
+  @media (min-width: 500px) {
+    min-width: 480px !important;
+  }
+}
+
+.v-input--radio-group__input .v-label {
+  font-size: 18px !important;
+  font-family: Verdana !important;
+  color: black !important;
+}
