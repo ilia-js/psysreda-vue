@@ -13,6 +13,14 @@
 
 .v-application {
   font-family: Georgia, 'Times New Roman', Times, serif !important;
+
+  .v-card__title {
+    padding-top: 32px;
+  }
+
+  .v-card__text {
+    padding-bottom: 42px;
+  }
 }
 
 .psysreda-card-header, .v-dialog > .v-card > .v-card__title {
@@ -21,4 +29,12 @@
   color: #444 !important;
   line-height: 33px !important;
   text-align: center !important;
+}
+
+.rounded-1 {
+  border-radius: 112px;
+}
+
+.rounded-2 {
+  border-radius: 32px;
 }
