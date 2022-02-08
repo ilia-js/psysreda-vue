@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row class="mt-12">
-      <v-col md="12" lg="6" class="">
+      <v-col md="12" lg="6">
         <Introduction class="mb-16"/>
       </v-col>
       <v-col md="12" lg="6" class="d-flex flex-column justify-space-between">
@@ -13,7 +13,8 @@
       <v-col md="12" lg="6" class="">
         <Prices/>
       </v-col>
-      <v-col md="12" lg="6" class="d-flex flex-column justify-space-between">
+      <v-col md="12" lg="6">
+        <Choice/>
       </v-col>
     </v-row>
   </div>
@@ -31,3 +32,9 @@
 </template>
 <style lang="scss" scoped>
 </style>
+<script>
+import Choice from '../components/Choice'
+export default {
+  components: { Choice }
+}
+</script>

@@ -1,36 +1,39 @@
-<!--NEXT Раздел "Выбор"-->
 <template>
-  <div class="col-12 muted">
-    <div>
-      <h1 class="s-title text-center">Кому подойдут консультации?</h1>
+  <v-card class="mx-auto main-page-block" max-width="480px" min-height="270">
+    <v-card-title class="psysreda-card-header">
+      Кому подойдут консультации?
+    </v-card-title>
+    <v-card-text class="mt-0 text-center custom-text-1">
       <div class="d-block mx-auto col-md-6 text-center">
         <div class="part">
           <h2>Отношения жертва-спасатель-агрессор</h2>
-          <p class="text-left">
+          <p class="text-left d-none">
             Мои консультации подойдут тем, кто устал от разрушающих отношений.<br/>
             Всю жизнь старается, заботиться о других, в ответ упреки и безразличие.<br/>
             Тем, кто ощущает в душе боль и пустоту одиночества.<br/>
           </p>
+          <br/>
         </div>
         <div class="part">
           <h2>Жизнь состоит из ожиданий и откладывания на потом</h2>
-          <p class="text-left">
+          <p class="text-left d-none">
             Вы часто ждете подходящий момент или человека.<br/>
             Вам часто говорят - ты хороший человек, но мы не можем быть вместе.<br/>
             Вы «торчите на эмоциях» от эйфории до эмоционального упадка.
           </p>
+          <br/>
         </div>
         <div class="part">
           <h2>Твоей жизнью распоряжается кто угодно, только не ты</h2>
-          <p class="text-left">
+          <p class="text-left d-none">
             Для тех, кто боится сказать свое НЕТ, и живет в тревоге.<br/>
             Кто ощущает, что живет не свою жизнь, терпит и подстраивается<br/>
             Для тех, кто устал и хочет менять свою жизнь, но не знает, как себе помочь.
           </p>
         </div>
       </div>
-    </div>
-  </div>
+    </v-card-text>
+  </v-card>
 </template>
 <style scoped>
   h2{font-size:1.1rem;font-weight:bold;text-align:left;}
