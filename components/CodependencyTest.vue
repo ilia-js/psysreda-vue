@@ -1,4 +1,3 @@
-<!--NEXT Раздел "Тест на созависимость"-->
 <template>
   <v-card class="mx-auto main-page-block" max-width="480px" min-height="270">
     <v-card-title class="psysreda-card-header">
