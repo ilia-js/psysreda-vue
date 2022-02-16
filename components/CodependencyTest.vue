@@ -3,7 +3,7 @@
     <v-card-title class="psysreda-card-header">
       Нужна ли мне работа<br/> с со-зависимостью?
     </v-card-title>
-    <v-card-text class="mt-0 text-center custom-text-1">
+    <v-card-text class="mt-0 text-center">
       Этот легкий бесплатный тест<br/> поможет тебе
       определить<br/> степень созависимости
       <v-dialog
@@ -18,11 +18,11 @@
           </div>
         </template>
         <v-card>
-          <v-card-title class="custom-text-1 pt-5 pb-4">
+          <v-card-title class="pt-5 pb-4">
             Тест на созависимость
           </v-card-title>
           <v-divider></v-divider>
-          <v-card-text class="pt-6 pb-8" style="font-size: 17px; color: #333;">
+          <v-card-text class="pt-6 pb-8">
             <div v-if="!isTestFinished">
               <div v-if="currentQuestionIndex === null">
                 <p>Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.</p>
@@ -43,18 +43,17 @@
                   v-model="percentAnswered"
                   height="22"
                   color="light-green lighten-3"
-                  class="custom-text0"
                 >
                   Вопрос {{ currentQuestionIndex + 1 }} из {{ questionsNumber }}
                 </v-progress-linear>
-                <div class="question-box mt-6 custom-text1">
-                  <span style="vertical-align: middle">{{ currentQuestion.content }}</span>
+                <div class="mt-6">
+                  {{ currentQuestion.content }}
                 </div>
                 <v-radio-group v-model="currentAnswer" class="pt-0 pb-2 pl-4">
-                  <v-radio label="1 (никогда)" value="1"/>
-                  <v-radio label="2 (иногда)" value="2"/>
-                  <v-radio label="3 (часто)" value="3"/>
-                  <v-radio label="4 (почти всегда)" value="4"/>
+                  <v-radio label="никогда" value="1"/>
+                  <v-radio label="иногда" value="2"/>
+                  <v-radio label="часто" value="3"/>
+                  <v-radio label="почти всегда" value="4"/>
                 </v-radio-group>
                 <v-btn
                   v-if="currentQuestionIndex < questionsNumber - 1"
@@ -188,12 +187,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.question-box {
-  vertical-align: middle;
-}
-
 p {
   margin-bottom: 12px !important;
+}
+
+.v-card__text {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.8) !important;
 }
 
 </style>

@@ -3,7 +3,7 @@
     <v-card-title class="psysreda-card-header">
       Кому подойдут консультации?
     </v-card-title>
-    <v-card-text class="">
+    <v-card-text class="pt-3">
       <v-list flat class="pl-15">
         <v-list-item-group
           color="#444"

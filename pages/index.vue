@@ -9,11 +9,11 @@
         <OceanOfEmotionsCourse class="mb-16"/>
       </v-col>
     </v-row>
-    <v-row class="mt-12">
-      <v-col md="12" lg="6" class="">
+    <v-row class="mt-0">
+      <v-col md="12" lg="6" class="mt-5">
         <Prices/>
       </v-col>
-      <v-col md="12" lg="6">
+      <v-col md="12" lg="6" class="mt-5">
         <Choice/>
       </v-col>
     </v-row>
@@ -34,6 +34,7 @@
 </style>
 <script>
 import Choice from '../components/Choice'
+
 export default {
   components: { Choice }
 }

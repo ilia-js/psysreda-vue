@@ -12,7 +12,7 @@
       />
     </v-card-title>
     <v-card-text class="text-center pb-10">
-      <p class="text-center mb-5 custom-text-1">
+      <p class="text-center mb-5">
         Если ты задаёшь себе эти вопросы,<br/> то значит ты готов к изменениям
         <br/>и мы сможем начать совместную работу
       </p>

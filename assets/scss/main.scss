@@ -52,7 +52,25 @@
 }
 
 .v-input--radio-group__input .v-label {
-  font-size: 18px !important;
-  font-family: Verdana !important;
-  color: black !important;
+  //font-size: 18px !important;
+  //font-family: Verdana !important;
+  //color: black !important;
 }
+
+.v-progress-linear__content {
+  font-size: 13px !important;
+  font-family: Verdana !important;
+}
+
+.main-page-block .v-card__text, .v-card__subtitle {
+  font-size: 17px !important;
+  line-height: 21px !important;
+  color: #666 !important;
+}
+
+.v-label {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+
+
