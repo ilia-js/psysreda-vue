@@ -1,9 +1,9 @@
 <template>
-  <v-card class="main-page-block" min-height="320">
+  <v-card class="main-page-block" min-height="330">
     <v-card-title class="psysreda-card-header">
       Курс "Океан Эмоций"
     </v-card-title>
-    <v-card-text class="text-center px-14">
+    <v-card-text class="text-center px-14 pt-5">
       <div>
         <v-row class="justify-space-around">
           <v-col class="">
@@ -39,6 +39,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.v-card__text {
+  padding-bottom: 0;
+}
 </style>

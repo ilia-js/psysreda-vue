@@ -1,9 +1,9 @@
 <template>
-  <v-card class="mx-auto main-page-block" max-width="480px" min-height="270">
+  <v-card class="mx-auto main-page-block" max-width="480px" min-height="330">
     <v-card-title class="psysreda-card-header">
       Кому подойдут консультации?
     </v-card-title>
-    <v-card-text class="mt-0 custom-text-1">
+    <v-card-text class="">
       <v-list flat class="pl-15">
         <v-list-item-group
           color="#444"
@@ -23,7 +23,7 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                <v-list-item-icon class="pt-3">
+                <v-list-item-icon class="pt-0">
                   <v-icon v-text="item.icon"></v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
@@ -84,4 +84,13 @@ h2 {
   opacity: var(--v-tooltip-opacity, 1) !important;
   background: var(--v-tooltip-bg, rgba(97, 97, 97, 1)) !important;
 }
+
+.v-card__title {
+  padding-bottom: 0;
+}
+
+.v-card__text {
+  padding-bottom: 0;
+}
+
 </style>
