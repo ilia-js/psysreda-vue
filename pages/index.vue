@@ -14,7 +14,7 @@
         <Prices/>
       </v-col>
       <v-col md="12" lg="6" class="mt-5">
-        <Choice/>
+        <ConsultationsForWhom/>
       </v-col>
     </v-row>
   </div>
@@ -33,7 +33,7 @@
 <style lang="scss" scoped>
 </style>
 <script>
-import Choice from '../components/Choice'
+import Choice from '../components/ConsultationsForWhom'
 
 export default {
   components: { Choice }

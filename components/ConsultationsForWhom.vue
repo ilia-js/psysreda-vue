@@ -42,6 +42,7 @@
 </template>
 <script>
 export default {
+  name: 'ConsultationsForWhom',
   data: () => ({
     selectedItem: 0,
     items: [
