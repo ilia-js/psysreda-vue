@@ -33,9 +33,9 @@
 <style lang="scss" scoped>
 </style>
 <script>
-import Choice from '../components/ConsultationsForWhom'
+import ConsultationsForWhom from '../components/ConsultationsForWhom'
 
 export default {
-  components: { Choice }
+  components: { ConsultationsForWhom }
 }
 </script>
