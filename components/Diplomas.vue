@@ -1,75 +1,115 @@
-<!--NEXT Раздел "Дипломы"-->
 <template>
-  <div class="col-md-12 s-container text-center muted">
-    <h1>Дипломы.<br/> Подтверждение квалификации.</h1>
-    <div id="carouselExampleIndicators" class="carousel slide w-50 mx-auto" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="img/diplomas/diploma_1.jpeg" alt="First slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Диплом о высшем образовании"Психолог. Преподователь психологии"</h2>
-            <p>2005 год</p>
-          </div>                
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/diplomas/diploma_2.jpeg" alt="Second slide">
-          <div class="carousel-caption d-none d-md-block desc">
-            <h2>Повышение квалификации "Гештальт-подход"</h2>
-            <p>2011 год</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/diplomas/diploma_3.jpeg" alt="Third slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Диплом "Современные методы психологии"</h2>
-            <p>2008 год</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/diplomas/diploma_4.jpeg" alt="Third slide">
-          <div class="carousel-caption d-none d-md-block desc">
-            <h2>Программа "Арт-терапия"</h2>
-            <p>2011 год</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/diplomas/diploma_5.jpeg" alt="Third slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Программа "Консультирование клиентов с сексуальными дисфункциями"</h2>
-            <p>2013</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/diplomas/diploma_6.jpeg" alt="Third slide">
-          <div class="carousel-caption d-none d-md-block desc">
-            <h2>Программа телесно-ориентированных методов</h2>
-            <p>2010</p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Предыдущая</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Следующая</span>
-      </a>
-    </div>          
-  </div>
+  <v-card class="mx-auto" max-width="700" min-height="330">
+    <v-card-title class="psysreda-card-header">
+      Дипломы. Курсы. <br/> Подтверждения квалификации.
+    </v-card-title>
+    <v-card-text class="pt-3">
+      <v-carousel height="340" class="carousel-container">
+        <v-carousel-item v-for="(item,i) in items" :key="i">
+          <v-list class="carousel-container__custom-list">
+            <v-list-item>
+              <span class="carousel-container__small-title">Вид:</span> {{ item.type }}
+            </v-list-item>
+            <v-list-item>
+              <span class="carousel-container__small-title">Квалификация:</span> {{ item.qualification }}
+            </v-list-item>
+            <v-list-item>
+              <span class="carousel-container__small-title">Специальность:</span> {{ item.speciality }}
+            </v-list-item>
+            <v-list-item>
+              <span class="carousel-container__small-title">Год:</span> {{ item.year }}
+            </v-list-item>
+          </v-list>
+        </v-carousel-item>
+      </v-carousel>
+      <!--      <v-carousel height="340" class="caurusel-container">-->
+      <!--        <v-carousel-item-->
+      <!--          v-for="(item,i) in items"-->
+      <!--          :key="i"-->
+      <!--          :src="item.src"-->
+      <!--          reverse-transition="fade-transition"-->
+      <!--          transition="fade-transition"-->
+
+      <!--        ></v-carousel-item>-->
+      <!--      </v-carousel>-->
+    </v-card-text>
+  </v-card>
 </template>
-<style scoped>
-  h1{font-size:2.5rem;margin-bottom:40px;}
-  h2{color:#000;font-size:1.3rem;}
-  p{color:#000;font-size:1.2rem;}
-  .carousel-caption{bottom:60px;padding:10px 0 0 0;background:#efefef !important;opacity:0.8;border:1px solid #999;}
-  .desc{background:#efefef !important;opacity:0.8 !important;}
-</style>  
+<script>
+export default {
+  name: 'Diplomas',
+  data () {
+    return {
+      items: [
+        {
+          type: 'Диплом',
+          qualification: 'Психолог. Преподаватель психологии.',
+          speciality: 'Психология',
+          year: '2005',
+          src: 'img/diplomas/diploma_1.jpeg'
+        },
+        {
+          type: 'Диплом1',
+          qualification: 'Психолог. Преподаватель психологии.1',
+          speciality: 'Психология1',
+          year: '2005',
+          src: 'img/diplomas/diploma_1.jpeg'
+        }
+      ]
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
+.carousel-container {
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__custom-list {
+    border: 1px dashed gray;
+    padding: 20px 20px;
+    margin: 0 90px;
+    min-height: 250px;
+    font-size: 16px;
+  }
+
+  &__small-title {
+    color: coral;
+    padding-right: 3px;
+  }
+
+  .v-list-item {
+    display: block;
+    min-height: auto;
+    padding-bottom: 15px
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #000;
+  font-size: 1.3rem;
+}
+
+p {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.carousel-caption {
+  bottom: 60px;
+  padding: 10px 0 0 0;
+  background: #efefef !important;
+  opacity: 0.8;
+  border: 1px solid #999;
+}
+
+.desc {
+  background: #efefef !important;
+  opacity: 0.8 !important;
+}
+</style>

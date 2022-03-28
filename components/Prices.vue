@@ -49,7 +49,7 @@
                 </li>
                 <li>Также мы обсудим границы наших отношений и график дальнейших встреч.</li>
               </ul>
-              <h2 class="text-center mt-7">3500 руб / 50 минут</h2>
+              <h2 class="text-center mt-7">4000 руб / 50 минут</h2>
             </div>
             <div v-if="chosenItemName === 'long_term_therapy'">
               <ul class="">
