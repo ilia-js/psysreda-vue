@@ -1,81 +1,100 @@
 <template>
-  <v-card class="mx-auto" max-width="700" min-height="330">
-    <v-card-title class="psysreda-card-header">
-      Дипломы. Курсы. <br/> Подтверждения квалификации.
-    </v-card-title>
-    <v-card-text class="pt-3">
-      <v-carousel height="340" class="carousel-container">
-        <v-carousel-item v-for="(item,i) in items" :key="i">
+  <v-card class="mx-auto" max-width="1100" min-height="380">
+    <v-card-text class="">
+      <div class="document-counter text-center mt-3 mb-5">
+        {{ currentIndex + 1 }} из {{ documents.length }}
+      </div>
+      <v-carousel height="370" class="carousel-container" hide-delimiters show-arrows
+                  @change="change">
+        <v-carousel-item v-for="(document, documentKey) in documents" :key="documentKey">
           <v-list class="carousel-container__custom-list">
-            <v-list-item>
-              <span class="carousel-container__small-title">Вид:</span> {{ item.type }}
+            <v-list-item v-for="(item, itemKey) in document.items" :key="itemKey">
+              <span v-if="item.title" v-html="item.title" class="carousel-container__title">
+              </span>
+              <span v-if="item.label" class="carousel-container__label">
+                {{ item.label }}
+              </span>
+              <span v-if="item.text">
+                <br/>{{ item.text }}
+              </span>
             </v-list-item>
-            <v-list-item>
-              <span class="carousel-container__small-title">Квалификация:</span> {{ item.qualification }}
-            </v-list-item>
-            <v-list-item>
-              <span class="carousel-container__small-title">Специальность:</span> {{ item.speciality }}
-            </v-list-item>
-            <v-list-item>
-              <span class="carousel-container__small-title">Год:</span> {{ item.year }}
-            </v-list-item>
+            <div class="text-center">
+              <v-btn v-if="document.image" color="success" @click="openDocument" small depressed>Посмотреть</v-btn>
+            </div>
           </v-list>
         </v-carousel-item>
       </v-carousel>
-      <!--      <v-carousel height="340" class="caurusel-container">-->
-      <!--        <v-carousel-item-->
-      <!--          v-for="(item,i) in items"-->
-      <!--          :key="i"-->
-      <!--          :src="item.src"-->
-      <!--          reverse-transition="fade-transition"-->
-      <!--          transition="fade-transition"-->
-
-      <!--        ></v-carousel-item>-->
-      <!--      </v-carousel>-->
     </v-card-text>
+    <v-dialog v-model="documentDialog" max-width="600">
+      <v-card>
+        <v-card-title class="pt-7 pb-5" v-html="this.currentTitle">
+        </v-card-title>
+        <v-card-text class="text-center pb-5">
+          <img width="500" :src="documents[currentIndex].image"/>
+        </v-card-text>
+        <v-card-actions class="pb-8">
+          <v-btn @click="closeDocument" class="mx-auto" color="primary" depressed small>Закрыть</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-card>
 </template>
 <script>
+import DOCUMENTS from '../settings/documents'
+
 export default {
   name: 'Diplomas',
   data () {
     return {
-      items: [
-        {
-          type: 'Диплом',
-          qualification: 'Психолог. Преподаватель психологии.',
-          speciality: 'Психология',
-          year: '2005',
-          src: 'img/diplomas/diploma_1.jpeg'
-        },
-        {
-          type: 'Диплом1',
-          qualification: 'Психолог. Преподаватель психологии.1',
-          speciality: 'Психология1',
-          year: '2005',
-          src: 'img/diplomas/diploma_1.jpeg'
-        }
-      ]
+      documentDialog: false,
+      currentIndex: 0,
+      currentTitle: '',
+      documents: DOCUMENTS
+    }
+  },
+  methods: {
+    openDocument () {
+      this.documentDialog = true
+    },
+    closeDocument () {
+      this.documentDialog = false
+    },
+    change (index) {
+      this.currentIndex = index
+      if (this.documents[index].items[0]) {
+        this.currentTitle = this.documents[index].items[0].title
+      }
     }
   }
 }
 </script>
 <style lang="scss" scoped>
+.document-counter {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .carousel-container {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
 
   &__custom-list {
     border: 1px dashed gray;
     padding: 20px 20px;
     margin: 0 90px;
-    min-height: 250px;
+    min-height: 280px;
     font-size: 16px;
   }
 
-  &__small-title {
+  &__label {
     color: coral;
     padding-right: 3px;
+  }
+
+  &__title {
+    display: block;
+    font-size: 22px;
+    text-align: center;
   }
 
   .v-list-item {
