@@ -1,6 +1,6 @@
-<!--NEXT Раздел "Стоимость"-->
 <template>
-  <v-card class="mx-auto main-page-block" max-width="480px" min-height="330">
+  <v-card class="mx-auto main-page-block" max-width="480px" min-height="330" style="border: 1px dashed #ccc"
+          elevation="0">
     <v-card-title class="psysreda-card-header">
       Стоимость услуг
     </v-card-title>
@@ -49,7 +49,7 @@
                 </li>
                 <li>Также мы обсудим границы наших отношений и график дальнейших встреч.</li>
               </ul>
-              <h2 class="text-center mt-7">4000 руб / 50 минут</h2>
+              <h2 class="text-center mt-7">4 000 руб / 50 минут</h2>
             </div>
             <div v-if="chosenItemName === 'long_term_therapy'">
               <ul class="">
@@ -73,7 +73,7 @@
                   пожизненно.
                 </li>
               </ul>
-              <h2 class="text-center mt-7">16 000руб / 4 встречи</h2>
+              <h2 class="text-center mt-7">16 000 руб / 4 встречи</h2>
             </div>
             <div v-if="chosenItemName === 'therapeutic_group'">
               <h2 class="text-center mt-7">-руб / - встречи</h2>

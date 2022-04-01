@@ -9,35 +9,20 @@
         <ConsultationsForWhom/>
       </v-col>
     </v-row>
-
-    <v-row class="mt-0">
-      <v-col md="12" lg="6" class="mt-16">
-        <Prices/>
-      </v-col>
-      <v-col md="12" lg="6" class="mt-16">
-        <OceanOfEmotionsCourse class="mb-0"/>
-      </v-col>
-    </v-row>
-
-    <v-row>
-      <v-col md="12" lg="12" class="mt-16">
-        <Diplomas/>
-      </v-col>
-    </v-row>
   </div>
 </template>
 <style lang="scss" scoped>
 </style>
 <script>
-import ConsultationsForWhom from '../components/ConsultationsForWhom'
-import Diplomas from '../components/Diplomas'
 import Introduction from '../components/Introduction'
+import CodependencyTest from '../components/CodependencyTest'
+import ConsultationsForWhom from '../components/ConsultationsForWhom'
 
 export default {
   components: {
-    ConsultationsForWhom,
-    Diplomas,
-    Introduction
+    Introduction,
+    CodependencyTest,
+    ConsultationsForWhom
   }
 }
 </script>

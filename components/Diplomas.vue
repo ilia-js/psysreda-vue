@@ -1,5 +1,8 @@
 <template>
-  <v-card class="mx-auto" max-width="1100" min-height="380">
+  <v-card class="mx-auto" max-width="1100" min-height="360" elevation="1">
+    <v-card-title class="psysreda-card-header">
+      Подтверждающие документы
+    </v-card-title>
     <v-card-text class="">
       <div class="document-counter text-center mt-3 mb-5">
         {{ currentIndex + 1 }} из {{ documents.length }}
@@ -19,7 +22,8 @@
               </span>
             </v-list-item>
             <div class="text-center">
-              <v-btn v-if="document.image" color="success" @click="openDocument" small depressed>Посмотреть</v-btn>
+              <v-btn v-if="document.image" color="primary" @click="openDocument" small depressed>Документ
+              </v-btn>
             </div>
           </v-list>
         </v-carousel-item>
@@ -79,7 +83,8 @@ export default {
   margin: 0 auto;
 
   &__custom-list {
-    border: 1px dashed gray;
+    border: 1px dashed #ddd;
+    border-radius: 15px;
     padding: 20px 20px;
     margin: 0 90px;
     min-height: 280px;
