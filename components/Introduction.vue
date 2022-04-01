@@ -1,5 +1,5 @@
 <template>
-  <v-card class="main-page-block" max-width="480">
+  <v-card class="main-page-block" max-width="480" elevation="0" style="border: 1px dashed #ccc">
     <v-card-title class="psysreda-card-header">
       <div>
         Как перестать думать только о других?

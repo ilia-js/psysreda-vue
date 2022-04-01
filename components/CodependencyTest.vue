@@ -1,5 +1,6 @@
 <template>
-  <v-card class="mx-auto main-page-block" max-width="480px" min-height="270">
+  <v-card class="mx-auto main-page-block" max-width="480px" min-height="270" elevation="0"
+          style="border: 1px dashed #ccc">
     <v-card-title class="psysreda-card-header">
       Нужна ли мне работа<br/> с со-зависимостью?
     </v-card-title>

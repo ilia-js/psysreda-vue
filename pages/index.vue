@@ -6,7 +6,7 @@
       </v-col>
       <v-col md="12" lg="6" class="d-flex flex-column justify-space-between">
         <CodependencyTest class="mb-0"/>
-        <OceanOfEmotionsCourse class="mb-0"/>
+        <ConsultationsForWhom/>
       </v-col>
     </v-row>
 
@@ -15,7 +15,7 @@
         <Prices/>
       </v-col>
       <v-col md="12" lg="6" class="mt-16">
-        <ConsultationsForWhom/>
+        <OceanOfEmotionsCourse class="mb-0"/>
       </v-col>
     </v-row>
 
@@ -31,11 +31,13 @@
 <script>
 import ConsultationsForWhom from '../components/ConsultationsForWhom'
 import Diplomas from '../components/Diplomas'
+import Introduction from '../components/Introduction'
 
 export default {
   components: {
     ConsultationsForWhom,
-    Diplomas
+    Diplomas,
+    Introduction
   }
 }
 </script>
