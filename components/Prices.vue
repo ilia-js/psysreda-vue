@@ -22,7 +22,7 @@
           <div class="text-center">
             <v-btn class="" v-bind="attrs" v-on="on" :disabled="!chosenItemName">
               <v-icon left>mdi-cellphone-information</v-icon>
-              Узнать больше
+              Узнать стоимость
             </v-btn>
           </div>
         </template>
@@ -73,7 +73,7 @@
                   пожизненно.
                 </li>
               </ul>
-              <h2 class="text-center mt-7">14 000руб / 4 встречи</h2>
+              <h2 class="text-center mt-7">16 000руб / 4 встречи</h2>
             </div>
             <div v-if="chosenItemName === 'therapeutic_group'">
               <h2 class="text-center mt-7">-руб / - встречи</h2>
