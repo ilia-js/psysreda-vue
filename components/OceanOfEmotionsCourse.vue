@@ -1,5 +1,6 @@
 <template>
-  <v-card class="main-page-block" min-height="330">
+  <v-card class="main-page-block" min-height="330" elevation="0"
+          style="border: 1px dashed #ccc">
     <v-card-title class="psysreda-card-header">
       Курс "Океан Эмоций"
     </v-card-title>

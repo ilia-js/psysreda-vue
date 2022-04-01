@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto main-page-block" max-width="480px" min-height="330" style="border: 1px dashed #ccc"
+  <v-card class="mx-auto main-page-block pb-5" max-width="480px" min-height="330" style="border: 1px dashed #ccc"
           elevation="0">
     <v-card-title class="psysreda-card-header">
       Стоимость услуг

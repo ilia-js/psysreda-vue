@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div style="max-width: 700px">
     <v-row class="mt-12">
-      <v-col md="12" lg="6">
+      <v-col md="12">
         <Diplomas/>
       </v-col>
     </v-row>

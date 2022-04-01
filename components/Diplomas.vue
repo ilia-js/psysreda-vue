@@ -3,10 +3,7 @@
     <v-card-title class="psysreda-card-header">
       Подтверждающие документы
     </v-card-title>
-    <v-card-text class="">
-      <div class="document-counter text-center mt-3 mb-5">
-        {{ currentIndex + 1 }} из {{ documents.length }}
-      </div>
+    <v-card-text class="pt-8 pb-16">
       <v-carousel height="370" class="carousel-container" hide-delimiters show-arrows
                   @change="change">
         <v-carousel-item v-for="(document, documentKey) in documents" :key="documentKey">
@@ -28,6 +25,9 @@
           </v-list>
         </v-carousel-item>
       </v-carousel>
+      <div class="document-counter text-center b-5">
+        {{ currentIndex + 1 }} из {{ documents.length }}
+      </div>
     </v-card-text>
     <v-dialog v-model="documentDialog" max-width="600">
       <v-card>
