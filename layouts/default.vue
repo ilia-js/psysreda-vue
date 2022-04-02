@@ -1,24 +1,23 @@
 <template>
   <v-app>
     <v-container>
-      <v-row>
-        <v-col md="12" class="px-16">
-          <v-tabs>
-            <v-tab @click="$router.push('/')">Главная</v-tab>
-            <v-tab @click="$router.push('/course')">Курс "Океан Эмоций"</v-tab>
-            <v-tab @click="$router.push('/price')">Стоимость</v-tab>
-            <v-tab @click="$router.push('/documents')">Подтверждение образования</v-tab>
-          </v-tabs>
-        </v-col>
-      </v-row>
-
+      <v-tabs centered>
+        <v-tab @click="$router.push('/')">Главная</v-tab>
+        <v-tab @click="$router.push('/course')">Курс "Океан Эмоций"</v-tab>
+        <v-tab @click="$router.push('/price')">Стоимость</v-tab>
+        <v-tab @click="$router.push('/documents')">Подтверждение образования</v-tab>
+      </v-tabs>
       <Nuxt/>
     </v-container>
   </v-app>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   max-width: 1240px;
+}
+
+.v-tabs {
+  margin-bottom: 100px;
 }
 </style>

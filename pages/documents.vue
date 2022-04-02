@@ -1,21 +1,20 @@
 <template>
-  <div style="max-width: 700px">
-    <v-row class="mt-12">
-      <v-col md="12">
-        <Diplomas/>
-      </v-col>
-    </v-row>
-  </div>
+  <DocumentsCard class="documents-card-container"/>
 </template>
 <style lang="scss" scoped>
 </style>
 <script>
-
-import Diplomas from '../components/Diplomas'
+import DocumentsCard from '~/components/cards/DocumentsCard'
 
 export default {
   components: {
-    Diplomas
+    DocumentsCard
   }
 }
 </script>
+<style lang="scss" scoped>
+.documents-card-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+</style>

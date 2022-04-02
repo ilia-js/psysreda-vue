@@ -1,18 +1,10 @@
 <template>
   <div>
-    <v-row class="mt-12">
-      <v-col md="12" lg="6">
-        <Introduction class="mb-0"/>
-      </v-col>
-      <v-col md="12" lg="6" class="d-flex flex-column justify-space-between">
-        <CodependencyTest class="mb-0"/>
-        <ConsultationsForWhom/>
-      </v-col>
-    </v-row>
+    <Introduction/>
+    <ConsultationsForWhom class="mt-16 mb-16"/>
+    <CodependencyTest class="mt-16 mb-16"/>
   </div>
 </template>
-<style lang="scss" scoped>
-</style>
 <script>
 import Introduction from '../components/Introduction'
 import CodependencyTest from '../components/CodependencyTest'
@@ -26,3 +18,5 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>

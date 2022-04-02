@@ -1,21 +1,16 @@
 <template>
-  <div>
-    <v-row class="mt-12">
-      <v-col md="12" lg="6">
-        <Prices/>
-      </v-col>
-    </v-row>
-  </div>
+  <PriceCard/>
 </template>
 <style lang="scss" scoped>
 </style>
 <script>
-
-import Prices from '../components/Prices'
+import PriceCard from '~/components/cards/PriceCard'
 
 export default {
   components: {
-    Prices
+    PriceCard
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>

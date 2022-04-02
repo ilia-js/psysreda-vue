@@ -1,34 +1,32 @@
 <template>
-  <v-card class="mx-auto" max-width="1100" min-height="360" elevation="1">
-    <v-card-title class="psysreda-card-header">
-      Подтверждающие документы
-    </v-card-title>
-    <v-card-text class="pt-8 pb-16">
-      <v-carousel height="370" class="carousel-container" hide-delimiters show-arrows
-                  @change="change">
-        <v-carousel-item v-for="(document, documentKey) in documents" :key="documentKey">
-          <v-list class="carousel-container__custom-list">
-            <v-list-item v-for="(item, itemKey) in document.items" :key="itemKey">
-              <span v-if="item.title" v-html="item.title" class="carousel-container__title">
-              </span>
-              <span v-if="item.label" class="carousel-container__label">
-                {{ item.label }}
-              </span>
-              <span v-if="item.text">
-                <br/>{{ item.text }}
-              </span>
-            </v-list-item>
-            <div class="text-center">
-              <v-btn v-if="document.image" color="primary" @click="openDocument" small depressed>Документ
-              </v-btn>
-            </div>
-          </v-list>
-        </v-carousel-item>
-      </v-carousel>
-      <div class="document-counter text-center b-5">
-        {{ currentIndex + 1 }} из {{ documents.length }}
-      </div>
-    </v-card-text>
+  <SimpleCard>
+    <template v-slot:title>
+      Подтверждение образования
+    </template>
+    <v-carousel height="400" class="carousel-container" hide-delimiters show-arrows
+                @change="change">
+      <v-carousel-item v-for="(document, documentKey) in documents" :key="documentKey">
+        <v-list class="carousel-container__custom-list">
+          <v-list-item v-for="(item, itemKey) in document.items" :key="itemKey">
+            <span v-if="item.title" v-html="item.title" class="carousel-container__title">
+            </span>
+            <span v-if="item.label" class="carousel-container__label">
+              {{ item.label }}
+            </span>
+            <span v-if="item.text">
+              <br/>{{ item.text }}
+            </span>
+          </v-list-item>
+          <div class="text-center">
+            <v-btn v-if="document.image" color="primary" @click="openDocument" small depressed>Документ
+            </v-btn>
+          </div>
+        </v-list>
+      </v-carousel-item>
+    </v-carousel>
+    <div class="document-counter text-center b-5">
+      {{ currentIndex + 1 }} из {{ documents.length }}
+    </div>
     <v-dialog v-model="documentDialog" max-width="600">
       <v-card>
         <v-card-title class="pt-7 pb-5" v-html="this.currentTitle">
@@ -41,13 +39,13 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-card>
+  </SimpleCard>
 </template>
 <script>
-import DOCUMENTS from '../settings/documents'
+import DOCUMENTS from '~/settings/documents'
 
 export default {
-  name: 'Diplomas',
+  name: 'DocumentsCard',
   data () {
     return {
       documentDialog: false,
@@ -80,12 +78,12 @@ export default {
 
 .carousel-container {
   max-width: 650px;
-  margin: 0 auto;
+  margin: 15px auto 0;
 
   &__custom-list {
     border: 1px dashed #ddd;
     border-radius: 15px;
-    padding: 20px 20px;
+    padding: 30px 20px;
     margin: 0 90px;
     min-height: 280px;
     font-size: 16px;
