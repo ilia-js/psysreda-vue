@@ -1,120 +1,120 @@
 <template>
-  <v-card class="mx-auto main-page-block" max-width="480px" min-height="270" elevation="0"
-          style="border: 1px dashed #ccc">
-    <v-card-title class="psysreda-card-header">
+  <SimpleCard>
+    <template v-slot:title>
       Нужна ли мне работа<br/> с со-зависимостью?
-    </v-card-title>
-    <v-card-text class="mt-0 text-center">
-      Этот легкий бесплатный тест<br/> поможет тебе
-      определить<br/> степень созависимости
-      <v-dialog
-        v-model="showTest"
-        width="600"
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <div class="text-center">
-            <v-btn class="mt-5 psysreda-red-button" v-bind="attrs" v-on="on">
-              ПРОЙТИ ТЕСТ
-            </v-btn>
-          </div>
-        </template>
-        <v-card>
-          <v-card-title class="pt-5 pb-4">
-            Тест на созависимость
-          </v-card-title>
-          <v-divider></v-divider>
-          <v-card-text class="pt-6 pb-8">
-            <div v-if="!isTestFinished">
-              <div v-if="currentQuestionIndex === null">
-                <p>Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.</p>
-                <p>Не думайте слишком долго над каждым утверждением.</p>
-                <p>Обычно первый ответ, который приходит в голову - <i>является самым точным</i>.
-                </p>
-                <v-btn
-                  type="submit"
-                  @click="startTest()"
-                  class="mt-4 psysreda-button"
-                  color="green darken-1"
-                >
-                  Начать тест
-                </v-btn>
-              </div>
-              <div v-else>
-                <v-progress-linear
-                  v-model="percentAnswered"
-                  height="22"
-                  color="light-green lighten-3"
-                >
-                  Вопрос {{ currentQuestionIndex + 1 }} из {{ questionsNumber }}
-                </v-progress-linear>
-                <div class="mt-6">
-                  {{ currentQuestion.content }}
-                </div>
-                <v-radio-group v-model="currentAnswer" class="pt-0 pb-2 pl-4">
-                  <v-radio label="никогда" value="1"/>
-                  <v-radio label="иногда" value="2"/>
-                  <v-radio label="часто" value="3"/>
-                  <v-radio label="почти всегда" value="4"/>
-                </v-radio-group>
-                <v-btn
-                  v-if="currentQuestionIndex < questionsNumber - 1"
-                  type="submit"
-                  @click="nextQuestion()"
-                  class="psysreda-button mb-2"
-                  :disabled="currentAnswer === null"
-                  color="green darken-1"
-                >
-                  Далее
-                </v-btn>
-                <v-btn
-                  v-else
-                  type="submit"
-                  id="show_result"
-                  @click="processResult"
-                  :disabled="currentAnswer === null"
-                  :class="`${isAnswered && 'psysreda-button'}`"
-                  color="green darken-1"
-                >
-                  Получить результат
-                </v-btn>
-              </div>
+    </template>
+    Этот легкий бесплатный тест<br/> поможет тебе
+    определить<br/> степень созависимости
+    <v-dialog
+      v-model="showTest"
+      width="600"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <div class="text-center">
+          <v-btn class="mt-8 psysreda-red-button" v-bind="attrs" v-on="on">
+            ПРОЙТИ ТЕСТ
+          </v-btn>
+        </div>
+      </template>
+      <v-card>
+        <v-card-title class="pt-5 pb-4">
+          Тест на созависимость
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="pt-6 pb-8">
+          <div v-if="!isTestFinished">
+            <div v-if="currentQuestionIndex === null">
+              <p>Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.</p>
+              <p>Не думайте слишком долго над каждым утверждением.</p>
+              <p>Обычно первый ответ, который приходит в голову - <i>является самым точным</i>.
+              </p>
+              <v-btn
+                type="submit"
+                @click="startTest()"
+                class="mt-4 psysreda-button"
+                color="green darken-1"
+              >
+                Начать тест
+              </v-btn>
             </div>
             <div v-else>
-              Ваш результат: <b>{{ total }}</b><br/><br/>
-              Шкала оценки результатов:<br/>
-              <ul class='shkala'>
-                <li style='margin-top:5px;'>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
-                <li style='margin-top:5px;'>От <b>40 до 59 баллов</b> - высокая степень зависимых моделей</li>
-                <li style='margin-top:5px;'>От <b>30 до 39 баллов</b> - средняя степень зависимых и/или контрзависимых
-                  моделей
-                </li>
-                <li style='margin-top:5px;'>От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая степень
-                  контрзависимых моделей
-                </li>
-              </ul>
+              <v-progress-linear
+                v-model="percentAnswered"
+                height="22"
+                color="light-green lighten-3"
+              >
+                Вопрос {{ currentQuestionIndex + 1 }} из {{ questionsNumber }}
+              </v-progress-linear>
+              <div class="mt-6">
+                {{ currentQuestion.content }}
+              </div>
+              <v-radio-group v-model="currentAnswer" class="pt-0 pb-2 pl-4">
+                <v-radio label="никогда" value="1"/>
+                <v-radio label="иногда" value="2"/>
+                <v-radio label="часто" value="3"/>
+                <v-radio label="почти всегда" value="4"/>
+              </v-radio-group>
+              <v-btn
+                v-if="currentQuestionIndex < questionsNumber - 1"
+                type="submit"
+                @click="nextQuestion()"
+                class="psysreda-button mb-2"
+                :disabled="currentAnswer === null"
+                color="green darken-1"
+              >
+                Далее
+              </v-btn>
+              <v-btn
+                v-else
+                type="submit"
+                id="show_result"
+                @click="processResult"
+                :disabled="currentAnswer === null"
+                :class="`${isAnswered && 'psysreda-button'}`"
+                color="green darken-1"
+              >
+                Получить результат
+              </v-btn>
             </div>
-          </v-card-text>
+          </div>
+          <div v-else>
+            Ваш результат: <b>{{ total }}</b><br/><br/>
+            Шкала оценки результатов:<br/>
+            <ul class='shkala'>
+              <li style='margin-top:5px;'>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
+              <li style='margin-top:5px;'>От <b>40 до 59 баллов</b> - высокая степень зависимых моделей</li>
+              <li style='margin-top:5px;'>От <b>30 до 39 баллов</b> - средняя степень зависимых и/или контрзависимых
+                моделей
+              </li>
+              <li style='margin-top:5px;'>От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая степень
+                контрзависимых моделей
+              </li>
+            </ul>
+          </div>
+        </v-card-text>
 
-          <v-divider></v-divider>
+        <v-divider></v-divider>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn
-              color="primary"
-              text
-              @click="showTest = false"
-            >
-              Закрыть
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-card-text>
-  </v-card>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="showTest = false"
+          >
+            Закрыть
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </SimpleCard>
 </template>
 <script>
+import SimpleCard from '../SimpleCard'
+
 export default {
-  name: 'CodependencyTest',
+  name: 'TestingCard',
+  components: { SimpleCard },
   data: () => ({
     questions: [
       { content: 'Я склонен/склонна брать на себя ответственность за чувства и/или поведение других людей' },
@@ -188,6 +188,19 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.simple-card {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+::v-deep {
+  .simple-card-text {
+    padding-top: 10px !important;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+}
+
 p {
   margin-bottom: 12px !important;
 }

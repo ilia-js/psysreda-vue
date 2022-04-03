@@ -43,7 +43,7 @@
 import SimpleCard from '../SimpleCard'
 
 export default {
-  name: 'Audience',
+  name: 'AudienceCard',
   components: { SimpleCard },
   data: () => ({
     selectedItem: 0,
@@ -98,6 +98,7 @@ v-list-item--link {
 ::v-deep {
   .simple-card-text {
     padding-top: 0px !important;
+    padding-bottom: 30px !important;
   }
 }
 

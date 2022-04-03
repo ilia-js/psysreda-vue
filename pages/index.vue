@@ -1,20 +1,20 @@
 <template>
   <div>
     <Introduction/>
-    <Audience class="mt-16 mb-16"/>
-    <CodependencyTest class="mt-16 mb-16"/>
+    <AudienceCard class="mt-16 mb-16"/>
+    <TestingCard class="mt-16 mb-16"/>
   </div>
 </template>
 <script>
 import Introduction from '../components/Introduction'
-import CodependencyTest from '../components/CodependencyTest'
-import Audience from '../components/cards/Audience'
+import TestingCard from '../components/cards/TestingCard'
+import AudienceCard from '../components/cards/AudienceCard'
 
 export default {
   components: {
     Introduction,
-    CodependencyTest,
-    Audience
+    TestingCard,
+    AudienceCard
   }
 }
 </script>
