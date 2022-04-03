@@ -24,7 +24,7 @@
       {{ currentIndex + 1 }} из {{ documents.length }}
     </div>
     <v-dialog v-model="documentDialog" max-width="600">
-      <v-card>
+      <v-card min-height="500">
         <v-card-title class="pt-7 pb-5" v-html="this.currentTitle">
         </v-card-title>
         <v-card-text class="text-center pb-5">

@@ -81,7 +81,7 @@ export default {
 .custom-tooltip {
   opacity: var(--v-tooltip-opacity, 1) !important;
   background: #fff !important;
-  border: 1px dashed #dc3545 !important;
+  border: 1px dashed #FA6060 !important;
   padding: 20px;
   border-radius: 20px;
   font-size: 16px;
