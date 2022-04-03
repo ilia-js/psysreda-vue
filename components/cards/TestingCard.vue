@@ -31,8 +31,7 @@
               <v-btn
                 type="submit"
                 @click="startTest()"
-                class="mt-4 psysreda-button"
-                color="primary"
+                class="mt-4 psysreda-pink-button"
                 depressed
                 small
               >
@@ -43,7 +42,8 @@
               <v-progress-linear
                 v-model="percentAnswered"
                 height="22"
-                color="light-green lighten-3"
+                color="#FCBF8A"
+                style="color: white;"
               >
                 Вопрос {{ currentQuestionIndex + 1 }} из {{ questionsNumber }}
               </v-progress-linear>
@@ -60,9 +60,8 @@
                 v-if="currentQuestionIndex < questionsNumber - 1"
                 type="submit"
                 @click="nextQuestion()"
-                class="psysreda-button mb-2"
+                class="psysreda-pink-button mb-2"
                 :disabled="currentAnswer === null"
-                color="primary"
                 small
                 depressed
               >
@@ -74,8 +73,7 @@
                 id="show_result"
                 @click="processResult"
                 :disabled="currentAnswer === null"
-                :class="`${isAnswered && 'psysreda-button'}`"
-                color="primary"
+                :class="`${currentAnswer !== null && 'psysreda-pink-button'}`"
                 small
                 depressed
               >

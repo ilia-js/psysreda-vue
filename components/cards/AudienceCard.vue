@@ -11,7 +11,8 @@
         <v-tooltip
           top
           color="red"
-          open-delay="200"
+          open-delay="250"
+          close-delay="0"
           content-class="custom-tooltip"
           v-for="(item, i) in items"
           :key="i"
@@ -69,7 +70,7 @@ export default {
         subtitle: 'кто угодно, только не ты',
         icon: 'mdi-account-minus-outline',
         tooltip: 'Для тех, кто боится сказать свое НЕТ, и живет в тревоге.<br/>\n' +
-          'Кто ощущает, что живет не свою жизнь, терпит и подстраивается<br/>\n' +
+          'Кто ощущает, что живет не свою жизнь, терпит и подстраивается.<br/>\n' +
           'Для тех, кто устал и хочет менять свою жизнь, но не знает, как себе помочь.'
       }
     ]
@@ -84,7 +85,11 @@ export default {
 
 .custom-tooltip {
   opacity: var(--v-tooltip-opacity, 1) !important;
-  background: var(--v-tooltip-bg, rgba(97, 97, 97, 1)) !important;
+  background: var(--v-tooltip-bg, rgba(255, 142, 142, 1)) !important;
+  padding: 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .v-list-item__content {
