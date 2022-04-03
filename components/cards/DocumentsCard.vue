@@ -24,11 +24,11 @@
       {{ currentIndex + 1 }} из {{ documents.length }}
     </div>
     <v-dialog v-model="documentDialog" max-width="600">
-      <v-card min-height="500">
+      <v-card>
         <v-card-title class="pt-7 pb-5" v-html="this.currentTitle">
         </v-card-title>
         <v-card-text class="text-center pb-5">
-          <img width="500" :src="documents[currentIndex].image"/>
+          <img class="document-image" :src="documents[currentIndex].image"/>
         </v-card-text>
         <v-card-actions class="pb-8">
           <v-btn @click="closeDocument" class="mx-auto psysreda-pink-button" depressed small>Закрыть</v-btn>
@@ -106,6 +106,10 @@ export default {
 ::v-deep {
   .v-window__prev, .v-window__next {
     top: 180px;
+  }
+
+  .document-image {
+    max-width: 90%;
   }
 }
 </style>

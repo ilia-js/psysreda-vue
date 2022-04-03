@@ -8,6 +8,7 @@
     <v-dialog
       v-model="showTest"
       width="600"
+      persistent
     >
       <template v-slot:activator="{ on, attrs }">
         <div class="text-center">
@@ -102,9 +103,9 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="primary"
-            text
             @click="showTest = false"
+            small depressed
+            class="my-2"
           >
             Закрыть
           </v-btn>
