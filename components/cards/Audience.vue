@@ -1,49 +1,50 @@
 <template>
-  <v-card class="mx-auto main-page-block" max-width="480px" min-height="330" elevation="0"
-          style="border: 1px dashed #ccc">
-    <v-card-title class="psysreda-card-header">
+  <SimpleCard class="price-card">
+    <template v-slot:title>
       Кому подойдут консультации?
-    </v-card-title>
-    <v-card-text class="pt-3">
-      <v-list flat class="pl-15">
-        <v-list-item-group
-          color="#444"
-          no-action
+    </template>
+    <v-list flat class="pl-5 pt-3">
+      <v-list-item-group
+        color="#444"
+        no-action
+      >
+        <v-tooltip
+          top
+          color="red"
+          open-delay="200"
+          content-class="custom-tooltip"
+          v-for="(item, i) in items"
+          :key="i"
         >
-          <v-tooltip
-            top
-            color="red"
-            open-delay="200"
-            content-class="custom-tooltip"
-            v-for="(item, i) in items"
-            :key="i"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-list-item
-                two-line
-                v-bind="attrs"
-                v-on="on"
-              >
-                <v-list-item-icon class="pt-0">
-                  <v-icon v-text="item.icon"></v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title>{{ item.title }}</v-list-item-title>
-                  <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-            <span v-html="item.tooltip">
-            </span>
-          </v-tooltip>
-        </v-list-item-group>
-      </v-list>
-    </v-card-text>
-  </v-card>
+          <template v-slot:activator="{ on, attrs }">
+            <v-list-item
+              two-line
+              v-bind="attrs"
+              v-on="on"
+              inactive
+            >
+              <v-list-item-icon class="pt-0">
+                <v-icon v-text="item.icon"></v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+          <span v-html="item.tooltip">
+          </span>
+        </v-tooltip>
+      </v-list-item-group>
+    </v-list>
+  </SimpleCard>
 </template>
 <script>
+import SimpleCard from '../SimpleCard'
+
 export default {
-  name: 'ConsultationsForWhom',
+  name: 'Audience',
+  components: { SimpleCard },
   data: () => ({
     selectedItem: 0,
     items: [
@@ -76,10 +77,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-h2 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: left;
+.simple-card {
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .custom-tooltip {
@@ -87,12 +87,18 @@ h2 {
   background: var(--v-tooltip-bg, rgba(97, 97, 97, 1)) !important;
 }
 
-.v-card__title {
-  padding-bottom: 0;
+.v-list-item__content {
+  text-align: left;
 }
 
-.v-card__text {
-  padding-bottom: 0;
+v-list-item--link {
+  cursor: none;
+}
+
+::v-deep {
+  .simple-card-text {
+    padding-top: 0px !important;
+  }
 }
 
 </style>

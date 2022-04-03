@@ -1,5 +1,5 @@
 <template>
-  <v-card class="simple-card" elevation="0">
+  <v-card class="simple-card" :max-width="maxWidth" :min-height="minHeight" elevation="0">
     <v-card-title class="psysreda-card-header">
       <slot name="title"/>
     </v-card-title>
@@ -11,7 +11,11 @@
 
 <script>
 export default {
-  name: 'SimpleCard'
+  name: 'SimpleCard',
+  props: {
+    maxWidth: String,
+    minHeight: String
+  }
 }
 </script>
 
