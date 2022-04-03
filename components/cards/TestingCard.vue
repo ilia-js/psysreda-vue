@@ -32,7 +32,9 @@
                 type="submit"
                 @click="startTest()"
                 class="mt-4 psysreda-button"
-                color="green darken-1"
+                color="primary"
+                depressed
+                small
               >
                 Начать тест
               </v-btn>
@@ -60,7 +62,9 @@
                 @click="nextQuestion()"
                 class="psysreda-button mb-2"
                 :disabled="currentAnswer === null"
-                color="green darken-1"
+                color="primary"
+                small
+                depressed
               >
                 Далее
               </v-btn>
@@ -71,7 +75,9 @@
                 @click="processResult"
                 :disabled="currentAnswer === null"
                 :class="`${isAnswered && 'psysreda-button'}`"
-                color="green darken-1"
+                color="primary"
+                small
+                depressed
               >
                 Получить результат
               </v-btn>
@@ -195,7 +201,7 @@ export default {
 
 ::v-deep {
   .simple-card-text {
-    padding-top: 10px !important;
+    padding-top: 8px !important;
     font-size: 17px;
     color: rgba(0, 0, 0, 0.8) !important;
   }
