@@ -19,4 +19,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.simple-card {
+  max-width: 480px;
+  margin: 0 auto;
+}
 </style>

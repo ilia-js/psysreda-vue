@@ -1,35 +1,40 @@
 <template>
-  <v-card class="main-page-block" max-width="480" elevation="0" style="border: 1px dashed #ccc">
-    <v-card-title class="psysreda-card-header">
-      <div>
-        Как перестать думать только о других?
-        <br/>Как научиться заботиться о себе?!
-      </div>
+  <SimpleCard>
+    <template v-slot:title>
+      Как перестать думать только о других?
+      <br/>Как научиться заботиться о себе?!
       <v-img
         src="img/logo.png"
         max-width="280px"
         height="350"
         class="rounded-1 mt-6 d-inline-block mx-auto"
       />
-    </v-card-title>
-    <v-card-text class="text-center pb-10">
-      <p class="text-center mb-5">
-        Если ты задаёшь себе эти вопросы,<br/> то значит ты готов к изменениям
-        <br/>и мы сможем начать совместную работу
-      </p>
-      <v-btn class="psysreda-red-button">
-        Связаться ОН&#8209;ЛАЙН
-      </v-btn>
-    </v-card-text>
-  </v-card>
+    </template>
+    <p class="text-center mb-5">
+      Если ты задаёшь себе эти вопросы,<br/> то значит ты готов к изменениям
+      <br/>и мы сможем начать совместную работу
+    </p>
+    <v-btn class="psysreda-red-button mt-2">
+      Связаться ОН&#8209;ЛАЙН
+    </v-btn>
+  </SimpleCard>
 </template>
 
 <script>
+import SimpleCard from './SimpleCard'
+
 export default {
-  name: 'Introduction'
+  name: 'Introduction',
+  components: { SimpleCard }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+::v-deep {
+  .simple-card-text {
+    padding-top: 0px !important;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+}
 </style>

@@ -192,11 +192,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.simple-card {
-  max-width: 480px;
-  margin: 0 auto;
-}
-
 ::v-deep {
   .simple-card-text {
     padding-top: 8px !important;

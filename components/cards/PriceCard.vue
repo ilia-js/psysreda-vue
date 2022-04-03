@@ -6,7 +6,7 @@
     <div class="question">
       Каким вы видите наше взаимодействие?
     </div>
-    <v-radio-group v-model="chosenItemName">
+    <v-radio-group v-model="chosenItemName" class="pl-7">
       <v-radio
         v-for="item in items"
         :key="item.name"
@@ -14,19 +14,21 @@
         :value="item.name"
       ></v-radio>
     </v-radio-group>
-
-    <v-dialog width="600">
-      <template v-slot:activator="{ on, attrs }">
-        <div class="text-center">
-          <v-btn class="" v-bind="attrs" v-on="on" :disabled="!chosenItemName">
-            <v-icon left>mdi-cellphone-information</v-icon>
-            Узнать стоимость
-          </v-btn>
-        </div>
-      </template>
-      <v-card v-if="chosenItemName">
-        <v-card-title class="pt-6">{{ items.find(x => x.name === chosenItemName).label }}</v-card-title>
-        <v-card-text class="pt-3">
+    <div class="text-center">
+      <v-btn class="psysreda-red-button mt-5 mb-2" @click="show=true" :disabled="!chosenItemName">
+        <v-icon left class="d-none">mdi-cellphone-information</v-icon>
+        ПОКАЗАТЬ
+      </v-btn>
+    </div>
+    <v-dialog width="600" v-model="show">
+      <v-card v-if="chosenItemName" class="pb-5 pt-3">
+        <v-btn @click="show=false" text rounded class="mr-0 ml-auto d-block" small>
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-card-title class="pt-0">
+          {{ items.find(x => x.name === chosenItemName).label }}
+        </v-card-title>
+        <v-card-text class="pt-5 pb-7">
           <div v-if="chosenItemName === 'initial_consultation'">
             <ul>
               <li>На первой встрече я знакомлюсь, задаю вопросы, для меня важно услышать, с чем ты пришел, как
@@ -85,6 +87,7 @@
 export default {
   name: 'PriceCard',
   data: () => ({
+    show: false,
     items: [
       {
         name: 'initial_consultation',
@@ -116,7 +119,19 @@ export default {
 }
 
 .question {
+  font-size: 17px;
+  color: #333;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #333;
+}
+
+li {
   font-size: 16px;
   padding-bottom: 10px;
+  color: #222;
 }
 </style>

@@ -54,7 +54,7 @@ export default {
         subtitle: 'жертва-спасатель-агрессор',
         icon: 'mdi-human-male-female',
         tooltip: 'Мои консультации подойдут тем, кто устал от разрушающих отношений.<br/>\n' +
-          'Всю жизнь старается, заботиться о других, в ответ упреки и безразличие.<br/>\n' +
+          'Всю жизнь старается заботиться о других, в ответ упреки и безразличие.<br/>\n' +
           'Тем, кто ощущает в душе боль и пустоту одиночества.'
       },
       {
@@ -78,18 +78,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.simple-card {
-  max-width: 480px;
-  margin: 0 auto;
-}
-
 .custom-tooltip {
   opacity: var(--v-tooltip-opacity, 1) !important;
-  background: var(--v-tooltip-bg, rgba(255, 142, 142, 1)) !important;
+  background: #fff !important;
+  border: 1px dashed #dc3545 !important;
   padding: 20px;
-  border-radius: 25px;
+  border-radius: 20px;
   font-size: 16px;
   line-height: 28px;
+  color: #000;
 }
 
 .v-list-item__content {

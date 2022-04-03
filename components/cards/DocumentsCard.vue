@@ -1,10 +1,6 @@
 <template>
-  <SimpleCard>
-    <template v-slot:title>
-      Подтверждение образования
-    </template>
-    <v-carousel height="400" class="carousel-container" hide-delimiters show-arrows
-                @change="change">
+  <div>
+    <v-carousel class="carousel-container" hide-delimiters show-arrows @change="change">
       <v-carousel-item v-for="(document, documentKey) in documents" :key="documentKey">
         <v-list class="carousel-container__custom-list">
           <v-list-item v-for="(item, itemKey) in document.items" :key="itemKey">
@@ -13,36 +9,36 @@
             <span v-if="item.label" class="carousel-container__label">
               {{ item.label }}
             </span>
-            <span v-if="item.text">
-              <br/>{{ item.text }}
+            <span v-if="item.text" v-html="'<br/>' + item.text">
             </span>
           </v-list-item>
           <div class="text-center">
-            <v-btn v-if="document.image" color="primary" @click="openDocument" small depressed>Документ
+            <v-btn v-if="document.image" class="psysreda-pink-button" @click="openDocument" small depressed>
+              Документ
             </v-btn>
           </div>
         </v-list>
       </v-carousel-item>
     </v-carousel>
-    <div class="document-counter text-center b-5">
+    <div class="document-counter text-center b-5 d-none">
       {{ currentIndex + 1 }} из {{ documents.length }}
     </div>
     <v-dialog v-model="documentDialog" max-width="600">
-      <v-card>
+      <v-card min-height="500">
         <v-card-title class="pt-7 pb-5" v-html="this.currentTitle">
         </v-card-title>
         <v-card-text class="text-center pb-5">
           <img width="500" :src="documents[currentIndex].image"/>
         </v-card-text>
         <v-card-actions class="pb-8">
-          <v-btn @click="closeDocument" class="mx-auto" color="primary" depressed small>Закрыть</v-btn>
+          <v-btn @click="closeDocument" class="mx-auto psysreda-pink-button" depressed small>Закрыть</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </SimpleCard>
+  </div>
 </template>
 <script>
-import DOCUMENTS from '~/settings/documents'
+import DOCUMENTS from '../../settings/documents'
 
 export default {
   name: 'DocumentsCard',
@@ -83,14 +79,14 @@ export default {
   &__custom-list {
     border: 1px dashed #ddd;
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 30px 20px 40px;
     margin: 0 90px;
     min-height: 280px;
     font-size: 16px;
   }
 
   &__label {
-    color: coral;
+    color: #dc3545;
     padding-right: 3px;
   }
 
@@ -107,31 +103,9 @@ export default {
   }
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-h2 {
-  color: #000;
-  font-size: 1.3rem;
-}
-
-p {
-  color: #000;
-  font-size: 1.2rem;
-}
-
-.carousel-caption {
-  bottom: 60px;
-  padding: 10px 0 0 0;
-  background: #efefef !important;
-  opacity: 0.8;
-  border: 1px solid #999;
-}
-
-.desc {
-  background: #efefef !important;
-  opacity: 0.8 !important;
+::v-deep {
+  .v-window__prev, .v-window__next {
+    top: 180px;
+  }
 }
 </style>
