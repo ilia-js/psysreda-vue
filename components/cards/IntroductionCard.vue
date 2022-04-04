@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import SimpleCard from './SimpleCard'
+import SimpleCard from '../SimpleCard'
 
 export default {
-  name: 'Introduction',
+  name: 'IntroductionCard',
   components: { SimpleCard }
 }
 </script>

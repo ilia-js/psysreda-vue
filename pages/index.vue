@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Introduction/>
+    <IntroductionCard/>
     <AudienceCard class="mt-16 mb-16"/>
     <TestingCard class="mt-16 mb-16"/>
   </div>
 </template>
 <script>
-import Introduction from '../components/Introduction'
+import IntroductionCard from '../components/cards/IntroductionCard'
 import TestingCard from '../components/cards/TestingCard'
 import AudienceCard from '../components/cards/AudienceCard'
 
 export default {
   components: {
-    Introduction,
+    IntroductionCard,
     TestingCard,
     AudienceCard
   }
