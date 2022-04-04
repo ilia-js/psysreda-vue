@@ -1,8 +1,8 @@
 <template>
   <SimpleCard>
     <template v-slot:title>
-      Как перестать думать только о других?
-      <br/>Как научиться заботиться о себе?!
+      <div class="bigger-title">Как научиться заботиться о себе?</div>
+      <div class="smaller-title">Как перестать думать только о других?</div>
       <v-img
         src="img/logo.png"
         max-width="280px"
@@ -30,6 +30,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bigger-title {
+  font-size: 1.15em;
+}
+
+.smaller-title {
+  font-size: 0.85em;
+}
+
 ::v-deep {
   .simple-card-text {
     padding-top: 0px !important;

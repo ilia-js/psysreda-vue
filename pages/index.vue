@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="index-container">
+    <h1>Татьяна Гвоздовская,<br/> психотерапевт</h1>
     <IntroductionCard/>
     <AudienceCard class="mt-16 mb-16"/>
     <TestingCard class="mt-16 mb-16"/>
@@ -19,6 +20,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+h1 {
+  text-align: center;
+  margin-top: -70px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.index-container {
+}
+
 .simple-card {
   max-width: 480px;
   margin: 0 auto;
