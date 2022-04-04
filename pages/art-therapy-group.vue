@@ -1,14 +1,14 @@
 <template>
-  <ArtTherapyGroup/>
+  <ArtTherapyGroupCard/>
 </template>
 <style lang="scss" scoped>
 </style>
 <script>
-import ArtTherapyGroup from '~/components/cards/ArtTherapyGroup'
+import ArtTherapyGroupCard from '~/components/cards/ArtTherapyGroupCard'
 
 export default {
   components: {
-    ArtTherapyGroup
+    ArtTherapyGroupCard
   }
 }
 </script>
