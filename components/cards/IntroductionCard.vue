@@ -1,8 +1,8 @@
 <template>
   <SimpleCard>
     <template v-slot:title>
-      <div class="bigger-title">Как научиться заботиться о себе?</div>
-      <div class="smaller-title">Как перестать думать только о других?</div>
+      <div class="bigger-title">Татьяна Гвоздовская,</div>
+      <div class="smaller-title">психотерапевт</div>
       <v-img
         src="img/logo.png"
         max-width="280px"

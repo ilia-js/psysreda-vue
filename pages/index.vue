@@ -1,6 +1,6 @@
 <template>
   <div class="index-container">
-    <h1>Татьяна Гвоздовская,<br/> психотерапевт</h1>
+    <h1>Как научиться заботиться о себе?<br/> Как перестать думать только о других?</h1>
     <IntroductionCard/>
     <AudienceCard class="mt-16 mb-16"/>
     <TestingCard class="mt-16 mb-16"/>
@@ -28,6 +28,7 @@ h1 {
 }
 
 .index-container {
+  padding-bottom: 50px;
 }
 
 .simple-card {
