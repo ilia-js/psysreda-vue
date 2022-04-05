@@ -102,7 +102,6 @@ export default {
       this.show = false
     },
     cancel () {
-      console.log('cancel')
       this.close()
       this.formData = { ...initData }
       setTimeout(() => {

@@ -3,7 +3,7 @@
     <h1>
       <span class="special-first-title">Как научиться заботиться о себе</span><span
       class="special-exclamation-mark">?</span>
-      <br/> <s class="special-second-title">Как перестать думать только о других</s><span
+      <br/> <span class="special-second-title">Как <s>перестать думать только о других</s></span><span
       class="special-exclamation-mark">!</span>
     </h1>
     <ContactMeCard/>
