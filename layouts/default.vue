@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <v-container>
-      <v-tabs centered>
-        <v-tab @click="$router.push('/')">Главная</v-tab>
-        <v-tab @click="$router.push('/art-therapy-group')">Арт-Терапевтическая группа</v-tab>
-        <v-tab @click="$router.push('/course')" class="d-none">Курс "Океан Эмоций"</v-tab>
-        <v-tab @click="$router.push('/price')">Стоимость</v-tab>
-        <v-tab @click="$router.push('/documents')">Подтверждение образования</v-tab>
+      <v-tabs v-model="menu" centered show-arrows>
+        <v-tab to="/">Главная</v-tab>
+        <v-tab to="/art-therapy-group">Арт-Терапевтическая группа</v-tab>
+        <v-tab to="/course" class="d-none">Курс "Океан Эмоций"</v-tab>
+        <v-tab to="/price">Стоимость</v-tab>
+        <v-tab to="/documents">Подтверждение образования</v-tab>
       </v-tabs>
       <Nuxt/>
       <div class="empty-space"></div>
@@ -25,7 +25,16 @@
     </v-container>
   </v-app>
 </template>
-
+<script>
+export default {
+  name: 'DefaultLayout',
+  data () {
+    return {
+      menu: ''
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 .container {
   max-width: 1240px;

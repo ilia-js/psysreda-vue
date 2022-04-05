@@ -1,7 +1,7 @@
 <template>
   <SimpleCard>
     <template v-slot:title>
-      АРТ-ТЕРАПЕВТИЧЕСКАЯ ГРУППА<BR/>“ВЕСНА ТВОЕЙ ДУШИ”
+      АРТ-ТЕРАПЕВТИЧЕСКАЯ ГРУППА<br/>“ВЕСНА ТВОЕЙ ДУШИ”
     </template>
     <v-row class="justify-space-around">
       <v-col>
@@ -18,12 +18,12 @@
                    depressed small>
               Для кого?
             </v-btn>
-            <br/>
+            <div/>
             <v-btn class="black-gray-light-button ml-0 mt-8 py-2" @click="openDialog('process')"
                    depressed small>
               Как проходит?
             </v-btn>
-            <br/>
+            <div/>
             <v-btn class="black-gray-light-button ml-0 mt-8 py-2" @click="openDialog('results')"
                    depressed small>
               Что вы получите?
