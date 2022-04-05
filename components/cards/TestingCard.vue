@@ -215,7 +215,7 @@ export default {
   }
 
   .v-dialog {
-    border-radius: 20px;
+    border-radius: 25px;
   }
 }
 
