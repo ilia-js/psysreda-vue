@@ -70,7 +70,7 @@ const initData = {
 }
 
 export default {
-  name: 'IntroductionCard',
+  name: 'ContactMeCard',
   components: { SimpleCard },
   data () {
     return {

@@ -6,19 +6,19 @@
       <br/> <s class="special-second-title">Как перестать думать только о других</s><span
       class="special-exclamation-mark">!</span>
     </h1>
-    <IntroductionCard/>
+    <ContactMeCard/>
     <AudienceCard class="mt-16 mb-16"/>
     <TestingCard class="mt-16 mb-16"/>
   </div>
 </template>
 <script>
-import IntroductionCard from '../components/cards/IntroductionCard'
+import ContactMeCard from '../components/cards/ContactMeCard'
 import TestingCard from '../components/cards/TestingCard'
 import AudienceCard from '../components/cards/AudienceCard'
 
 export default {
   components: {
-    IntroductionCard,
+    ContactMeCard,
     TestingCard,
     AudienceCard
   }
