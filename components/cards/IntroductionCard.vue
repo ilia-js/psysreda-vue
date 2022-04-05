@@ -4,7 +4,7 @@
       <div class="bigger-title">Татьяна Гвоздовская,</div>
       <div class="smaller-title">психотерапевт</div>
       <v-img
-        src="img/logo.png"
+        src="/img/logo.png"
         max-width="280px"
         height="350"
         class="rounded-1 mt-6 d-inline-block mx-auto"

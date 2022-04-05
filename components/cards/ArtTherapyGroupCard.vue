@@ -4,9 +4,9 @@
       АРТ-ТЕРАПЕВТИЧЕСКАЯ ГРУППА<BR/>“ВЕСНА ТВОЕЙ ДУШИ”
     </template>
     <v-row class="justify-space-around">
-      <v-col class="">
+      <v-col>
         <v-img
-          src="img/art-therapy.jpg"
+          src="/img/art-therapy.jpg"
           max-width="250"
           class="rounded-2 img-fluid mx-auto"
         />
