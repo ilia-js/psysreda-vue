@@ -90,6 +90,12 @@ export default {
       if (!this.valid) {
         return
       }
+      let text = 'Кто-то запросил он-лайн связь на сайте!\n'
+      text += 'Дата и время запроса:\n' + this.$moment().format('DD.MM.YYYY HH:mm') + '\n'
+      text += 'Имя:\n' + this.formData.name
+      text += '\nТелефон:\n' + this.formData.phone
+      text += '\nСпособ связи:\n' + this.formData.connector
+      this.$telegram(text)
       this.status = 'data_sent'
     },
     close () {
