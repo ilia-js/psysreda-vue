@@ -1,6 +1,11 @@
 <template>
   <div class="index-container">
-    <h1>Как научиться заботиться о себе?<br/> Как перестать думать только о других?</h1>
+    <h1>
+      <span class="special-first-title">Как научиться заботиться о себе</span><span
+      class="special-exclamation-mark">?</span>
+      <br/> <s class="special-second-title">Как перестать думать только о других</s><span
+      class="special-exclamation-mark">!</span>
+    </h1>
     <IntroductionCard/>
     <AudienceCard class="mt-16 mb-16"/>
     <TestingCard class="mt-16 mb-16"/>
@@ -34,5 +39,18 @@ h1 {
 .simple-card {
   max-width: 480px;
   margin: 0 auto;
+}
+
+.special-exclamation-mark {
+  padding-left: 3px;
+}
+
+.special-first-title {
+  color: #333;
+}
+
+.special-second-title {
+  color: #333;
+  font-size: 28px;
 }
 </style>

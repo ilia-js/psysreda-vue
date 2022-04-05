@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .simple-card {
-  border: 2px dashed #ccc;
+  border: 2px dashed #bbb;
   border-radius: 48px;
 }
 </style>

@@ -77,8 +77,8 @@ export default {
   margin: 15px auto 0;
 
   &__custom-list {
-    border: 1px dashed #ddd;
-    border-radius: 15px;
+    border: 2px dashed #bbb;
+    border-radius: 48px;
     padding: 30px 20px 40px;
     margin: 0 90px;
     min-height: 280px;

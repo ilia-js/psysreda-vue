@@ -11,7 +11,7 @@
           class="rounded-2 img-fluid mx-auto"
         />
       </v-col>
-      <v-col class="pt-12 pl-13">
+      <v-col class="pt-9 pl-13">
         <div class="d-inline-block">
           <div class="text-right">
             <v-btn class="black-gray-light-button ml-0 mt-0 py-2" @click="openDialog('audience')"
@@ -28,7 +28,7 @@
                    depressed small>
               Что вы получите?
             </v-btn>
-            <v-btn small class="black-gray-button ml-0 mt-14"
+            <v-btn small class="black-gray-button ml-0 mt-16"
                    @click="openDialog('place_price')"
                    depressed>
               Сколько стоит, где и когда?

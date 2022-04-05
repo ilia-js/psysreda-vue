@@ -39,7 +39,7 @@
   width: 100%;
   padding-top: 0px;
   text-align: center;
-  border-top: 2px dashed #aaa
+  border-top: 2px dashed #aaa;
 
 }
 
