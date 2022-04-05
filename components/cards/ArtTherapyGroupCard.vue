@@ -28,13 +28,22 @@
                    depressed small>
               Что вы получите?
             </v-btn>
-            <v-btn small class="black-gray-button ml-0 mt-16"
+            <div/>
+            <v-btn small class="black-gray-button ml-0 mt-12"
                    @click="openDialog('place_price')"
                    depressed>
-              Сколько стоит, где и когда?
+              Сколько стоит? Где и когда?
             </v-btn>
+            <div/>
           </div>
         </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-btn class="psysreda-red-button mt-8" @click="open">
+          Записаться
+        </v-btn>
       </v-col>
     </v-row>
     <v-dialog width="600" v-model="show">
@@ -126,11 +135,57 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    <v-dialog
+      v-model="showSignUp"
+      width="500"
+      persistent
+    >
+      <v-card class="px-2">
+        <v-card-title class="pt-5 pb-4">
+          Запись на группу
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="pt-6 pb-8">
+          <v-form v-model="valid" @submit.prevent="contact" ref="form" v-if="status === 'init'">
+            <v-text-field v-model="formData.name" label="Ваше имя" :rules="[formValidators.requiredName]"
+                          class="local-input"/>
+            <v-text-field v-model="formData.phone" label="Ваш телефон" :rules="[formValidators.requiredPhone]"
+                          class="local-input"/>
+            <v-radio-group v-model="formData.connector" row :rules="[formValidators.requiredConnector]">
+              <v-radio label="Телефон" value="phone"/>
+              <v-radio label="WhatsApp" value="whatsapp"/>
+              <v-radio label="Telegram" value="telegram"/>
+            </v-radio-group>
+          </v-form>
+          <div class="result-message" v-else>
+            Спасибо! Я скоро с Вами свяжусь.
+          </div>
+        </v-card-text>
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn @click="status === 'init' ? close() : cancel()" small depressed class="my-2">
+            Закрыть
+          </v-btn>
+          <v-btn @click="contact" small depressed class="my-2 ml-5 psysreda-pink-button" v-if="status === 'init'">
+            СВЯЗАТЬСЯ
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </SimpleCard>
 </template>
 
 <script>
 import SimpleCard from '../SimpleCard'
+import { formValidators } from '../../helpers/formValidators'
+
+const initData = {
+  name: '',
+  phone: '',
+  connector: ''
+}
 
 export default {
   name: 'ArtTherapyGroupCard',
@@ -138,6 +193,11 @@ export default {
   data () {
     return {
       show: false,
+      showSignUp: false,
+      valid: false,
+      formData: { ...initData },
+      status: 'init',
+      formValidators,
       items: [
         {
           name: 'audience',
@@ -163,9 +223,34 @@ export default {
     openDialog (name) {
       this.chosenItemName = name
       this.show = true
+    },
+    open () {
+      this.showSignUp = true
+    },
+    contact () {
+      this.$refs.form.validate()
+      if (!this.valid) {
+        return
+      }
+      let text = 'Кто-то запросил запись на арт-терапевтическую группу!\n'
+      text += 'Дата и время запроса:\n' + this.$moment().format('DD.MM.YYYY HH:mm') + '\n'
+      text += 'Имя:\n' + this.formData.name
+      text += '\nТелефон:\n' + this.formData.phone
+      text += '\nСпособ связи:\n' + this.formData.connector
+      this.$telegram(text)
+      this.status = 'data_sent'
+    },
+    close () {
+      this.showSignUp = false
+    },
+    cancel () {
+      this.close()
+      this.formData = { ...initData }
+      setTimeout(() => {
+        this.status = 'init'
+      }, 300)
     }
   }
-
 }
 </script>
 

@@ -125,13 +125,6 @@ export default {
   max-width: 90%;
 }
 
-.result-message {
-  font-size: 16px;
-  color: #111;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 ::v-deep {
   .simple-card-text {
     padding-top: 0px !important;
