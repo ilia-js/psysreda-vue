@@ -111,5 +111,9 @@ export default {
   .document-image {
     max-width: 90%;
   }
+
+  .v-dialog {
+    border-radius: 25px !important;
+  }
 }
 </style>
