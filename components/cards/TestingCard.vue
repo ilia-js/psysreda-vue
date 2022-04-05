@@ -19,7 +19,7 @@
           </v-btn>
         </div>
       </template>
-      <v-card>
+      <v-card class="px-2">
         <v-card-title class="pt-5 pb-4">
           Тест на созависимость
         </v-card-title>
@@ -212,6 +212,10 @@ export default {
   .v-label {
     color: #111 !important;
     font-style: italic;
+  }
+
+  .v-dialog {
+    border-radius: 20px;
   }
 }
 
