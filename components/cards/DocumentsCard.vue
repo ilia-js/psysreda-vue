@@ -25,7 +25,7 @@
     </div>
     <v-dialog v-model="documentDialog" max-width="600">
       <v-card min-height="500">
-        <v-card-title class="pt-7 pb-5" v-html="this.currentTitle">
+        <v-card-title class="pt-7 pb-5" v-html="currentTitle">
         </v-card-title>
         <v-card-text class="text-center pb-5">
           <img class="document-image" :src="documents[currentIndex].image"/>
