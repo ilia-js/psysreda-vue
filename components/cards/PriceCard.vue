@@ -10,9 +10,12 @@
       <v-radio
         v-for="item in items"
         :key="item.name"
-        :label="item.label"
         :value="item.name"
-      ></v-radio>
+      >
+        <template slot="label">
+          <span v-html="item.label"/>
+        </template>
+      </v-radio>
     </v-radio-group>
     <div class="text-center">
       <v-btn class="psysreda-red-button mt-5 mb-2" @click="show=true" :disabled="!chosenItemName">
@@ -25,8 +28,7 @@
         <v-btn @click="show=false" text rounded class="mr-0 ml-auto d-block" small>
           <v-icon>mdi-close</v-icon>
         </v-btn>
-        <v-card-title class="pt-0">
-          {{ items.find(x => x.name === chosenItemName).label }}
+        <v-card-title class="pt-0" v-html="items.find(x => x.name === chosenItemName).label">
         </v-card-title>
         <v-card-text class="pt-5 pb-7">
           <div v-if="chosenItemName === 'initial_consultation'">
@@ -95,7 +97,7 @@
           <div v-if="chosenItemName === 'art_therapeutic_group'">
             <ul>
               <li>
-                Арт-терапевтическая группа "Весна твоей души"
+                Арт-терапевтическая <span class="text-no-wrap">группа</span> "Весна твоей души"
               </li>
               <li>
                 Состоится с <b>16 по 17 апреля</b> 2022 года
@@ -137,7 +139,7 @@ export default {
       },
       {
         name: 'art_therapeutic_group',
-        label: 'Арт-Терапевтическая группа (г.Тбилиси)'
+        label: 'Арт-Терапевтическая <span class="text-no-wrap">группа</span> (г.Тбилиси)'
       }
     ],
     chosenItemName: null

@@ -1,7 +1,7 @@
 <template>
   <SimpleCard>
     <template v-slot:title>
-      АРТ-ТЕРАПЕВТИЧЕСКАЯ ГРУППА<br/>“ВЕСНА ТВОЕЙ ДУШИ”
+      АРТ-ТЕРАПЕВТИЧЕСКАЯ <span class="text-no-wrap">ГРУППА</span><br/>“ВЕСНА ТВОЕЙ ДУШИ”
     </template>
     <v-row class="justify-space-around">
       <v-col>
