@@ -9,7 +9,7 @@
             <span v-if="item.label" class="carousel-container__label">
               {{ item.label }}
             </span>
-            <span v-if="item.text" v-html="'<br/>' + item.text">
+            <span v-if="item.text" v-html="'<br/>' + item.text" class="carousel-container__text">
             </span>
           </v-list-item>
           <div class="text-center">
@@ -74,7 +74,7 @@ export default {
 
 .carousel-container {
   max-width: 650px;
-  margin: 15px auto 0;
+  margin: 15px auto 40px;
 
   &__custom-list {
     border: 2px dashed #bbb !important;
@@ -94,6 +94,18 @@ export default {
     display: block;
     font-size: 22px;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 18px
+    }
+    @media (max-width: 440px) {
+      font-size: 16px
+    }
+  }
+
+  &__text {
+    @media (max-width: 440px) {
+      font-size: 0.9em;
+    }
   }
 
   .v-list-item {
@@ -114,6 +126,10 @@ export default {
 
   .v-dialog {
     border-radius: 25px !important;
+  }
+
+  .carousel-container, .v-carousel__item {
+    height: auto !important;
   }
 }
 </style>
