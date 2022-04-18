@@ -1,6 +1,6 @@
-Репозиторий Таниного сайта psysreda.ru. Сайт написан на NUXT и сейчас используется режим статики.
-Сайт на данный момент является одностраничником и выложен на хостинге ruweb.net.
-На сайте есть тест, отправка уведомлений на телеграм из формы записи и о прохождении теста.
+Repository of Prysreda.ru. Includes condependency test, sending results of test to site owner. Also there is a form to
+connect with site owner.
 
-- в ветке master не используется vuetify и подключены bootstrap и jquery в nuxt.config.js (сайт-одностраничник) 
-- в ветке ver2.0 - используется vuetify, bootstrap и jquery убраны
+- Branch master - It's a landing page with design taken from Tilda. Use Nuxt, Bootstrap and Jquery.
+- Branch ver2.0 - New version of site, with several page, custom design by Ilya D. Use Nuxt and Vuetify. Since april
+  2022.
