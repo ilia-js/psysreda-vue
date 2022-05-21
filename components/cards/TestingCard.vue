@@ -1,5 +1,8 @@
 <template>
   <SimpleCard>
+    <!--    <div v-if="isTestEnvironment">-->
+    <!--      ::: Test environment :::-->
+    <!--    </div>-->
     <template v-slot:title>
       Нужна ли мне работа<br/> с со-зависимостью?
     </template>
@@ -139,6 +142,7 @@
 <script>
 import SimpleCard from '../SimpleCard'
 import { QUESTIONS } from '../../settings/testing'
+import { isTestEnvironment } from '../../helpers'
 
 export default {
   name: 'TestingCard',
@@ -165,7 +169,8 @@ export default {
     },
     percentAnswered () {
       return Math.ceil((this.currentQuestionIndex + 1) * (100 / this.questionsNumber))
-    }
+    },
+    isTestEnvironment
   },
   methods: {
     startTest () {

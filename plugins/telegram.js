@@ -1,3 +1,5 @@
+import { isTestEnvironment } from '../helpers'
+
 export default (context, inject) => {
   // This function send notification to telegram
   const telegram = text => {
@@ -6,7 +8,7 @@ export default (context, inject) => {
     const url = new URL('https://psysreda.ru/public/telegram')
     const params = {
       text: text,
-      mode: localStorage.getItem('test_env') !== null ? 'test' : 'prod'
+      mode: isTestEnvironment() ? 'test' : 'prod'
     }
     url.search = new URLSearchParams(params).toString()
     fetch(url)
