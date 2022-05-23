@@ -155,6 +155,9 @@
 import SimpleCard from "../SimpleCard";
 import { QUESTIONS } from "../../settings/testing";
 import { isTestEnvironment } from "../../helpers";
+import { notifySiteOwner } from "@/api/api";
+import { format } from "date-fns";
+import { DATE_TIME_FORMAT } from "@/settings/dates";
 
 export default {
   name: "TestingCard",
@@ -201,16 +204,16 @@ export default {
       this.total += Number(this.currentAnswer);
       this.currentAnswer = null;
     },
-    processResult() {
+    async processResult() {
       this.total += Number(this.currentAnswer);
       this.isTestFinished = true;
       let text = "Кто-то заполнил тест на сайте!\n";
       text +=
         "Дата и время заполнения:\n" +
-        this.$moment().format("DD.MM.YYYY HH:mm") +
+        format(new Date(), DATE_TIME_FORMAT) +
         "\n";
       text += "Сумма теста:\n" + this.total;
-      this.$telegram(text);
+      await notifySiteOwner(text);
     },
     close() {
       this.show = false;
@@ -299,12 +302,5 @@ p {
   .dialog-title {
     position: relative;
   }
-}
-.test-environment {
-  position: absolute;
-  left: 40%;
-  top: 0;
-  font-size: 9px !important;
-  color: #999;
 }
 </style>

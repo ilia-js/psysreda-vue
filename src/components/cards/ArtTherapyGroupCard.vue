@@ -173,7 +173,12 @@
     </v-dialog>
     <v-dialog v-model="showSignUp" width="500" persistent>
       <v-card class="px-2">
-        <v-card-title class="pt-5 pb-4"> Запись на группу </v-card-title>
+        <v-card-title class="pt-5 pb-4">
+          Запись на группу
+          <div v-if="isTestEnvironment" class="test-environment">
+            ::: Test environment :::
+          </div>
+        </v-card-title>
         <v-divider></v-divider>
         <v-card-text class="pt-6 pb-8">
           <v-form
@@ -238,6 +243,10 @@
 <script>
 import SimpleCard from "../SimpleCard";
 import { formValidators } from "../../helpers/formValidators";
+import { notifySiteOwner } from "@/api/api";
+import { format } from "date-fns";
+import { DATE_TIME_FORMAT } from "@/settings/dates";
+import { isTestEnvironment } from "@/helpers";
 
 const initData = {
   name: "",
@@ -277,6 +286,9 @@ export default {
       chosenItemName: null,
     };
   },
+  computed: {
+    isTestEnvironment,
+  },
   methods: {
     openDialog(name) {
       this.chosenItemName = name;
@@ -285,20 +297,18 @@ export default {
     open() {
       this.showSignUp = true;
     },
-    contact() {
+    async contact() {
       this.$refs.form.validate();
       if (!this.valid) {
         return;
       }
       let text = "Кто-то запросил запись на арт-терапевтическую группу!\n";
       text +=
-        "Дата и время запроса:\n" +
-        this.$moment().format("DD.MM.YYYY HH:mm") +
-        "\n";
+        "Дата и время запроса:\n" + format(new Date(), DATE_TIME_FORMAT) + "\n";
       text += "Имя:\n" + this.formData.name;
       text += "\nТелефон:\n" + this.formData.phone;
       text += "\nСпособ связи:\n" + this.formData.connector;
-      this.$telegram(text);
+      await notifySiteOwner(text);
       this.status = "data_sent";
     },
     close() {
