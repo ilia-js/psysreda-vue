@@ -156,6 +156,8 @@ import SimpleCard from "../SimpleCard";
 import { QUESTIONS } from "../../settings/testing";
 import { isTestEnvironment } from "../../helpers";
 import { notifySiteOwner } from "@/api/api";
+import { format } from "date-fns";
+import { DATE_TIME_FORMAT } from "@/settings/dates";
 
 export default {
   name: "TestingCard",
@@ -208,7 +210,7 @@ export default {
       let text = "Кто-то заполнил тест на сайте!\n";
       text +=
         "Дата и время заполнения:\n" +
-        this.$moment().format("DD.MM.YYYY HH:mm") +
+        format(new Date(), DATE_TIME_FORMAT) +
         "\n";
       text += "Сумма теста:\n" + this.total;
       await notifySiteOwner(text);

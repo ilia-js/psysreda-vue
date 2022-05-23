@@ -2,6 +2,7 @@
 node_modules
 /dist
 
+/_PsySredaPhpApi_
 
 # local env files
 .env

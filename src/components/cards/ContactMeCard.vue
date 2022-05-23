@@ -86,6 +86,8 @@
 import SimpleCard from "../SimpleCard";
 import { formValidators } from "../../helpers/formValidators";
 import { notifySiteOwner } from "@/api/api";
+import { format } from "date-fns";
+import { DATE_TIME_FORMAT } from "@/settings/dates";
 
 const initData = {
   name: "",
@@ -116,9 +118,7 @@ export default {
       }
       let text = "Кто-то запросил он-лайн связь на сайте!\n";
       text +=
-        "Дата и время запроса:\n" +
-        this.$moment().format("DD.MM.YYYY HH:mm") +
-        "\n";
+        "Дата и время запроса:\n" + format(new Date(), DATE_TIME_FORMAT) + "\n";
       text += "Имя:\n" + this.formData.name;
       text += "\nТелефон:\n" + this.formData.phone;
       text += "\nСпособ связи:\n" + this.formData.connector;

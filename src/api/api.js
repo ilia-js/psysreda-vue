@@ -1,6 +1,7 @@
 import axios from "axios";
 import { LOCAL_STORAGE_TOKEN_FIELD } from "@/settings/auth";
 import { isTestEnvironment } from "@/helpers";
+import { API_ROUTES } from "@/settings/api";
 
 const AXIOS_METHODS = {
   get: "get",
@@ -57,5 +58,8 @@ export const notifySiteOwner = async (text) => {
     text: text,
     mode: isTestEnvironment() ? "test" : "prod",
   };
-  return await apiRequest({ data });
+  return await apiRequest({
+    path: API_ROUTES.TELEGRAM_SEND,
+    data,
+  });
 };

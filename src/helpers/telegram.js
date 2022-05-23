@@ -5,7 +5,7 @@ export default (context, inject) => {
   const telegram = (text) => {
     console.log("%c%s", "color: green", "Send with telegram:");
     console.log("%c%s", "color: brown", text);
-    const url = new URL("");
+    const url = new URL("/public/telegram");
     const params = {
       text: text,
       mode: isTestEnvironment() ? "test" : "prod",
