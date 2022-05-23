@@ -173,7 +173,12 @@
     </v-dialog>
     <v-dialog v-model="showSignUp" width="500" persistent>
       <v-card class="px-2">
-        <v-card-title class="pt-5 pb-4"> Запись на группу </v-card-title>
+        <v-card-title class="pt-5 pb-4">
+          Запись на группу
+          <div v-if="isTestEnvironment" class="test-environment">
+            ::: Test environment :::
+          </div>
+        </v-card-title>
         <v-divider></v-divider>
         <v-card-text class="pt-6 pb-8">
           <v-form
@@ -241,6 +246,7 @@ import { formValidators } from "../../helpers/formValidators";
 import { notifySiteOwner } from "@/api/api";
 import { format } from "date-fns";
 import { DATE_TIME_FORMAT } from "@/settings/dates";
+import { isTestEnvironment } from "@/helpers";
 
 const initData = {
   name: "",
@@ -279,6 +285,9 @@ export default {
       ],
       chosenItemName: null,
     };
+  },
+  computed: {
+    isTestEnvironment,
   },
   methods: {
     openDialog(name) {

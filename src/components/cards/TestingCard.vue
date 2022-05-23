@@ -303,11 +303,4 @@ p {
     position: relative;
   }
 }
-.test-environment {
-  position: absolute;
-  left: 40%;
-  top: 0;
-  font-size: 9px !important;
-  color: #999;
-}
 </style>

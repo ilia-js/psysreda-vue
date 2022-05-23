@@ -59,9 +59,10 @@ export default {
 
 .footer-card {
   width: 100%;
+  height: 75px;
   padding-top: 0px;
   text-align: center;
-  border-top: 2px dashed #aaa;
+  border-top: 2px dashed #aaa !important;
 }
 
 .v-card__text {
