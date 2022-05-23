@@ -1,5 +1,6 @@
 import axios from "axios";
 import { LOCAL_STORAGE_TOKEN_FIELD } from "@/settings/auth";
+import { isTestEnvironment } from "@/helpers";
 
 const AXIOS_METHODS = {
   get: "get",
@@ -49,4 +50,12 @@ export const apiRequest = async (config) => {
     // this.toastError(Lang.UNKNOWN_ERROR);
   }
   return res.data;
+};
+
+export const notifySiteOwner = async (text) => {
+  const data = {
+    text: text,
+    mode: isTestEnvironment() ? "test" : "prod",
+  };
+  return await apiRequest({ data });
 };

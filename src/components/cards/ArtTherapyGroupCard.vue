@@ -238,6 +238,7 @@
 <script>
 import SimpleCard from "../SimpleCard";
 import { formValidators } from "../../helpers/formValidators";
+import { notifySiteOwner } from "@/api/api";
 
 const initData = {
   name: "",
@@ -285,7 +286,7 @@ export default {
     open() {
       this.showSignUp = true;
     },
-    contact() {
+    async contact() {
       this.$refs.form.validate();
       if (!this.valid) {
         return;
@@ -298,7 +299,7 @@ export default {
       text += "Имя:\n" + this.formData.name;
       text += "\nТелефон:\n" + this.formData.phone;
       text += "\nСпособ связи:\n" + this.formData.connector;
-      this.$telegram(text);
+      await notifySiteOwner(text);
       this.status = "data_sent";
     },
     close() {
