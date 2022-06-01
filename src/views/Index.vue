@@ -7,20 +7,20 @@
         >Как перестать <s>думать только о других</s></span
       ><span class="special-exclamation-mark">!</span>
     </h1>
-    <ContactMeCard />
+    <contactCard />
     <AudienceCard class="mt-16 mb-16" />
     <TestingCard class="mt-16 mb-16" />
   </div>
 </template>
 <script>
-import ContactMeCard from "../components/cards/ContactMeCard";
+import contactCard from "../components/cards/ContactCard";
 import TestingCard from "../components/cards/TestingCard";
 import AudienceCard from "../components/cards/AudienceCard";
 
 export default {
   name: "IndexComponent",
   components: {
-    ContactMeCard,
+    contactCard,
     TestingCard,
     AudienceCard,
   },
