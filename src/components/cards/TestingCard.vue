@@ -112,6 +112,9 @@
                 степень контрзависимых моделей
               </li>
             </ul>
+            <v-btn class="psysreda-red-button mt-6" @click="openContactDialog">
+              Связаться ОН&#8209;ЛАЙН
+            </v-btn>
           </div>
         </v-card-text>
 
@@ -149,19 +152,21 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <ContactDialog v-model="showContactDialog" />
   </SimpleCard>
 </template>
 <script>
-import SimpleCard from "../SimpleCard";
-import { QUESTIONS } from "../../settings/testing";
-import { isTestEnvironment } from "../../helpers";
+import SimpleCard from "@/components/SimpleCard";
+import { QUESTIONS } from "@/settings/testing";
+import { isTestEnvironment } from "@/helpers";
 import { notifySiteOwner } from "@/api/api";
 import { format } from "date-fns";
 import { DATE_TIME_FORMAT } from "@/settings/dates";
+import ContactDialog from "@/components/dialogs/ContactDialog";
 
 export default {
   name: "TestingCard",
-  components: { SimpleCard },
+  components: { SimpleCard, ContactDialog },
   data() {
     return {
       questions: [],
@@ -171,6 +176,7 @@ export default {
       isTestFinished: false,
       currentAnswer: null,
       status: "not_started",
+      showContactDialog: false,
     };
   },
   created() {},
@@ -234,6 +240,9 @@ export default {
         this.currentAnswer = null;
       }, 300);
     },
+    openContactDialog() {
+      this.showContactDialog = true;
+    },
   },
 };
 </script>
@@ -273,7 +282,7 @@ p {
     display: flex;
     margin-bottom: 20px;
     font-size: 16px;
-    font-family: Tahoma;
+    font-family: Tahoma, serif;
 
     b {
       padding-left: 10px;
@@ -295,7 +304,7 @@ p {
     padding-left: 0;
 
     b {
-      font-family: Tahoma;
+      font-family: Tahoma, serif;
       font-size: 0.9em;
     }
   }
