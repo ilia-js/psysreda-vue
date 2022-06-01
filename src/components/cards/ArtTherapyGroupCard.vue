@@ -177,6 +177,7 @@
       v-model="showSignUp"
       :title="lang.titleEnrollArtTherapyGroup"
       :button-text="lang.buttonEnrollArtTherapyGroupApprove"
+      :type="clientConnectionTypes.enrollArtTherapyGroup"
     />
   </SimpleCard>
 </template>
@@ -190,6 +191,7 @@ import { DATE_TIME_FORMAT } from "@/settings/dates";
 import { isTestEnvironment } from "@/helpers";
 import ContactDialog from "@/components/dialogs/ContactDialog";
 import { lang } from "@/settings/lang";
+import { clientConnectionTypes } from "@/settings";
 
 const initData = {
   name: "",
@@ -228,6 +230,7 @@ export default {
       ],
       chosenItemName: null,
       lang,
+      clientConnectionTypes,
     };
   },
   computed: {

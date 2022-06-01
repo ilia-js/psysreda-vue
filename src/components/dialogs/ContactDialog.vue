@@ -90,6 +90,7 @@ export default {
     value: Boolean,
     title: String,
     buttonText: String,
+    type: String,
   },
   data() {
     return {
@@ -108,7 +109,8 @@ export default {
       if (!this.valid) {
         return;
       }
-      let text = "Кто-то запросил он-лайн связь на сайте!\n";
+      let text = "Тип запроса:\n";
+      text += `${this.type}\n`;
       text +=
         "Дата и время запроса:\n" + format(new Date(), DATE_TIME_FORMAT) + "\n";
       text += "Имя:\n" + this.formData.name;

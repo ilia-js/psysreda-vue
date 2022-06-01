@@ -158,6 +158,7 @@
       v-model="showContactDialog"
       :title="lang.titleContact"
       :button-text="lang.buttonContactApprove"
+      :type="clientConnectionTypes.connectOnlineAfterTest"
     />
   </SimpleCard>
 </template>
@@ -170,6 +171,7 @@ import { format } from "date-fns";
 import { DATE_TIME_FORMAT } from "@/settings/dates";
 import ContactDialog from "@/components/dialogs/ContactDialog";
 import { lang } from "@/settings/lang";
+import { clientConnectionTypes } from "@/settings";
 
 export default {
   name: "TestingCard",
@@ -185,6 +187,7 @@ export default {
       status: "not_started",
       showContactDialog: false,
       lang,
+      clientConnectionTypes,
     };
   },
   created() {},

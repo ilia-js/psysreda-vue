@@ -24,6 +24,7 @@
       v-model="show"
       :title="lang.titleContact"
       :button-text="lang.buttonContactApprove"
+      :type="clientConnectionTypes.connectOnline"
     />
   </SimpleCard>
 </template>
@@ -32,14 +33,16 @@
 import SimpleCard from "../SimpleCard";
 import ContactDialog from "@/components/dialogs/ContactDialog";
 import { lang } from "@/settings/lang";
+import { clientConnectionTypes } from "@/settings";
 
 export default {
-  name: "ContactMeCard",
+  name: "contactCard",
   components: { ContactDialog, SimpleCard },
   data() {
     return {
       show: false,
       lang,
+      clientConnectionTypes,
     };
   },
   methods: {
