@@ -18,9 +18,13 @@
     <v-btn
       class="psysreda-red-button mt-2"
       @click="open"
-      v-html="lang.contactButton"
+      v-html="lang.buttonContact"
     ></v-btn>
-    <ContactDialog v-model="show" :title="lang.contactTitle" />
+    <ContactDialog
+      v-model="show"
+      :title="lang.titleContact"
+      :button-text="lang.buttonContactApprove"
+    />
   </SimpleCard>
 </template>
 

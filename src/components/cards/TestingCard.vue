@@ -115,7 +115,7 @@
             <v-btn
               class="psysreda-red-button mt-6"
               @click="openContactDialog"
-              v-html="lang.contactButton"
+              v-html="lang.buttonContact"
             />
           </div>
         </v-card-text>
@@ -154,7 +154,11 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <ContactDialog v-model="showContactDialog" :title="lang.contactTitle" />
+    <ContactDialog
+      v-model="showContactDialog"
+      :title="lang.titleContact"
+      :button-text="lang.buttonContactApprove"
+    />
   </SimpleCard>
 </template>
 <script>

@@ -65,7 +65,7 @@
           class="my-2 ml-5 psysreda-pink-button"
           v-if="status === 'init'"
         >
-          СВЯЗАТЬСЯ
+          {{ buttonText }}
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -89,6 +89,7 @@ export default {
   props: {
     value: Boolean,
     title: String,
+    buttonText: String,
   },
   data() {
     return {

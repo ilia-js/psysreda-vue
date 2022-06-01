@@ -176,6 +176,7 @@
     <ContactDialog
       v-model="showSignUp"
       :title="lang.titleEnrollArtTherapyGroup"
+      :button-text="lang.buttonEnrollArtTherapyGroupApprove"
     />
   </SimpleCard>
 </template>
