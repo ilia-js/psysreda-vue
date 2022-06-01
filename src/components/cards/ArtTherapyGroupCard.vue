@@ -57,9 +57,11 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-btn class="psysreda-red-button mt-8" @click="open">
-          Записаться
-        </v-btn>
+        <v-btn
+          class="psysreda-red-button mt-8"
+          @click="open"
+          v-html="lang.buttonEnrollArtTherapyGroup"
+        />
       </v-col>
     </v-row>
     <v-dialog width="600" v-model="show">
@@ -171,82 +173,22 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-    <v-dialog v-model="showSignUp" width="500" persistent>
-      <v-card class="px-2">
-        <v-card-title class="pt-5 pb-4">
-          Запись на группу
-          <div v-if="isTestEnvironment" class="test-environment">
-            ::: Test environment :::
-          </div>
-        </v-card-title>
-        <v-divider></v-divider>
-        <v-card-text class="pt-6 pb-8">
-          <v-form
-            v-model="valid"
-            @submit.prevent="contact"
-            ref="form"
-            v-if="status === 'init'"
-          >
-            <v-text-field
-              v-model="formData.name"
-              label="Ваше имя"
-              :rules="[formValidators.requiredName]"
-              class="local-input"
-            />
-            <v-text-field
-              v-model="formData.phone"
-              label="Ваш телефон"
-              :rules="[formValidators.requiredPhone]"
-              class="local-input"
-            />
-            <v-radio-group
-              v-model="formData.connector"
-              row
-              :rules="[formValidators.requiredConnector]"
-            >
-              <v-radio label="Телефон" value="phone" />
-              <v-radio label="WhatsApp" value="whatsapp" />
-              <v-radio label="Telegram" value="telegram" />
-            </v-radio-group>
-          </v-form>
-          <div class="result-message" v-else>
-            Спасибо! Я скоро с Вами свяжусь.
-          </div>
-        </v-card-text>
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            @click="status === 'init' ? close() : cancel()"
-            small
-            depressed
-            class="my-2"
-          >
-            Закрыть
-          </v-btn>
-          <v-btn
-            @click="contact"
-            small
-            depressed
-            class="my-2 ml-5 psysreda-pink-button"
-            v-if="status === 'init'"
-          >
-            СВЯЗАТЬСЯ
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <ContactDialog
+      v-model="showSignUp"
+      :title="lang.titleEnrollArtTherapyGroup"
+    />
   </SimpleCard>
 </template>
 
 <script>
-import SimpleCard from "../SimpleCard";
-import { formValidators } from "../../helpers/formValidators";
+import SimpleCard from "@/components/SimpleCard";
+import { formValidators } from "@/helpers/formValidators";
 import { notifySiteOwner } from "@/api/api";
 import { format } from "date-fns";
 import { DATE_TIME_FORMAT } from "@/settings/dates";
 import { isTestEnvironment } from "@/helpers";
+import ContactDialog from "@/components/dialogs/ContactDialog";
+import { lang } from "@/settings/lang";
 
 const initData = {
   name: "",
@@ -256,7 +198,7 @@ const initData = {
 
 export default {
   name: "ArtTherapyGroupCard",
-  components: { SimpleCard },
+  components: { SimpleCard, ContactDialog },
   data() {
     return {
       show: false,
@@ -284,6 +226,7 @@ export default {
         },
       ],
       chosenItemName: null,
+      lang,
     };
   },
   computed: {

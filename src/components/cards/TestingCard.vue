@@ -112,9 +112,11 @@
                 степень контрзависимых моделей
               </li>
             </ul>
-            <v-btn class="psysreda-red-button mt-6" @click="openContactDialog">
-              Связаться ОН&#8209;ЛАЙН
-            </v-btn>
+            <v-btn
+              class="psysreda-red-button mt-6"
+              @click="openContactDialog"
+              v-html="lang.contactButton"
+            />
           </div>
         </v-card-text>
 
@@ -152,7 +154,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <ContactDialog v-model="showContactDialog" />
+    <ContactDialog v-model="showContactDialog" :title="lang.contactTitle" />
   </SimpleCard>
 </template>
 <script>
@@ -163,6 +165,7 @@ import { notifySiteOwner } from "@/api/api";
 import { format } from "date-fns";
 import { DATE_TIME_FORMAT } from "@/settings/dates";
 import ContactDialog from "@/components/dialogs/ContactDialog";
+import { lang } from "@/settings/lang";
 
 export default {
   name: "TestingCard",
@@ -177,6 +180,7 @@ export default {
       currentAnswer: null,
       status: "not_started",
       showContactDialog: false,
+      lang,
     };
   },
   created() {},

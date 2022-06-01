@@ -7,7 +7,7 @@
   >
     <v-card class="px-2">
       <v-card-title class="pt-5 pb-4">
-        Связаться ОН&#8209;ЛАЙН
+        <span v-html="title"></span>
         <div v-if="isTestEnvironment" class="test-environment">
           ::: Test environment :::
         </div>
@@ -88,6 +88,7 @@ export default {
   name: "ContactDialog",
   props: {
     value: Boolean,
+    title: String,
   },
   data() {
     return {

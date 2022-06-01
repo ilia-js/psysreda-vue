@@ -15,16 +15,19 @@
       то значит ты <b>готов к изменениям</b> <br />и мы сможем начать совместную
       работу
     </p>
-    <v-btn class="psysreda-red-button mt-2" @click="open">
-      Связаться ОН&#8209;ЛАЙН
-    </v-btn>
-    <ContactDialog v-model="show" />
+    <v-btn
+      class="psysreda-red-button mt-2"
+      @click="open"
+      v-html="lang.contactButton"
+    ></v-btn>
+    <ContactDialog v-model="show" :title="lang.contactTitle" />
   </SimpleCard>
 </template>
 
 <script>
 import SimpleCard from "../SimpleCard";
 import ContactDialog from "@/components/dialogs/ContactDialog";
+import { lang } from "@/settings/lang";
 
 export default {
   name: "ContactMeCard",
@@ -32,6 +35,7 @@ export default {
   data() {
     return {
       show: false,
+      lang,
     };
   },
   methods: {
