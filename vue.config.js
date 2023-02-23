@@ -4,4 +4,10 @@ module.exports = defineConfig({
   devServer: {
     host: "localhost",
   },
+  chainWebpack: (config) => {
+    config.plugin("html").tap((args) => {
+      args[0].title = "Татьяна Гвоздовская - психотерапевт";
+      return args;
+    });
+  },
 });
