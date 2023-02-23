@@ -1,10 +1,10 @@
 <template>
   <div class="index-container">
     <h1>
-      <span class="special-first-title">Как научиться заботиться о себе</span
-      ><span class="special-exclamation-mark">?</span> <br />
-      <span class="special-second-title"
+      <span class="special-first-title"
         >Как перестать <s>думать только о других</s></span
+      ><span class="special-exclamation-mark">?</span> <br />
+      <span class="special-second-title">Как научиться заботиться о себе</span
       ><span class="special-exclamation-mark">!</span>
     </h1>
     <contactCard />
@@ -49,10 +49,10 @@ h1 {
 
 .special-first-title {
   color: #333;
+  font-size: 28px;
 }
 
 .special-second-title {
   color: #333;
-  font-size: 28px;
 }
 </style>
