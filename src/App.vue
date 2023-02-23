@@ -2,11 +2,9 @@
   <v-app>
     <v-container>
       <v-tabs v-model="menu" centered show-arrows>
-        <v-tab to="/">Главная</v-tab>
-        <v-tab to="/art-therapy-group">Арт-Терапевтическая группа</v-tab>
-        <v-tab to="/course" class="d-none">Курс "Океан Эмоций"</v-tab>
-        <v-tab to="/price">Стоимость</v-tab>
-        <v-tab to="/documents">Подтверждение образования</v-tab>
+        <v-tab v-for="tab in preparedTabs" :key="tab.path" :to="tab.path"
+          >{{ tab.label }}
+        </v-tab>
       </v-tabs>
       <v-main>
         <router-view />
@@ -26,13 +24,22 @@
 </template>
 
 <script>
+import { appTabs } from "@/settings";
+
 export default {
   name: "App",
 
   data() {
     return {
       menu: "",
+      appTabs,
     };
+  },
+
+  computed: {
+    preparedTabs() {
+      return appTabs.filter((el) => !el.disabled);
+    },
   },
 };
 </script>
