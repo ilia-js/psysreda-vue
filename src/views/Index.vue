@@ -1,5 +1,5 @@
 <template>
-  <div class="index-container">
+  <div>
     <h1>
       <span class="special-first-title"
         >Как перестать <s>думать только о других</s></span
@@ -32,10 +32,6 @@ h1 {
   margin-top: -70px;
   margin-bottom: 25px;
   color: #444;
-}
-
-.index-container {
-  padding-bottom: 50px;
 }
 
 .simple-card {

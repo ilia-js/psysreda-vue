@@ -14,24 +14,12 @@
 
       <div class="empty-space"></div>
       <v-footer fixed padless>
-        <v-card flat tile class="footer-card">
-          <v-card-text>
-            <v-btn
-              icon
-              href="https://www.facebook.com/psysreda"
-              target="_blank"
-            >
-              <v-icon color="#4267B2" size="24px">mdi-facebook</v-icon>
-            </v-btn>
-            <v-btn
-              icon
-              href="https://www.instagram.com/mypsyholog"
-              target="_blank"
-            >
-              <v-icon color="#e95950" size="24px">mdi-instagram</v-icon>
-            </v-btn>
-          </v-card-text>
-        </v-card>
+        <v-btn icon href="https://www.facebook.com/psysreda" target="_blank">
+          <v-icon color="#4267B2" size="24px">mdi-facebook</v-icon>
+        </v-btn>
+        <v-btn icon href="https://www.instagram.com/mypsyholog" target="_blank">
+          <v-icon color="#e95950" size="24px">mdi-instagram</v-icon>
+        </v-btn>
       </v-footer>
     </v-container>
   </v-app>
@@ -57,12 +45,11 @@ export default {
   margin-bottom: 100px;
 }
 
-.footer-card {
-  width: 100%;
-  height: 75px;
-  padding-top: 0px;
-  text-align: center;
-  border-top: 2px dashed #aaa !important;
+.v-footer {
+  display: flex;
+  justify-content: center;
+  height: 45px;
+  border-top: 1px dashed #aaa !important;
 }
 
 .v-card__text {

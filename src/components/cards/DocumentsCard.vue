@@ -47,7 +47,7 @@
     </div>
     <v-dialog v-model="documentDialog" max-width="600">
       <v-card min-height="500">
-        <v-card-title class="pt-7 pb-5" v-html="currentTitle"> </v-card-title>
+        <v-card-title class="pt-7 pb-5" v-html="currentTitle"></v-card-title>
         <v-card-text class="text-center pb-5">
           <img
             class="document-image"
@@ -60,8 +60,8 @@
             class="mx-auto psysreda-pink-button"
             depressed
             small
-            >Закрыть</v-btn
-          >
+            >Закрыть
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -100,6 +100,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
+
 .document-counter {
   font-size: 20px;
   font-weight: bold;
@@ -111,7 +113,7 @@ export default {
 
   &__custom-list {
     border: 2px dashed #bbb !important;
-    border-radius: 48px;
+    border-radius: $border-radius !important;
     padding: 30px 20px 40px;
     margin: 0 90px;
     min-height: 280px;

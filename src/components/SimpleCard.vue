@@ -25,8 +25,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
+
 .simple-card {
   border: 2px dashed #bbb;
-  border-radius: 48px;
+  border-radius: $border-radius !important;
 }
 </style>
