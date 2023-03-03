@@ -52,6 +52,7 @@
           <img
             class="document-image"
             :src="getDiplomaUrl(documents[currentIndex].image)"
+            alt=""
           />
         </v-card-text>
         <v-card-actions class="pb-8">
@@ -68,7 +69,7 @@
   </div>
 </template>
 <script>
-import DOCUMENTS from "@/settings/documents";
+import DOCUMENTS from "@/data/documents";
 
 export default {
   name: "DocumentsCard",

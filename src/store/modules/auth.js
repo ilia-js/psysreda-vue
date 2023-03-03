@@ -8,11 +8,7 @@ const getters = {
   },
 };
 const actions = {};
-const mutations = {
-  setToken(state, token) {
-    state.token = token;
-  },
-};
+const mutations = {};
 
 export default {
   namespaced: true,

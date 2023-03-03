@@ -164,7 +164,7 @@
 </template>
 <script>
 import SimpleCard from "@/components/SimpleCard";
-import { QUESTIONS } from "@/settings/testing";
+import { QUESTIONS } from "@/data/testing";
 import { isTestEnvironment } from "@/helpers";
 import { notifySiteOwner } from "@/api/api";
 import { format } from "date-fns";
@@ -319,6 +319,7 @@ p {
       font-size: 0.9em;
     }
   }
+
   .dialog-title {
     position: relative;
   }
