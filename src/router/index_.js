@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import { ROUTES } from "@/settings/routes";
+import { ROUTES } from "@/settings/routes.js";
 import Index from "@/views/Index.vue";
 import ArtTherapyGroup from "@/views/ArtTherapyGroup";
 import Price from "@/views/Price";
