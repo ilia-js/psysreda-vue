@@ -1,53 +1,39 @@
 <template>
   <v-app>
-    <v-container>
-      <v-tabs v-model="menu" centered show-arrows>
-        <v-tab v-for="tab in preparedTabs" :key="tab.path" :to="tab.path"
-          >{{ tab.label }}
-        </v-tab>
-      </v-tabs>
-      <v-main>
-        <router-view />
-      </v-main>
+    <v-tabs v-model="menu" centered show-arrows>
+      <v-tab v-for="tab in preparedTabs" :key="tab.path" :to="tab.path">{{ tab.label }} </v-tab>
+    </v-tabs>
+    <v-main>
+      <router-view />
+    </v-main>
 
-      <v-footer fixed padless>
-        <v-btn
-          v-for="social in socialNetworks"
-          :key="social.link"
-          :href="social.link"
-          target="_blank"
-          icon
-        >
-          <v-icon :color="social.color" size="24px">{{ social.icon }}</v-icon>
-        </v-btn>
-      </v-footer>
-    </v-container>
+    <!--      <v-footer fixed padless>-->
+    <!--        <v-btn-->
+    <!--          v-for="social in socialNetworks"-->
+    <!--          :key="social.link"-->
+    <!--          :href="social.link"-->
+    <!--          target="_blank"-->
+    <!--          icon-->
+    <!--        >-->
+    <!--          <v-icon :color="social.color" size="24px">{{ social.icon }}</v-icon>-->
+    <!--        </v-btn>-->
+    <!--      </v-footer>-->
   </v-app>
 </template>
 
-<script>
-import { appTabs, socialNetworks } from "@/settings";
+<script lang="ts" setup>
+import { topMenuTabs } from '@/settings/topMenuTabs'
+import { computed, ref } from 'vue'
+//import { VApp } from 'vuetify/vuetify'
 
-export default {
-  name: "App",
+const menu = ref('')
 
-  data() {
-    return {
-      menu: "",
-      appTabs,
-      socialNetworks,
-    };
-  },
-
-  computed: {
-    preparedTabs() {
-      return appTabs.filter((el) => !el.disabled);
-    },
-  },
-};
+const preparedTabs = computed(() => {
+  return topMenuTabs.filter((el) => !el.disabled)
+})
 </script>
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import '@/assets/scss/variables.scss';
 
 .container {
   max-width: $container-max-width;
@@ -64,7 +50,7 @@ export default {
   border-top: $footer-border-style !important;
 }
 
-::v-deep .v-main {
+:deep(.v-main) {
   padding-bottom: $space-after-blocks !important;
 }
 </style>

@@ -11,27 +11,22 @@
       <template v-slot:activator="{ on, attrs }">
         <div class="text-center">
           <v-btn class="mt-8 psysreda-red-button" v-bind="attrs" v-on="on">
-            {{ status === "not_started" ? "ПРОЙТИ ТЕСТ" : "" }}
-            {{ status === "in_progress" ? "ВЕРНУТЬСЯ К ТЕСТУ" : "" }}
-            {{ status === "finished" ? "ПОСМОТРЕТЬ РЕЗУЛЬТАТ" : "" }}
+            {{ status === 'not_started' ? 'ПРОЙТИ ТЕСТ' : '' }}
+            {{ status === 'in_progress' ? 'ВЕРНУТЬСЯ К ТЕСТУ' : '' }}
+            {{ status === 'finished' ? 'ПОСМОТРЕТЬ РЕЗУЛЬТАТ' : '' }}
           </v-btn>
         </div>
       </template>
       <v-card class="px-2">
         <v-card-title class="pt-5 pb-4 dialog-title">
           Тест на созависимость
-          <div v-if="isTestEnvironment" class="test-environment">
-            ::: Test environment :::
-          </div>
+          <div v-if="isTestEnvironment" class="test-environment">::: Test environment :::</div>
         </v-card-title>
         <v-divider></v-divider>
         <v-card-text class="pt-6 pb-8">
           <div v-if="!isTestFinished">
             <div v-if="currentQuestionIndex === null">
-              <p>
-                Вам предлагается 20 утверждений, которые нужно оценить
-                применительно к себе.
-              </p>
+              <p>Вам предлагается 20 утверждений, которые нужно оценить применительно к себе.</p>
               <p>Не думайте слишком долго над каждым утверждением.</p>
               <p>
                 Обычно первый ответ, который приходит в голову -
@@ -97,19 +92,14 @@
             </div>
             <div class="scale">Шкала оценки результатов:</div>
             <ul>
+              <li>Более <b>60 баллов</b> - очень высокая степень зависимых моделей</li>
+              <li>От <b>40 до 59 баллов</b> - высокая степень зависимых моделей</li>
               <li>
-                Более <b>60 баллов</b> - очень высокая степень зависимых моделей
+                От <b>30 до 39 баллов</b> - средняя степень зависимых и/или контрзависимых моделей
               </li>
               <li>
-                От <b>40 до 59 баллов</b> - высокая степень зависимых моделей
-              </li>
-              <li>
-                От <b>30 до 39 баллов</b> - средняя степень зависимых и/или
+                От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая степень
                 контрзависимых моделей
-              </li>
-              <li>
-                От <b>21 до 29 баллов</b> - очень мало зависимых и/или высокая
-                степень контрзависимых моделей
               </li>
             </ul>
             <v-btn
@@ -124,22 +114,10 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn
-            @click="close"
-            v-if="!isTestFinished"
-            small
-            depressed
-            class="my-2"
-          >
+          <v-btn @click="close" v-if="!isTestFinished" small depressed class="my-2">
             Закрыть
           </v-btn>
-          <v-btn
-            @click="again"
-            v-if="isTestFinished"
-            small
-            depressed
-            class="my-2"
-          >
+          <v-btn @click="again" v-if="isTestFinished" small depressed class="my-2">
             ПРОЙТИ ЕЩЁ РАЗ
           </v-btn>
           <v-btn
@@ -163,18 +141,18 @@
   </SimpleCard>
 </template>
 <script>
-import SimpleCard from "@/components/SimpleCard";
-import { QUESTIONS } from "@/data/testing";
-import { isTestEnvironment } from "@/helpers";
-import { notifySiteOwner } from "@/api/api";
-import { format } from "date-fns";
-import { DATE_TIME_FORMAT } from "@/settings/dates";
-import ContactDialog from "@/components/dialogs/ContactDialog";
-import { lang } from "@/settings/lang";
-import { clientConnectionTypes } from "@/settings";
+import SimpleCard from '@/components/SimpleCard'
+import { QUESTIONS } from '@/data/testing'
+import { isTestEnvironment } from '@/helpers'
+import { notifySiteOwner } from '@/api/api'
+import { format } from 'date-fns'
+import { DATE_TIME_FORMAT } from '@/settings/dates'
+import ContactDialog from '@/components/dialogs/ContactDialog'
+import { lang } from '@/settings/lang'
+import { clientConnectionTypes } from '@/settings'
 
 export default {
-  name: "TestingCard",
+  name: 'TestingCard',
   components: { SimpleCard, ContactDialog },
   data() {
     return {
@@ -184,82 +162,77 @@ export default {
       show: false,
       isTestFinished: false,
       currentAnswer: null,
-      status: "not_started",
+      status: 'not_started',
       showContactDialog: false,
       lang,
-      clientConnectionTypes,
-    };
+      clientConnectionTypes
+    }
   },
   created() {},
   beforeMount() {
     if (this.isTestEnvironment) {
-      this.questions = [QUESTIONS[0]];
+      this.questions = [QUESTIONS[0]]
     } else {
-      this.questions = QUESTIONS;
+      this.questions = QUESTIONS
     }
   },
   computed: {
     questionsNumber() {
-      return this.questions.length;
+      return this.questions.length
     },
     currentQuestion() {
-      return this.questions[this.currentQuestionIndex];
+      return this.questions[this.currentQuestionIndex]
     },
     percentAnswered() {
-      return Math.ceil(
-        (this.currentQuestionIndex + 1) * (100 / this.questionsNumber)
-      );
+      return Math.ceil((this.currentQuestionIndex + 1) * (100 / this.questionsNumber))
     },
-    isTestEnvironment,
+    isTestEnvironment
   },
   methods: {
     startTest() {
-      this.currentQuestionIndex = 0;
+      this.currentQuestionIndex = 0
     },
     nextQuestion() {
-      this.currentQuestionIndex++;
-      this.total += Number(this.currentAnswer);
-      this.currentAnswer = null;
+      this.currentQuestionIndex++
+      this.total += Number(this.currentAnswer)
+      this.currentAnswer = null
     },
     async processResult() {
-      this.total += Number(this.currentAnswer);
-      this.isTestFinished = true;
-      let text = "Кто-то заполнил тест на сайте!\n";
-      text +=
-        "Дата и время заполнения:\n" +
-        format(new Date(), DATE_TIME_FORMAT) +
-        "\n";
-      text += "Сумма теста:\n" + this.total;
-      await notifySiteOwner(text);
+      this.total += Number(this.currentAnswer)
+      this.isTestFinished = true
+      let text = 'Кто-то заполнил тест на сайте!\n'
+      text += 'Дата и время заполнения:\n' + format(new Date(), DATE_TIME_FORMAT) + '\n'
+      text += 'Сумма теста:\n' + this.total
+      await notifySiteOwner(text)
     },
     close() {
-      this.show = false;
+      this.show = false
       if (this.currentQuestionIndex !== null) {
-        this.status = "in_progress";
+        this.status = 'in_progress'
       }
       if (this.isTestFinished) {
-        this.status = "finished";
+        this.status = 'finished'
       }
     },
     again() {
       // this.show = false
       setTimeout(() => {
-        this.status = "not_started";
-        this.isTestFinished = false;
-        this.currentQuestionIndex = null;
-        this.total = 0;
-        this.currentAnswer = null;
-      }, 300);
+        this.status = 'not_started'
+        this.isTestFinished = false
+        this.currentQuestionIndex = null
+        this.total = 0
+        this.currentAnswer = null
+      }, 300)
     },
     openContactDialog() {
-      this.showContactDialog = true;
-    },
-  },
-};
+      this.showContactDialog = true
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 ::v-deep {
-  .simple-card-text {
+  .base-card__text {
     padding-top: 8px !important;
     font-size: 17px;
     color: rgba(0, 0, 0, 0.8) !important;

@@ -1,9 +1,43 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h1>
+      <span class="special-first-title"> Как перестать <s>думать только о других</s> </span>
+      <span class="special-exclamation-mark">?</span> <br />
+      <span class="special-second-title">Как научиться заботиться о себе</span
+      ><span class="special-exclamation-mark">!</span>
+    </h1>
+    <ContactsBlock />
+    <!--    <AudienceCard class="mt-16 mb-16" />-->
+    <!--    <TestingCard class="mt-16 mb-16" />-->
+  </div>
 </template>
+<script lang="ts" setup>
+// TODO
+import ContactsBlock from '@/components/cards/ContactsBlock.vue'
+</script>
+<style lang="scss" scoped>
+h1 {
+  text-align: center;
+  margin-top: -70px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.simple-card {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.special-exclamation-mark {
+  padding-left: 3px;
+}
+
+.special-first-title {
+  color: #333;
+  font-size: 28px;
+}
+
+.special-second-title {
+  color: #333;
+}
+</style>
