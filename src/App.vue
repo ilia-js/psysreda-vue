@@ -1,11 +1,12 @@
 <template>
-  <v-app>
-    <v-tabs v-model="menu" centered show-arrows>
-      <v-tab v-for="tab in preparedTabs" :key="tab.path" :to="tab.path">{{ tab.label }} </v-tab>
-    </v-tabs>
-    <v-main>
+  <div class="app">
+    <div class="app__tabs-bar">
+      <TabsBar />
+    </div>
+
+    <div>
       <router-view />
-    </v-main>
+    </div>
 
     <!--      <v-footer fixed padless>-->
     <!--        <v-btn-->
@@ -18,22 +19,26 @@
     <!--          <v-icon :color="social.color" size="24px">{{ social.icon }}</v-icon>-->
     <!--        </v-btn>-->
     <!--      </v-footer>-->
-  </v-app>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { topMenuTabs } from '@/settings/topMenuTabs'
-import { computed, ref } from 'vue'
-//import { VApp } from 'vuetify/vuetify'
-
-const menu = ref('')
-
-const preparedTabs = computed(() => {
-  return topMenuTabs.filter((el) => !el.disabled)
-})
+import TabsBar from '@/components/tabs/TabsBar.vue'
 </script>
 <style lang="scss" scoped>
 @import '@/assets/scss/variables.scss';
+
+.app {
+  width: 100%;
+  height: 100%;
+
+  padding-bottom: $px-40;
+
+  &__tabs-bar {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .container {
   max-width: $container-max-width;

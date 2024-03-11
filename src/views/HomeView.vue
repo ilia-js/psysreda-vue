@@ -1,43 +1,52 @@
 <template>
-  <div>
-    <h1>
-      <span class="special-first-title"> Как перестать <s>думать только о других</s> </span>
-      <span class="special-exclamation-mark">?</span> <br />
-      <span class="special-second-title">Как научиться заботиться о себе</span
-      ><span class="special-exclamation-mark">!</span>
-    </h1>
-    <ContactsBlock />
-    <!--    <AudienceCard class="mt-16 mb-16" />-->
-    <!--    <TestingCard class="mt-16 mb-16" />-->
+  <div class="home-view">
+    <div class="home-view__header">
+      <span class="home-view__title-line-primary">
+        Как перестать <s>думать только о других</s>
+      </span>
+      <span class="home-view__exclamation-mark">?</span> <br />
+      <span class="home-view__title-line-secondary">Как научиться заботиться о себе</span
+      ><span class="home-view__exclamation-mark">!</span>
+    </div>
+    <div class="home-view__cards">
+      <WelcomeCard />
+      <AuditoryCard class="home-view__card" />
+      <TestingCard class="home-view__card" />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
 // TODO
-import ContactsBlock from '@/components/cards/ContactsBlock.vue'
+import WelcomeCard from '@/components/cards/WelcomeCard.vue'
+import AuditoryCard from '@/components/cards/AuditoryCard.vue'
+import TestingCard from '@/components/cards/TestingCard.vue'
 </script>
 <style lang="scss" scoped>
-h1 {
-  text-align: center;
-  margin-top: -70px;
-  margin-bottom: 25px;
-  color: #444;
-}
+@import '@/assets/scss/variables.scss';
 
-.simple-card {
-  max-width: 480px;
-  margin: 0 auto;
-}
+.home-view {
+  &__header {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #444;
+    font-size: 2.25rem;
+  }
 
-.special-exclamation-mark {
-  padding-left: 3px;
-}
+  &__title-line-primary {
+    color: #333;
+    font-size: 1.25rem;
+  }
 
-.special-first-title {
-  color: #333;
-  font-size: 28px;
-}
+  &__exclamation-mark {
+    padding-left: 3px;
+  }
 
-.special-second-title {
-  color: #333;
+  &__title-line-secondary {
+    color: #333;
+  }
+
+  &__card {
+    margin-top: $px-50;
+  }
 }
 </style>

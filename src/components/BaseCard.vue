@@ -1,12 +1,12 @@
 <template>
-  <v-card class="base-card" :max-width="maxWidth" :min-height="minHeight" elevation="0">
-    <v-card-title class="psysreda-card-header">
-      <slot name="title" />
-    </v-card-title>
-    <v-card-text class="base-card__text text-center px-14 pt-5">
-      <slot />
-    </v-card-text>
-  </v-card>
+  <div class="base-card" :style="{ maxWidth, minHeight }">
+    <div class="base-card__header">
+      <slot name="header" />
+    </div>
+    <div class="base-card__body">
+      <slot name="body" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -20,7 +20,25 @@ defineProps({
 @import '@/assets/scss/variables.scss';
 
 .base-card {
+  max-width: 480px;
+  margin: 0 auto;
   border: 2px dashed #bbb;
   border-radius: $border-radius !important;
+
+  &__header {
+    display: block !important;
+    font-size: 23px !important;
+    color: #444 !important;
+    line-height: 33px !important;
+    text-align: center !important;
+    margin-top: $px-20;
+    margin-bottom: $px-20;
+  }
+
+  &__body {
+    margin-bottom: $px-30;
+    padding-right: $px-20;
+    padding-left: $px-20;
+  }
 }
 </style>

@@ -1,23 +1,25 @@
-export const topMenuTabs = [
+import type { MenuOption } from '@/types/menus'
+
+export const topMenuTabs: MenuOption[] = [
   {
-    path: "/",
-    label: "Главная",
+    path: '/',
+    label: 'Главная'
   },
   {
-    path: "/art-therapy-group",
-    label: "Арт-Терапевтическая группа",
+    path: '/art-therapy-group',
+    label: 'Гештальт-подход'
   },
   {
-    path: "/course",
+    path: '/course',
     label: 'Курс "Океан Эмоций"',
-    disabled: true,
+    disabled: true
   },
   {
-    path: "/price",
-    label: "Стоимость",
+    path: '/price',
+    label: 'Стоимость'
   },
   {
-    path: "/documents",
-    label: "Подтверждение образования",
-  },
-];
+    path: '/documents',
+    label: 'Образование'
+  }
+]

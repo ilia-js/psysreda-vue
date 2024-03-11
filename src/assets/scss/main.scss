@@ -1,39 +1,13 @@
-/*Next Шрифт для всего текста*/
-/* body{font-family:'Georgia',serif;} */
-/*Next lines Разные стили списков*/
-/*ul.dash{list-style-type:none;}*/
-/*ul.dash li:before{content:"\2010";position:relative;left:-5px;}*/
-/*ul.square{list-style-type:square;}*/
-/*!*Next Заголовки разделов*!*/
-/*.s-title{font-size:2rem;font-weight:bold;text-align:center;}*/
-/*!*Next Слегка приглушённый фон для разделов*!*/
-/*.muted {background:#efefef;padding:80px 0 !important;border-radius:25px;}*/
-/*!*Next Общий отступ для разделов*!*/
-/*.s-container {padding:100px 0 !important;}*/
-
-.v-application {
+html {
   font-family: Georgia, 'Times New Roman', Times, serif !important;
-
-  .v-card__title {
-    padding-top: 32px;
-  }
-
-  .v-card__text {
-    padding-bottom: 42px;
-  }
+  font-weight: 500;
 }
 
-.psysreda-card-header, .v-dialog > .v-card > .v-card__title {
-  display: block !important;
-  font-size: 23px !important;
-  color: #444 !important;
-  line-height: 33px !important;
-  text-align: center !important;
+.app-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
-.rounded-1 {
-  border-radius: 112px;
-}
 
 .rounded-2 {
   border-radius: 32px;
