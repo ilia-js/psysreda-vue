@@ -31,7 +31,7 @@ import TabsBar from '@/components/tabs/TabsBar.vue'
 .app {
   width: 100%;
   height: 100%;
-
+  position: relative;
   padding-bottom: $px-40;
 
   &__tabs-bar {

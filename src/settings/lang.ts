@@ -1,9 +1,16 @@
 export const lang = {
-  titleContact: 'Связаться ON-LINE',
   titleEnrollArtTherapyGroup: 'Запись на группу',
   buttonContact: 'Связаться On-Line',
   buttonContactApprove: 'Связаться',
   buttonEnrollArtTherapyGroup: 'Записаться',
   buttonEnrollArtTherapyGroupApprove: 'Записаться',
-  testMe: 'Пройти Тест'
+  testMe: 'Пройти Тест',
+
+  button: {
+    //
+  },
+
+  title: {
+    contactMe: 'Связаться со мной'
+  }
 }

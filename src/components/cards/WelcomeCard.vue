@@ -13,7 +13,7 @@
           Если ты задаёшь себе этот вопрос,<br />
           то значит ты <b>готов к изменениям</b> <br />и мы сможем начать совместную работу
         </div>
-        <TaniaButton :text="lang.buttonContact" color-scheme="red" />
+        <SunnyButton :text="lang.buttonContact" color-scheme="red" />
       </div>
     </template>
 
@@ -24,15 +24,29 @@
     <!--      :type="clientConnectionTypes.connectOnline"-->
     <!--    />-->
   </BaseCard>
+  <SunnyDialog>
+    <template #header>
+      {{ lang.title.contactMe }}
+    </template>
+    <template #body>
+      <InputText v-model="form.name" :placeholder="'Ваше имя'" /><br /><br />
+      <InputText v-model="form.name" :placeholder="'Ваш телефон'" />
+    </template>
+  </SunnyDialog>
 </template>
 
 <script lang="ts" setup>
 import { lang } from '@/settings/lang'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 import BaseCard from '@/components/BaseCard.vue'
-import TaniaButton from '@/components/buttons/TaniaButton.vue'
+import SunnyButton from '@/components/sunnyLibrary/buttons/SunnyButton.vue'
+import SunnyDialog from '@/components/sunnyLibrary/dialogs/SunnyDialog.vue'
+import InputText from 'primevue/inputtext'
 
 const show = ref<boolean>(false)
+const form = reactive({
+  name: undefined
+})
 
 const open = () => {
   show.value = true

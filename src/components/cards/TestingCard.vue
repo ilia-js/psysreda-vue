@@ -11,7 +11,7 @@
           поможет тебе определить<br />
           степень созависимости
         </div>
-        <TaniaButton :text="lang.testMe" color-scheme="red" class="testing-card__button" />
+        <SunnyButton :text="lang.testMe" color-scheme="red" class="testing-card__button" />
       </div>
     </template>
 
@@ -158,7 +158,7 @@ import { DATE_TIME_FORMAT } from '@/settings/dates'
 import { computed, onBeforeMount, ref } from 'vue'
 import BaseCard from '@/components/BaseCard.vue'
 import { lang } from '@/settings/lang'
-import TaniaButton from '@/components/buttons/TaniaButton.vue'
+import SunnyButton from '@/components/sunnyLibrary/buttons/SunnyButton.vue'
 
 const questions = ref([])
 const total = ref(0)

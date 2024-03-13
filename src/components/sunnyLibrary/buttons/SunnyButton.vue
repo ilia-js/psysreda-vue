@@ -1,5 +1,5 @@
 <template>
-  <div class="tania-button" @click="emit('click')" :style="colorScheme">
+  <div class="sunny-button" @click="emit('click')" :style="colorScheme">
     {{ text }}
   </div>
 </template>
@@ -23,10 +23,10 @@ const colorScheme = computed(() => {
 })
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
-.tania-button {
+@import '@/assets/scss/variables';
+.sunny-button {
   padding: 0 $px-10;
-  height: 32px;
+  height: $button-height-normal;
   cursor: pointer;
   border-radius: $px-5;
   text-transform: uppercase;
@@ -35,7 +35,7 @@ const colorScheme = computed(() => {
   align-items: center;
 }
 
-.tania-button:hover {
+.sunny-button:hover {
   opacity: 0.8;
 }
 </style>
