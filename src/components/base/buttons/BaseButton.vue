@@ -1,5 +1,10 @@
 <template>
-  <div class="sunny-button" @click="emit('click')" :style="colorScheme">
+  <div
+    class="base-button"
+    :class="{ 'base-button--disabled': disabled }"
+    @click="emit('click')"
+    :style="colorScheme"
+  >
     {{ text }}
   </div>
 </template>
@@ -11,7 +16,8 @@ const emit = defineEmits(['click'])
 
 const props = defineProps({
   text: String,
-  colorScheme: String
+  colorScheme: String,
+  disabled: Boolean
 })
 
 const colorScheme = computed(() => {
@@ -24,7 +30,7 @@ const colorScheme = computed(() => {
 </script>
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
-.sunny-button {
+.base-button {
   padding: 0 $px-10;
   height: $button-height-normal;
   cursor: pointer;
@@ -33,9 +39,17 @@ const colorScheme = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &--disabled {
+    background-color: #666 !important;
+  }
 }
 
-.sunny-button:hover {
+.base-button:hover {
   opacity: 0.8;
+}
+
+.base-button--disabled:hover {
+  opacity: 1 !important;
 }
 </style>

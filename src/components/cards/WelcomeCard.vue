@@ -13,40 +13,22 @@
           Если ты задаёшь себе этот вопрос,<br />
           то значит ты <b>готов к изменениям</b> <br />и мы сможем начать совместную работу
         </div>
-        <SunnyButton :text="lang.buttonContact" color-scheme="red" />
+        <BaseButton :text="lang.button.writeMe" color-scheme="red" />
       </div>
     </template>
-
-    <!--    <ContactDialog-->
-    <!--      v-model="show"-->
-    <!--      :title="lang.titleContact"-->
-    <!--      :button-text="lang.buttonContactApprove"-->
-    <!--      :type="clientConnectionTypes.connectOnline"-->
-    <!--    />-->
   </BaseCard>
-  <SunnyDialog>
-    <template #header>
-      {{ lang.title.contactMe }}
-    </template>
-    <template #body>
-      <InputText v-model="form.name" :placeholder="'Ваше имя'" /><br /><br />
-      <InputText v-model="form.name" :placeholder="'Ваш телефон'" />
-    </template>
-  </SunnyDialog>
+  <MessageDialog />
 </template>
 
 <script lang="ts" setup>
 import { lang } from '@/settings/lang'
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 import BaseCard from '@/components/BaseCard.vue'
-import SunnyButton from '@/components/sunnyLibrary/buttons/SunnyButton.vue'
-import SunnyDialog from '@/components/sunnyLibrary/dialogs/SunnyDialog.vue'
-import InputText from 'primevue/inputtext'
+import BaseButton from '@/components/base/buttons/BaseButton.vue'
+
+import MessageDialog from '@/components/dialogs/MessageDialog.vue'
 
 const show = ref<boolean>(false)
-const form = reactive({
-  name: undefined
-})
 
 const open = () => {
   show.value = true
@@ -69,10 +51,6 @@ const open = () => {
     }
   }
 
-  //&__title:nth-child(1) {
-  //  font-size: 0.85em;
-  //}
-
   &__photo {
     height: 350px;
     border-radius: 112px;
@@ -90,20 +68,5 @@ const open = () => {
     text-align: center;
     font-size: 1.07rem;
   }
-}
-
-// TODO Move inside component's class.
-.local-input {
-  max-width: 90%;
-}
-
-:deep(.base-card__text) {
-  padding-top: 0 !important;
-  font-size: 17px;
-  color: rgba(0, 0, 0, 0.8) !important;
-}
-
-:deep(.v-dialog) {
-  border-radius: 25px;
 }
 </style>

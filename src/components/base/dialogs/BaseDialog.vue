@@ -1,14 +1,14 @@
 <template>
   <Teleport to="body">
-    <div class="sunny-dialog">
-      <div class="sunny-dialog__container">
-        <div class="sunny-dialog__header">
+    <div class="base-dialog">
+      <div class="base-dialog__container">
+        <div class="base-dialog__header">
           <slot name="header" />
         </div>
-        <div class="sunny-dialog__body">
+        <div class="base-dialog__body">
           <slot name="body" />
         </div>
-        <div class="sunny-dialog__buttons">
+        <div class="base-dialog__buttons">
           <slot name="buttons" />
         </div>
       </div>
@@ -19,9 +19,7 @@
 document.body.style.overflow = 'hidden'
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/sunnyLibrary.scss';
-
-.sunny-dialog {
+.base-dialog {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,14 +29,14 @@ document.body.style.overflow = 'hidden'
   justify-content: center;
   align-items: center;
   background-color: rgba(128, 64, 0, 0.75);
-  //background-color: $sunny-dialog-background-color;
+
   &__container {
     width: 400px;
     height: 400px;
     text-align: center;
-    padding: $sunny-dialog-padding;
-    border: $sunny-dialog-border;
-    background-color: $sunny-dialog-container-background-color;
+    padding: 20px 40px;
+    border: 1px solid #999;
+    background-color: #fff;
     opacity: 1;
     border-radius: 25px;
   }
@@ -48,7 +46,7 @@ document.body.style.overflow = 'hidden'
   }
 
   &__body {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   &__buttons {

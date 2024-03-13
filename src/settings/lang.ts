@@ -7,10 +7,10 @@ export const lang = {
   testMe: 'Пройти Тест',
 
   button: {
-    //
+    writeMe: 'Написать мне'
   },
 
   title: {
-    contactMe: 'Связаться со мной'
+    messageMe: 'Написать мне'
   }
 }
