@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="body">
+  <Teleport v-if="showDialog" to="body">
     <div class="base-dialog">
       <div class="base-dialog__container">
         <div class="base-dialog__header">
@@ -10,17 +10,39 @@
         </div>
         <div class="base-dialog__buttons">
           <slot name="buttons" />
+          <!-- TODO -->
+          <br />
+          <div @click="clickClose">close</div>
         </div>
       </div>
     </div>
   </Teleport>
 </template>
 <script lang="ts" setup>
-document.body.style.overflow = 'hidden'
+import { ref } from 'vue'
+
+const emit = defineEmits(['click:close'])
+
+const showDialog = ref<boolean>(false)
+
+const clickClose = () => {
+  emit('click:close')
+}
+
+defineExpose({
+  open: () => {
+    document.body.style.overflow = 'hidden'
+    showDialog.value = true
+  },
+  close: () => {
+    document.body.style.overflow = 'auto'
+    showDialog.value = false
+  }
+})
 </script>
 <style lang="scss" scoped>
 .base-dialog {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;

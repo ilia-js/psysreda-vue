@@ -1,5 +1,5 @@
 <template>
-  <BaseDialog>
+  <BaseDialog ref="baseDialogRef" @click:close="emit('click:close')">
     <template #header>
       {{ lang.title.messageMe }}
     </template>
@@ -31,7 +31,7 @@
   </BaseDialog>
 </template>
 <script lang="ts" setup>
-import { computed, reactive } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import { lang } from '@/settings/lang'
 import BaseDialog from '@/components/base/dialogs/BaseDialog.vue'
 import InputText from 'primevue/inputtext'
@@ -41,6 +41,10 @@ import BaseButton from '@/components/base/buttons/BaseButton.vue'
 const MIN_NAME_LENGTH = 2
 const MIN_PHONE_LENGTH = 9 // For local Spain number.
 const MIN_MESSAGE_LENGTH = 10
+
+const emit = defineEmits(['click:close'])
+
+const baseDialogRef = ref()
 
 const form = reactive({
   name: '',
@@ -78,6 +82,15 @@ const onClick = () => {
   // await notifySiteOwner(text)
   // this.status = 'data_sent'
 }
+
+defineExpose({
+  open: () => {
+    baseDialogRef.value.open()
+  },
+  close: () => {
+    baseDialogRef.value.close()
+  }
+})
 </script>
 <style lang="scss" scoped>
 @import '@/assets/scss/variables.scss';

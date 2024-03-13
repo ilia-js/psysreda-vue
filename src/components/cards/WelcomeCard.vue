@@ -13,11 +13,11 @@
           Если ты задаёшь себе этот вопрос,<br />
           то значит ты <b>готов к изменениям</b> <br />и мы сможем начать совместную работу
         </div>
-        <BaseButton :text="lang.button.writeMe" color-scheme="red" />
+        <BaseButton :text="lang.button.writeMe" color-scheme="red" @click="openMessageDialog" />
       </div>
     </template>
   </BaseCard>
-  <MessageDialog />
+  <MessageDialog ref="messageDialogRef" @click:close="onClickCloseMessageDialog" />
 </template>
 
 <script lang="ts" setup>
@@ -28,10 +28,14 @@ import BaseButton from '@/components/base/buttons/BaseButton.vue'
 
 import MessageDialog from '@/components/dialogs/MessageDialog.vue'
 
-const show = ref<boolean>(false)
+const messageDialogRef = ref()
 
-const open = () => {
-  show.value = true
+const openMessageDialog = () => {
+  messageDialogRef.value.open()
+}
+
+const onClickCloseMessageDialog = () => {
+  messageDialogRef.value.close()
 }
 </script>
 
