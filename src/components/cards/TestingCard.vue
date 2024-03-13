@@ -247,7 +247,7 @@ const openContactDialog = () => {
 
   &__button {
     margin-top: $px-20;
-    width: 130px;
+    width: 150px;
   }
 }
 
