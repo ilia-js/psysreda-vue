@@ -2,6 +2,7 @@
   <Teleport v-if="showDialog" to="body">
     <div class="base-dialog">
       <div class="base-dialog__container">
+        <div class="base-dialog__close pi pi-times" v-if="closeIcon" @click="emit('click:close')" />
         <div class="base-dialog__header">
           <slot name="header" />
         </div>
@@ -10,9 +11,6 @@
         </div>
         <div class="base-dialog__buttons">
           <slot name="buttons" />
-          <!-- TODO -->
-          <br />
-          <div @click="clickClose">close</div>
         </div>
       </div>
     </div>
@@ -23,11 +21,11 @@ import { ref } from 'vue'
 
 const emit = defineEmits(['click:close'])
 
-const showDialog = ref<boolean>(false)
+defineProps({
+  closeIcon: Boolean
+})
 
-const clickClose = () => {
-  emit('click:close')
-}
+const showDialog = ref<boolean>(true)
 
 defineExpose({
   open: () => {
@@ -41,6 +39,8 @@ defineExpose({
 })
 </script>
 <style lang="scss" scoped>
+@import '@/assets/scss/variables.scss';
+
 .base-dialog {
   position: fixed;
   top: 0;
@@ -53,14 +53,23 @@ defineExpose({
   background-color: rgba(128, 64, 0, 0.75);
 
   &__container {
+    position: relative;
     width: 400px;
-    height: 400px;
+    min-height: 400px;
     text-align: center;
     padding: 20px 40px;
     border: 1px solid #999;
     background-color: #fff;
     opacity: 1;
     border-radius: 25px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+    font-size: 2rem;
   }
 
   &__header {
@@ -73,6 +82,9 @@ defineExpose({
 
   &__buttons {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: $px-10;
   }
 }
 </style>

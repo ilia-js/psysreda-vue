@@ -163,11 +163,11 @@
   margin: 0 auto;
 }
 
-::v-deep {
-  .base-card__text {
-    padding-top: 10px !important;
-  }
-}
+//::v-deep {
+//  .base-card__text {
+//    padding-top: 10px !important;
+//  }
+//}
 
 .question {
   font-size: 17px;
@@ -186,9 +186,9 @@ li {
   color: #222;
 }
 
-::v-deep {
-  .v-dialog {
-    border-radius: 25px !important;
-  }
-}
+//::v-deep {
+//  .v-dialog {
+//    border-radius: 25px !important;
+//  }
+//}
 </style>

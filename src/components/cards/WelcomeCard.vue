@@ -28,14 +28,14 @@ import BaseButton from '@/components/base/buttons/BaseButton.vue'
 
 import MessageDialog from '@/components/dialogs/MessageDialog.vue'
 
-const messageDialogRef = ref()
+const messageDialogRef = ref<InstanceType<typeof MessageDialog> | undefined>()
 
 const openMessageDialog = () => {
-  messageDialogRef.value.open()
+  messageDialogRef.value?.open()
 }
 
 const onClickCloseMessageDialog = () => {
-  messageDialogRef.value.close()
+  messageDialogRef.value?.close()
 }
 </script>
 

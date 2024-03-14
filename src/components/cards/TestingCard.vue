@@ -251,22 +251,22 @@ const openContactDialog = () => {
   }
 }
 
-::v-deep {
-  .base-card__text {
-    padding-top: 8px !important;
-    font-size: 17px;
-    color: rgba(0, 0, 0, 0.8) !important;
-  }
-
-  .v-label {
-    color: #111 !important;
-    font-style: italic;
-  }
-
-  .v-dialog {
-    border-radius: 25px;
-  }
-}
+//::v-deep {
+//  .base-card__text {
+//    padding-top: 8px !important;
+//    font-size: 17px;
+//    color: rgba(0, 0, 0, 0.8) !important;
+//  }
+//
+//  .v-label {
+//    color: #111 !important;
+//    font-style: italic;
+//  }
+//
+//  .v-dialog {
+//    border-radius: 25px;
+//  }
+//}
 
 p {
   margin-bottom: 12px !important;

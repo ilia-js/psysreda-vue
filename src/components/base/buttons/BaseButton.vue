@@ -41,7 +41,7 @@ const colorScheme = computed(() => {
   align-items: center;
 
   &--disabled {
-    background-color: #666 !important;
+    background-color: #999 !important;
   }
 }
 

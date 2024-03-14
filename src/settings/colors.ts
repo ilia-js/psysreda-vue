@@ -3,12 +3,15 @@ import type { ColorScheme } from '@/types/colors'
 export const buttonColorSchemes: Record<string, ColorScheme> = {
   grey: {
     color: 'black',
-    borderColor: '#666',
     backgroundColor: '#666'
   },
   red: {
     color: 'white',
-    borderColor: '#dc3545',
     backgroundColor: '#dc3545'
+  },
+  whiteAndBlack: {
+    color: 'black',
+    border: '1px solid #666',
+    backgroundColor: '#FFF'
   }
 }

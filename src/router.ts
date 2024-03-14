@@ -27,3 +27,10 @@ export const router = createRouter({
     // },
   ]
 })
+
+// TODO
+// router.afterEach((to) => {
+//   Vue.nextTick(() => {
+//     document.title = to.meta.title || "Татьяна Гвоздовская - психотерапевт";
+//   });
+// });

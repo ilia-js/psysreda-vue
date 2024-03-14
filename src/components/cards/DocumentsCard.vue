@@ -1,31 +1,14 @@
 <template>
   <div>
-    <v-carousel
-      class="carousel-container"
-      hide-delimiters
-      show-arrows
-      @change="change"
-    >
-      <v-carousel-item
-        v-for="(document, documentKey) in documents"
-        :key="documentKey"
-      >
+    <v-carousel class="carousel-container" hide-delimiters show-arrows @change="change">
+      <v-carousel-item v-for="(document, documentKey) in documents" :key="documentKey">
         <v-list class="carousel-container__custom-list">
           <v-list-item v-for="(item, itemKey) in document.items" :key="itemKey">
-            <span
-              v-if="item.title"
-              v-html="item.title"
-              class="carousel-container__title"
-            >
-            </span>
+            <span v-if="item.title" v-html="item.title" class="carousel-container__title"> </span>
             <span v-if="item.label" class="carousel-container__label">
               {{ item.label }}
             </span>
-            <span
-              v-if="item.text"
-              v-html="'<br/>' + item.text"
-              class="carousel-container__text"
-            >
+            <span v-if="item.text" v-html="'<br/>' + item.text" class="carousel-container__text">
             </span>
           </v-list-item>
           <div class="text-center">
@@ -49,18 +32,10 @@
       <v-card min-height="500">
         <v-card-title class="pt-7 pb-5" v-html="currentTitle"></v-card-title>
         <v-card-text class="text-center pb-5">
-          <img
-            class="document-image"
-            :src="getDiplomaUrl(documents[currentIndex].image)"
-            alt=""
-          />
+          <img class="document-image" :src="getDiplomaUrl(documents[currentIndex].image)" alt="" />
         </v-card-text>
         <v-card-actions class="pb-8">
-          <v-btn
-            @click="closeDocument"
-            class="mx-auto psysreda-pink-button"
-            depressed
-            small
+          <v-btn @click="closeDocument" class="mx-auto psysreda-pink-button" depressed small
             >Закрыть
           </v-btn>
         </v-card-actions>
@@ -69,39 +44,39 @@
   </div>
 </template>
 <script>
-import DOCUMENTS from "@/data/documents";
+import DOCUMENTS from '@/data/documents'
 
 export default {
-  name: "DocumentsCard",
+  name: 'DocumentsCard',
   data() {
     return {
       documentDialog: false,
       currentIndex: 0,
-      currentTitle: "",
-      documents: DOCUMENTS,
-    };
+      currentTitle: '',
+      documents: DOCUMENTS
+    }
   },
   methods: {
     openDocument() {
-      this.documentDialog = true;
+      this.documentDialog = true
     },
     closeDocument() {
-      this.documentDialog = false;
+      this.documentDialog = false
     },
     change(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
       if (this.documents[index].items[0]) {
-        this.currentTitle = this.documents[index].items[0].title;
+        this.currentTitle = this.documents[index].items[0].title
       }
     },
     getDiplomaUrl(file) {
-      return require("@/assets/images/diplomas/" + file);
-    },
-  },
-};
+      return require('@/assets/images/diplomas/' + file)
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import '@/assets/scss/variables.scss';
 
 .document-counter {
   font-size: 20px;
@@ -151,23 +126,23 @@ export default {
   }
 }
 
-::v-deep {
-  .v-window__prev,
-  .v-window__next {
-    top: 180px;
-  }
-
-  .document-image {
-    max-width: 90%;
-  }
-
-  .v-dialog {
-    border-radius: 25px !important;
-  }
-
-  .carousel-container,
-  .v-carousel__item {
-    height: auto !important;
-  }
-}
+//::v-deep {
+//  .v-window__prev,
+//  .v-window__next {
+//    top: 180px;
+//  }
+//
+//  .document-image {
+//    max-width: 90%;
+//  }
+//
+//  .v-dialog {
+//    border-radius: 25px !important;
+//  }
+//
+//  .carousel-container,
+//  .v-carousel__item {
+//    height: auto !important;
+//  }
+//}
 </style>

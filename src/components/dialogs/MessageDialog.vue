@@ -5,17 +5,21 @@
     </template>
     <template #body>
       <div class="contact-me-dialog__body">
-        <InputText v-model="form.name" :placeholder="'Ваше имя'" :invalid="!validation.name()" />
+        <InputText
+          v-model="form.name"
+          :placeholder="lang.placeholder.yoursName"
+          :invalid="!validation.name()"
+        />
         <InputText
           v-model="form.phone"
-          :placeholder="'Ваш телефон'"
+          :placeholder="lang.placeholder.yoursPhone"
           :invalid="!validation.phone()"
         />
         <Textarea
           v-model="form.message"
           rows="5"
           cols="30"
-          :placeholder="'Сообщение мне'"
+          :placeholder="lang.placeholder.messageToMe"
           :invalid="!validation.message()"
         />
       </div>
@@ -25,7 +29,12 @@
         :text="lang.button.writeMe"
         :disabled="!isFormValid"
         color-scheme="red"
-        @click="onClick"
+        @click="handleClickWriteMe"
+      />
+      <BaseButton
+        :text="lang.button.close"
+        color-scheme="whiteAndBlack"
+        @click="emit('click:close')"
       />
     </template>
   </BaseDialog>
@@ -44,7 +53,7 @@ const MIN_MESSAGE_LENGTH = 10
 
 const emit = defineEmits(['click:close'])
 
-const baseDialogRef = ref()
+const baseDialogRef = ref<InstanceType<typeof BaseDialog> | undefined>()
 
 const form = reactive({
   name: '',
@@ -67,7 +76,7 @@ const validation = reactive({
 const isFormValid = computed<boolean>(() => {
   return validation.phone() && validation.name() && validation.message()
 })
-const onClick = () => {
+const handleClickWriteMe = () => {
   console.log('on click')
   // this.$refs.form.validate()
   // if (!this.valid) {
