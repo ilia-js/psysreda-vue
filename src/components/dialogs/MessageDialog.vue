@@ -94,10 +94,10 @@ const handleClickWriteMe = () => {
 
 defineExpose({
   open: () => {
-    baseDialogRef.value.open()
+    baseDialogRef.value?.open()
   },
   close: () => {
-    baseDialogRef.value.close()
+    baseDialogRef.value?.close()
   }
 })
 </script>

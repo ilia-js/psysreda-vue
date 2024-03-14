@@ -11,7 +11,12 @@
           поможет тебе определить<br />
           степень созависимости
         </div>
-        <BaseButton :text="lang.testMe" color-scheme="red" class="testing-card__button" />
+        <BaseButton
+          :text="lang.testMe"
+          color-scheme="red"
+          class="testing-card__button"
+          @click="openTestDialog"
+        />
       </div>
     </template>
 
@@ -147,6 +152,7 @@
     <!--      :type="clientConnectionTypes.connectOnlineAfterTest"-->
     <!--    />-->
   </BaseCard>
+  <TestDialog ref="testDialogRef" @click:close="onClickCloseTestDialog" />
 </template>
 <script lang="ts" setup>
 import { QUESTIONS } from '@/data/testing'
@@ -159,6 +165,17 @@ import { computed, onBeforeMount, ref } from 'vue'
 import BaseCard from '@/components/BaseCard.vue'
 import { lang } from '@/settings/lang'
 import BaseButton from '@/components/base/buttons/BaseButton.vue'
+import TestDialog from '@/components/dialogs/TestDialog.vue'
+
+const testDialogRef = ref<InstanceType<typeof TestDialog> | undefined>()
+
+const openTestDialog = () => {
+  testDialogRef.value?.open()
+}
+
+const onClickCloseTestDialog = () => {
+  testDialogRef.value?.close()
+}
 
 const questions = ref([])
 const total = ref(0)

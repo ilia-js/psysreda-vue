@@ -25,7 +25,7 @@ defineProps({
   closeIcon: Boolean
 })
 
-const showDialog = ref<boolean>(true)
+const showDialog = ref<boolean>(false)
 
 defineExpose({
   open: () => {

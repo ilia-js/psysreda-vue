@@ -10,8 +10,8 @@
     </div>
     <div class="home-view__cards">
       <WelcomeCard />
-      <AuditoryCard class="home-view__card" />
-      <TestingCard class="home-view__card" />
+      <AuditoryCard />
+      <TestCard />
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@
 // TODO
 import WelcomeCard from '@/components/cards/WelcomeCard.vue'
 import AuditoryCard from '@/components/cards/AuditoryCard.vue'
-import TestingCard from '@/components/cards/TestingCard.vue'
+import TestCard from '@/components/cards/TestCard.vue'
 </script>
 <style lang="scss" scoped>
 @import '@/assets/scss/variables.scss';
@@ -45,7 +45,7 @@ import TestingCard from '@/components/cards/TestingCard.vue'
     color: #333;
   }
 
-  &__card {
+  :deep(.base-card) {
     margin-top: $px-50;
   }
 }

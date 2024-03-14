@@ -8,11 +8,13 @@ export const lang = {
 
   button: {
     writeMe: 'Написать мне',
-    close: 'Закрыть'
+    close: 'Закрыть',
+    startTest: 'Начать тест'
   },
 
   title: {
-    messageMe: 'Написать мне'
+    messageMe: 'Написать мне',
+    testNaSozavisimost: 'Тест на созависимость'
   },
 
   placeholder: {
