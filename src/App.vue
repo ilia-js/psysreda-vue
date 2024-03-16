@@ -26,7 +26,7 @@
 import TabsBar from '@/components/tabs/TabsBar.vue'
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .app {
   width: 100%;

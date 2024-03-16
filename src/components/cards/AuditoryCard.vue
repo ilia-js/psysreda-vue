@@ -50,7 +50,7 @@ const items: ListItem[] = [
 ]
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .auditory-card {
   &__item {

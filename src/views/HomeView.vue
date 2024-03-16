@@ -11,7 +11,7 @@
     <div class="home-view__cards">
       <WelcomeCard />
       <AuditoryCard />
-      <TestCard />
+      <CodependencyTestCard />
     </div>
   </div>
 </template>
@@ -19,10 +19,10 @@
 // TODO
 import WelcomeCard from '@/components/cards/WelcomeCard.vue'
 import AuditoryCard from '@/components/cards/AuditoryCard.vue'
-import TestCard from '@/components/cards/TestCard.vue'
+import CodependencyTestCard from '@/components/cards/CodependencyTestCard.vue'
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .home-view {
   &__header {

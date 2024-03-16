@@ -19,7 +19,7 @@ const onClickTab = (tab: MenuOption) => {
 }
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 .tabs-bar {
   display: flex;
   gap: $px-15;

@@ -17,7 +17,7 @@ const emit = defineEmits(['click'])
 const props = defineProps({
   text: String,
   colorScheme: String,
-  disabled: Boolean
+  disabled: [Boolean, Number, String]
 })
 
 const colorScheme = computed(() => {
@@ -29,7 +29,7 @@ const colorScheme = computed(() => {
 })
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables';
+@import '@/scss/variables';
 .base-button {
   padding: 0 $px-10;
   height: $button-height-normal;

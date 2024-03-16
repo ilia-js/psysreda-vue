@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .base-card {
   max-width: 480px;

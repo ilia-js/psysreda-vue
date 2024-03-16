@@ -4,7 +4,7 @@
       {{ lang.title.messageMe }}
     </template>
     <template #body>
-      <div class="contact-me-dialog__body">
+      <div class="message_dialog__body">
         <InputText
           v-model="form.name"
           :placeholder="lang.placeholder.yoursName"
@@ -25,17 +25,19 @@
       </div>
     </template>
     <template #buttons>
-      <BaseButton
-        :text="lang.button.writeMe"
-        :disabled="!isFormValid"
-        color-scheme="red"
-        @click="handleClickWriteMe"
-      />
-      <BaseButton
-        :text="lang.button.close"
-        color-scheme="whiteAndBlack"
-        @click="emit('click:close')"
-      />
+      <div class="message_dialog__buttons">
+        <BaseButton
+          :text="lang.button.writeMe"
+          :disabled="!isFormValid"
+          color-scheme="red"
+          @click="handleClickWriteMe"
+        />
+        <BaseButton
+          :text="lang.button.close"
+          color-scheme="whiteAndBlack"
+          @click="emit('click:close')"
+        />
+      </div>
     </template>
   </BaseDialog>
 </template>
@@ -102,13 +104,19 @@ defineExpose({
 })
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 
-.contact-me-dialog {
+.message_dialog {
   &__body {
     display: flex;
     flex-direction: column;
     gap: $px-20;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
   }
 }
 </style>

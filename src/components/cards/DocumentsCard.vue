@@ -70,13 +70,13 @@ export default {
       }
     },
     getDiplomaUrl(file) {
-      return require('@/assets/images/diplomas/' + file)
+      return require('@/scss/images/diplomas/' + file)
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import '@/scss/variables.scss';
 
 .document-counter {
   font-size: 20px;
