@@ -34,7 +34,7 @@ defineProps({
 
   &__result-stands-for {
     margin-top: $px-30;
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-align: left;
   }
 

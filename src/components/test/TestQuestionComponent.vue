@@ -33,8 +33,9 @@ defineProps({
     text-align: center;
     font-size: 1.5rem;
     font-weight: normal;
-    border: 1px solid #bbb;
+    border: 1px dashed #ddd;
     padding: $px-20;
+    line-height: 2rem;
   }
 
   &__answers {
