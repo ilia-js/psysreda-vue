@@ -1,31 +1,38 @@
 <template>
-  <BaseDialog ref="baseDialogRef" @click:close="emit('click:close')">
+  <BaseDialog
+    ref="baseDialogRef"
+    @click:close="emit('click:close', result || resultFromLocalStorage)"
+  >
     <template #header> {{ lang.title.codependencyTest }}</template>
     <template #body>
       <div class="test-dialog__body">
-        <TextParser v-if="!questionNumber" :lines="lang.test.introduction" />
-        <ResultComponent v-else-if="isShowResult" :result="result" />
-        <QuestionComponent
-          v-else
-          v-model="answers[questionNumber]"
-          :question="codependencyTestQuestions[questionNumber - 1]"
+        <ResultComponent
+          v-if="isShowResult || resultFromLocalStorage"
+          :result="result || Number(resultFromLocalStorage)"
         />
+        <template v-else>
+          <TextParser v-if="!questionNumber" :lines="lang.test.introduction" />
+          <QuestionComponent
+            v-else
+            v-model="answers[questionNumber]"
+            :question="codependencyTestQuestions[questionNumber - 1]"
+            :info="`${questionNumber}/${codependencyTestQuestions.length}`"
+          />
+        </template>
       </div>
     </template>
     <template #buttons>
       <div class="test-dialog__buttons">
         <BaseButton
+          :text="lang.button.close"
+          color-scheme="whiteAndBlack"
+          @click="emit('test:finish', result || resultFromLocalStorage)"
+        />
+        <BaseButton
           :text="actionButtonText"
           color-scheme="red"
           @click="handleClickActionButton"
-          :disabled="
-            questionNumber && !isShowResult && typeof answers[questionNumber] === 'undefined'
-          "
-        />
-        <BaseButton
-          :text="lang.button.close"
-          color-scheme="whiteAndBlack"
-          @click="emit('click:close')"
+          :disabled="isActionButtonDisabled"
         />
       </div>
     </template>
@@ -40,8 +47,11 @@ import TextParser from '@/components/TextParser.vue'
 import { codependencyTestQuestions } from '@/settings/tests/codependencyTest/codependencyTestQuestions'
 import QuestionComponent from '@/components/test/TestQuestionComponent.vue'
 import ResultComponent from '@/components/test/TestResultComponent.vue'
+import { LocalStorageKeys } from '@/settings/localStorage'
 
-const emit = defineEmits(['click:close'])
+const emit = defineEmits(['click:close', 'test:finish'])
+
+let resultFromLocalStorage = ref<number | undefined>()
 
 const baseDialogRef = ref<InstanceType<typeof BaseDialog> | undefined>()
 const questionNumber = ref<number>(0)
@@ -53,6 +63,10 @@ const isLastQuestion = computed<boolean>(() => {
 })
 
 const actionButtonText = computed<string>(() => {
+  if (resultFromLocalStorage.value) {
+    return lang.button.passAgain
+  }
+
   if (!questionNumber.value) {
     return lang.button.startTest
   }
@@ -65,7 +79,7 @@ const actionButtonText = computed<string>(() => {
     return lang.button.showResult
   }
 
-  return lang.button.continue
+  return `${lang.button.continue}`
 })
 
 const result = computed<number>(() => {
@@ -75,22 +89,48 @@ const result = computed<number>(() => {
   )
 })
 
+const isActionButtonDisabled = computed<boolean>(() => {
+  return (
+    !!questionNumber.value &&
+    !isShowResult.value &&
+    typeof answers.value[questionNumber.value] === 'undefined'
+  )
+})
+
 const handleClickActionButton = () => {
+  if (resultFromLocalStorage.value) {
+    resultFromLocalStorage.value = undefined
+    localStorage.removeItem(LocalStorageKeys.CodependencyTest)
+  }
+
   if (isShowResult.value) {
-    emit('click:close')
+    emit('test:finish', result.value)
+
+    return
   }
 
   if (isLastQuestion.value) {
+    localStorage.setItem(LocalStorageKeys.CodependencyTest, result.value.toString())
+
     isShowResult.value = true
+
     return
   }
+
+  console.log('NEXT question')
 
   questionNumber.value++
 }
 
 defineExpose({
   open: () => {
+    questionNumber.value = 0
+    answers.value = {}
+    isShowResult.value = false
     baseDialogRef.value?.open()
+    if (localStorage.getItem(LocalStorageKeys.CodependencyTest)) {
+      resultFromLocalStorage.value = Number(localStorage.getItem(LocalStorageKeys.CodependencyTest))
+    }
   },
   close: () => {
     baseDialogRef.value?.close()
@@ -112,7 +152,6 @@ defineExpose({
     margin-top: $px-30;
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
   }
 }
 </style>

@@ -22,6 +22,7 @@ const onClickTab = (tab: MenuOption) => {
 @import '@/scss/variables.scss';
 .tabs-bar {
   display: flex;
+  justify-content: center;
   gap: $px-15;
   font-size: 1.25rem;
   margin-top: $px-10;

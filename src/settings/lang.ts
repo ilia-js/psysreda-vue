@@ -4,7 +4,6 @@ export const lang = {
   buttonContactApprove: 'Связаться',
   buttonEnrollArtTherapyGroup: 'Записаться',
   buttonEnrollArtTherapyGroupApprove: 'Записаться',
-  testMe: 'Пройти Тест',
 
   button: {
     writeMe: 'Написать мне',
@@ -13,7 +12,9 @@ export const lang = {
     continue: 'Далее',
     next: 'Следующий',
     finish: 'Завершить',
-    showResult: 'Показать результат'
+    showResult: 'Показать результат',
+    passTest: 'Пройти Тест',
+    passAgain: 'Пройти Заново'
   },
 
   title: {

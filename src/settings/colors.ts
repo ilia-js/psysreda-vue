@@ -5,6 +5,10 @@ export const buttonColorSchemes: Record<string, ColorScheme> = {
     color: 'black',
     backgroundColor: '#666'
   },
+  lightGrey: {
+    color: 'black',
+    backgroundColor: '#ccc'
+  },
   red: {
     color: 'white',
     backgroundColor: '#dc3545'

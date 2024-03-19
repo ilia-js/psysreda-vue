@@ -37,6 +37,8 @@ import TabsBar from '@/components/tabs/TabsBar.vue'
   &__tabs-bar {
     display: flex;
     justify-content: center;
+    padding-right: $px-20;
+    padding-left: $px-20;
   }
 }
 

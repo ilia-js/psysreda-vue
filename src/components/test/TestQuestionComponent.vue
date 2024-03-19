@@ -1,5 +1,6 @@
 <template>
   <div class="question-component">
+    <div class="question-component__info">Вопрос: {{ info }}</div>
     <div class="question-component__question">
       {{ question }}
     </div>
@@ -23,13 +24,15 @@ import RadioButton from 'primevue/radiobutton'
 const answerNumber = defineModel()
 
 defineProps({
-  question: { type: String, required: true }
+  question: { type: String, required: true },
+  info: { type: String }
 })
 </script>
 <style lang="scss" scoped>
 @import '@/scss/variables';
 .question-component {
   &__question {
+    margin-top: $px-20;
     text-align: center;
     font-size: 1.5rem;
     font-weight: normal;
@@ -38,8 +41,12 @@ defineProps({
     line-height: 2rem;
   }
 
+  &__info {
+    margin-top: -$px-15;
+  }
+
   &__answers {
-    margin-top: $px-40;
+    margin-top: $px-30;
     display: flex;
     flex-direction: column;
     gap: $px-10;

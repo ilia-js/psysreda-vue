@@ -2,7 +2,7 @@
   <div
     class="base-button"
     :class="{ 'base-button--disabled': disabled }"
-    @click="emit('click')"
+    @click="handleClick"
     :style="colorScheme"
   >
     {{ text }}
@@ -27,6 +27,12 @@ const colorScheme = computed(() => {
 
   return buttonColorSchemes.grey
 })
+
+const handleClick = () => {
+  if (!props.disabled) {
+    emit('click')
+  }
+}
 </script>
 <style lang="scss" scoped>
 @import '@/scss/variables';

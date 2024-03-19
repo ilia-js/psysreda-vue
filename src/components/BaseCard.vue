@@ -1,10 +1,12 @@
 <template>
   <div class="base-card" :style="{ maxWidth, minHeight }">
-    <div class="base-card__header">
-      <slot name="header" />
-    </div>
-    <div class="base-card__body">
-      <slot name="body" />
+    <div class="base-card__container">
+      <div class="base-card__header">
+        <slot name="header" />
+      </div>
+      <div class="base-card__body">
+        <slot name="body" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,10 +22,17 @@ defineProps({
 @import '@/scss/variables.scss';
 
 .base-card {
-  max-width: 480px;
-  margin: 0 auto;
-  border: 2px dashed #bbb;
-  border-radius: $border-radius !important;
+  display: flex;
+  justify-content: center;
+  padding-right: $px-10;
+  padding-left: $px-10;
+
+  &__container {
+    width: 480px;
+
+    border: 2px dashed #bbb;
+    border-radius: $border-radius !important;
+  }
 
   &__header {
     display: block !important;
