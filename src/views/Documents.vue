@@ -1,16 +1,16 @@
 <template>
-  <DocumentsCard class="documents-card-container" />
+<!--  <DocumentsCard class="documents-card-container" />-->
 </template>
 <style lang="scss" scoped></style>
-<script>
-import DocumentsCard from "@/components/cards/DocumentsCard";
+<script lang="ts" setup>
+//import DocumentsCard from "@/components/cards/DocumentsCard";
 
-export default {
-  name: "Documents",
-  components: {
-    DocumentsCard,
-  },
-};
+// export default {
+//   name: "Documents",
+//   components: {
+//     DocumentsCard,
+//   },
+// };
 </script>
 <style lang="scss" scoped>
 .documents-card-container {
