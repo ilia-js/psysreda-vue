@@ -3,9 +3,9 @@
     <template #header>
       <div class="welcome-card__title">
         <div>Татьяна Гвоздовская,</div>
-        <div>гештальт - терапевт</div>
+        <div>гештальт - психотерапевт</div>
       </div>
-      <img src="@/assets/images/logo.png" alt="Tatiana Gvozdovskaia" class="welcome-card__photo" />
+      <img src="@/images/logo.png" alt="Tatiana Gvozdovskaia" class="welcome-card__photo" />
     </template>
     <template #body>
       <div class="welcome-card__body">
@@ -21,26 +21,26 @@
 </template>
 
 <script lang="ts" setup>
-import { lang } from '@/settings/lang'
-import { ref } from 'vue'
-import BaseCard from '@/components/BaseCard.vue'
-import BaseButton from '@/components/base/buttons/BaseButton.vue'
+import { ref } from "vue";
 
-import MessageDialog from '@/components/dialogs/MessageDialog.vue'
+import BaseButton from "@/components/base/buttons/BaseButton.vue";
+import BaseCard from "@/components/BaseCard.vue";
+import MessageDialog from "@/components/dialogs/MessageDialog.vue";
+import { lang } from "@/settings/lang";
 
-const messageDialogRef = ref<InstanceType<typeof MessageDialog> | undefined>()
+const messageDialogRef = ref<InstanceType<typeof MessageDialog> | undefined>();
 
 const openMessageDialog = () => {
-  messageDialogRef.value?.open()
-}
+  messageDialogRef.value?.open();
+};
 
 const onClickCloseMessageDialog = () => {
-  messageDialogRef.value?.close()
-}
+  messageDialogRef.value?.close();
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@import "@/scss/variables.scss";
 
 .welcome-card {
   &__title {

@@ -1,3 +1,3 @@
-export const API_ROUTES = {
-  TELEGRAM_SEND: "/public/telegram",
-};
+export const apiRoutes = {
+  telegramProcessor: '/telegramProcessor'
+}

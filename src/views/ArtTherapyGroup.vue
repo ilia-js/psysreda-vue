@@ -7,7 +7,7 @@
   <!--    <v-row class="justify-space-around">-->
   <!--      <v-col>-->
   <!--        <v-img-->
-  <!--          src="@/assets/images/art-therapy.jpg"-->
+  <!--          src="@/images/art-therapy.jpg"-->
   <!--          max-width="250"-->
   <!--          class="rounded-2 img-fluid mx-auto"-->
   <!--        />-->

@@ -1,3 +1,4 @@
 export enum LocalStorageKeys {
-  CodependencyTest = 'codependencyTest'
+  CodependencyTest = "codependencyTest",
+  AuthToken = "authToken",
 }

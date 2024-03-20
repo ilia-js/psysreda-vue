@@ -1,13 +1,13 @@
-const { defineConfig } = require("@vue/cli-service");
+const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  transpileDependencies: ["vuetify"],
+  transpileDependencies: ['vuetify'],
   devServer: {
-    host: "localhost",
+    host: 'localhost'
   },
   chainWebpack: (config) => {
-    config.plugin("html").tap((args) => {
-      args[0].title = "Татьяна Гвоздовская - психотерапевт";
-      return args;
-    });
-  },
-});
+    config.plugin('html').tap((args) => {
+      args[0].title = 'Татьяна Гвоздовская - гештальт-психотерапевт'
+      return args
+    })
+  }
+})

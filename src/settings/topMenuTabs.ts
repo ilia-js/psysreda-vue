@@ -15,8 +15,8 @@ export const topMenuTabs: MenuOption[] = [
     disabled: true
   },
   {
-    path: '/price',
-    label: 'Стоимость'
+    path: '/consultations',
+    label: 'Консультации'
   },
   {
     path: '/documents',
