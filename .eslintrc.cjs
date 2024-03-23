@@ -46,35 +46,33 @@ module.exports = {
       "error",
       {
         ignoreCase: false,
-        ignoreDeclarationSort: true, // Do not want to sort import lines, use `eslint-plugin-import` instead.
+        ignoreDeclarationSort: true,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
         allowSeparatedGroups: true,
       },
     ],
-    "import/no-unresolved": "error",
+    "import/no-unresolved": "off", // "Off" because all imports with "@" looks like errors.
     "import/order": [
       "error",
       {
         "newlines-between": "always",
         groups: [
-          "builtin", // Built-in imports (come from NodeJS native) go first.
-          "external", // External imports.
-          "internal", // Absolute imports.
-          ["sibling", "parent"], // Relative imports, the sibling and parent types they can be mingled together.
-          "index", // Index imports.
-          "unknown", // Unknown.
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent"],
+          "index",
+          "unknown",
         ],
         alphabetize: {
-          order: "asc", // Sort in ascending order. Options: ["ignore", "asc", "desc"].
-          caseInsensitive: true, // ignore case. Options: [true, false].
+          order: "asc",
+          caseInsensitive: true,
         },
       },
     ],
-    // As CL built on web-components we need to turn off this rule
     "vue/no-deprecated-slot-attribute": "off",
 
-    // Required so we can inject values without additional check that are not required at all.
     "@typescript-eslint/no-non-null-assertion": "off",
   },
   settings: {
