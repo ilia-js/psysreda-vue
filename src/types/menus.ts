@@ -1,5 +1,7 @@
+import type { AppRoute } from "@/settings/appRoutes";
+
 export interface MenuOption {
-  path: string
-  label: string
-  disabled?: boolean
+  route: AppRoute;
+  label: string;
+  disabled?: boolean;
 }

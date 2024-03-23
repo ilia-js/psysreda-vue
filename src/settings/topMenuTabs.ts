@@ -1,25 +1,21 @@
-import type { MenuOption } from '@/types/menus'
+import { appRoutes } from "@/settings/appRoutes";
+import type { MenuOption } from "@/types/menus";
 
 export const topMenuTabs: MenuOption[] = [
   {
-    path: '/',
-    label: 'Главная'
+    label: "Главная",
+    route: appRoutes.home,
   },
   {
-    path: '/art-therapy-group',
-    label: 'Гештальт-подход'
+    label: "Гештальт-подход",
+    route: appRoutes.gestalt,
   },
   {
-    path: '/course',
-    label: 'Курс "Океан Эмоций"',
-    disabled: true
+    label: "Консультации",
+    route: appRoutes.consultations,
   },
   {
-    path: '/consultations',
-    label: 'Консультации'
+    label: "Образование",
+    route: appRoutes.education,
   },
-  {
-    path: '/documents',
-    label: 'Образование'
-  }
-]
+];

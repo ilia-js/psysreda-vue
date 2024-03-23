@@ -6,20 +6,24 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { topMenuTabs } from '@/settings/topMenuTabs'
-import type { MenuOption } from '@/types/menus'
+import { computed } from "vue";
+import { useRouter } from "vue-router";
+
+import { topMenuTabs } from "@/settings/topMenuTabs";
+import type { MenuOption } from "@/types/menus";
+
+const router = useRouter();
 
 const preparedTabs = computed(() => {
-  return topMenuTabs.filter((el) => !el.disabled)
-})
+  return topMenuTabs.filter((el) => !el.disabled);
+});
 
 const onClickTab = (tab: MenuOption) => {
-  console.log(tab)
-}
+  router.push({ name: tab.route.name });
+};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@import "@/scss/variables.scss";
 .tabs-bar {
   display: flex;
   justify-content: center;
