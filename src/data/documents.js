@@ -94,8 +94,7 @@ export default [
   {
     items: [
       {
-        title:
-          'Удостоверение о краткосрочном повышении <span class="text-no-wrap">квалификации</span>',
+        title: 'Удостоверение о краткосрочном повышении <span class="text-no-wrap">квалификации</span>',
       },
       {
         label: "Программа",

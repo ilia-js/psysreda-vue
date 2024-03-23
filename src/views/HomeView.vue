@@ -1,9 +1,7 @@
 <template>
   <div class="home-view">
     <div class="home-view__header">
-      <span class="home-view__title-line-primary">
-        Как перестать <s>думать только о других</s>
-      </span>
+      <span class="home-view__title-line-primary"> Как перестать <s>думать только о других</s> </span>
       <span class="home-view__exclamation-mark">?</span> <br />
       <span class="home-view__title-line-secondary">Как научиться заботиться о себе</span
       ><span class="home-view__exclamation-mark">!</span>
@@ -17,12 +15,12 @@
 </template>
 <script lang="ts" setup>
 // TODO
-import WelcomeCard from '@/components/cards/WelcomeCard.vue'
-import AuditoryCard from '@/components/cards/AuditoryCard.vue'
-import CodependencyTestCard from '@/components/cards/CodependencyTestCard.vue'
+import AuditoryCard from "@/components/cards/AuditoryCard.vue";
+import CodependencyTestCard from "@/components/cards/CodependencyTestCard.vue";
+import WelcomeCard from "@/components/cards/WelcomeCard.vue";
 </script>
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@import "@/scss/variables.scss";
 
 .home-view {
   &__header {
