@@ -1,7 +1,7 @@
 <template>
   <div class="base-card" :style="{ maxWidth, minHeight }">
     <div class="base-card__container">
-      <div class="base-card__header">
+      <div class="base-card__header" v-if="$slots.header">
         <slot name="header" />
       </div>
       <div class="base-card__body">
@@ -14,12 +14,12 @@
 <script lang="ts" setup>
 defineProps({
   maxWidth: String,
-  minHeight: String
-})
+  minHeight: String,
+});
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@import "@/scss/variables.scss";
 
 .base-card {
   display: flex;
